@@ -1,7 +1,20 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch("/api/fixtures/fixtures");
+
+      const data = res.json();
+
+      return data;
+    };
+
+    fetchData().then((data) => console.log(data));
+  }, []);
+
   return (
     <>
       <Head>
@@ -10,6 +23,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <h1>hello world</h1>
     </>
   );
 }
