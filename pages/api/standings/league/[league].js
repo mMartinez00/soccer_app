@@ -1,6 +1,6 @@
-const fetchData = async (team) => {
+const fetchData = async () => {
   const response = await fetch(
-    `https://api-football-v1.p.rapidapi.com/v3/teams?name=${team}`,
+    `https://api-football-v1.p.rapidapi.com/v3/standings?league=${id}&season=${season}`,
     {
       method: "GET",
       headers: {
@@ -16,8 +16,7 @@ const fetchData = async (team) => {
 };
 
 export default async function handler(req, res) {
-  const { team } = req.query;
-  const response = await fetchData(team);
+  const response = await fetchData();
 
   res.status(200).json(response);
 }
