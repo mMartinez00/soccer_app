@@ -1,19 +1,29 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import Fixtures from "@/components/Fixtures";
 
-export default function Home() {
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("/api/fixtures/fixtures");
+export const getServerSideProps = async () => {
+  const response = await fetch(
+    `https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all`,
+    {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": process.env.API_KEY,
+        "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
+      },
+    }
+  );
 
-      const data = res.json();
+  const data = await response.json();
 
-      return data;
-    };
+  return {
+    props: { data },
+  };
+};
 
-    fetchData().then((data) => console.log(data));
-  }, []);
+export default function Home({ data }) {
+  const [content, setContent] = useState(data);
 
   return (
     <>
@@ -23,7 +33,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>hello world</h1>
+
+      <Fixtures data={content} />
     </>
   );
 }
