@@ -1,0 +1,5 @@
+.League {
+  border: 2px orange solid;
+  display: flex;
+  align-items: center;
+}

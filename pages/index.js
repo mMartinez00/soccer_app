@@ -1,10 +1,10 @@
 import Head from "next/head";
-import Image from "next/image";
-import { useState } from "react";
 import Fixtures from "@/components/Fixtures";
 
 export const getServerSideProps = async () => {
-  const response = await fetch(
+  let today = new Date().toISOString().split("T")[0];
+
+  const response1 = await fetch(
     `https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all`,
     {
       method: "GET",
@@ -15,15 +15,56 @@ export const getServerSideProps = async () => {
     }
   );
 
-  const data = await response.json();
+  const response2 = await fetch(
+    `https://api-football-v1.p.rapidapi.com/v3/fixtures?timezone=America/New_York&date=${today}`,
+    {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": process.env.API_KEY,
+        "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
+      },
+    }
+  );
+
+  const allPromises = await Promise.all([response1, response2]);
+
+  const live = await allPromises[0].json();
+
+  const all = await allPromises[1].json();
 
   return {
-    props: { data },
+    props: {
+      live: live.response,
+      all: all.response,
+    },
   };
 };
 
-export default function Home({ data }) {
-  const [content, setContent] = useState(data);
+export default function Home({ live, all }) {
+  function groupFixturesByLeague(array) {
+    const groupedFixtures = array
+      .sort((a, b) => {
+        const leagueA = a.league.country.toUpperCase();
+        const leagueB = b.league.country.toUpperCase();
+
+        return leagueA > leagueB ? 1 : leagueA < leagueB ? -1 : 0;
+      })
+      .reduce((a, b) => {
+        const key = `${b.league.country} - ${b.league.name}`;
+        if (!a[key]) {
+          a[key] = [];
+        }
+
+        a[key].push(b);
+
+        return a;
+      }, {});
+
+    return groupedFixtures;
+  }
+
+  const liveGames = groupFixturesByLeague(live);
+  const allGames = groupFixturesByLeague(all);
 
   return (
     <>
@@ -33,8 +74,7 @@ export default function Home({ data }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Fixtures data={content} />
+      <Fixtures all={allGames} live={liveGames} />
     </>
   );
 }
