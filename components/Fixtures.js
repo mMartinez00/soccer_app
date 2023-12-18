@@ -1,42 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import Toggle from "./Toggle";
 import Competition from "./Competition";
 
-export default function Fixtures({ data }) {
-  const sortFixturesByCountryAlphabetically = data.sort((a, b) => {
-    const leagueA = a.league.country.toUpperCase();
-    const leagueB = b.league.country.toUpperCase();
+export default function Fixtures({ live, all }) {
+  const [liveGames, setLiveGames] = useState(false);
 
-    return leagueA > leagueB ? 1 : leagueA < leagueB ? -1 : 0;
-  });
+  const handleClick = () => {
+    liveGames === false ? setLiveGames(true) : setLiveGames(false);
+  };
 
-  const groupFixturesByLeague = sortFixturesByCountryAlphabetically.reduce(
-    (a, b) => {
-      const key = `${b.league.country} - ${b.league.name}`;
-      if (!a[key]) {
-        a[key] = [];
-      }
-
-      a[key].push(b);
-
-      return a;
-    },
-    {}
-  );
-
-  const leagueAndMatchesArray = Object.entries(groupFixturesByLeague);
+  const gamesAndLeaguesArray = liveGames
+    ? Object.entries(live)
+    : Object.entries(all);
 
   return (
-    <section className="Fixtures">
-      {leagueAndMatchesArray &&
-        leagueAndMatchesArray.map((fixture) => {
-          return (
-            <Competition
-              key={fixture[0]}
-              league={fixture[1][0].league}
-              matches={fixture[1]}
-            />
-          );
-        })}
-    </section>
+    <>
+      <Toggle handleClick={handleClick} />
+      <section className="Fixtures">
+        {gamesAndLeaguesArray &&
+          gamesAndLeaguesArray.map((fixture) => {
+            return (
+              <Competition
+                key={fixture[0]}
+                league={fixture[1][0].league}
+                matches={fixture[1]}
+              />
+            );
+          })}
+      </section>
+    </>
   );
 }
