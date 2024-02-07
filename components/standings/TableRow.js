@@ -1,5 +1,6 @@
 import React from "react";
 import Team from "../Team";
+import Form from "./Form";
 
 export default function TableRow({ team }) {
   return (
@@ -22,7 +23,8 @@ export default function TableRow({ team }) {
 
       <td className="row_cell points">{team.points}</td>
 
-      <td className="row_cell form">{team.form}</td>
+      <td className="row_cell form">{<Form form={team.form} />}</td>
+   
     </tr>
   );
 }

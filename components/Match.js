@@ -12,9 +12,9 @@ export default function Match({ matches }) {
           return (
             <div className={styles.Match} key={match.fixture.id}>
               <Time time={match.fixture.status} />
-              <Team team={match.teams.home} />
+              <Team team={match.teams.home} leagueId={match.league.id} season={match.league.season} />
               <Score score={match.score} />
-              <Team team={match.teams.away} />
+              <Team team={match.teams.away} leagueId={match.league.id} season={match.league.season} />
             </div>
           );
         })}

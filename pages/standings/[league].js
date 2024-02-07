@@ -11,7 +11,7 @@ export default function Standings() {
   const { query } = router;
 
   const { data, error, isLoading } = useSWR(
-    `/api/standings/league/${query.league}?id=${query.id}&season=${query.season}`,
+    `/api/standings/league/${query.league}?leagueId=${query.leagueId}&season=${query.season}`,
     fetcher
   );
 
@@ -20,17 +20,23 @@ export default function Standings() {
   const logo = data ? data.response[0].league.logo : null;
   const season = data ? data.response[0].league.season : null;
 
-  if (data)
+  if (isLoading)
     return (
       <>
-        <League name={name} logo={logo} />
-        <h1>
-          {name} Table - {season}/{season + 1}
-        </h1>
-
-        {standings.map((table, index) => (
-          <StandingsTable key={standings[index][0].group} table={table} />
-        ))}
+        <h1>Loading...</h1>
       </>
     );
+
+  return (
+    <>
+      <League name={name} logo={logo} />
+      <h1>
+        {name} Table - {season}/{season + 1}
+      </h1>
+
+      {standings.map((table, index) => (
+        <StandingsTable key={standings[index][0].group} table={table} />
+      ))}
+    </>
+  );
 }
