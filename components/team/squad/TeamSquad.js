@@ -14,7 +14,6 @@ export default function TeamSquads() {
     );
 
     const players = data ? data.response[0].players : null;
-    // players && console.log(players);
 
     if (isLoading) {
         return (

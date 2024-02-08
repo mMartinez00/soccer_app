@@ -9,7 +9,7 @@ export default function TeamPlayer({ player }) {
                     src={player.photo}
                     width={100}
                     height={100}
-                    alt="photp"
+                    alt="photo"
                 />
             </div>
             <div className="playerInfo">
