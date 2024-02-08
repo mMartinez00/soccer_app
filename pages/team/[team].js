@@ -1,7 +1,7 @@
 import React from 'react';
 import TeamFacts from '@/components/team/TeamFacts';
-import TeamStatistics from '@/components/team/TeamStatistics';
-import TeamSquads from '@/components/team/TeamSquads';
+import TeamStatistics from '@/components/team/statistics/TeamStatistics';
+import TeamSquad from '@/components/team/squad/TeamSquad';
 import { useState } from 'react';
 
 export default function Team() {
@@ -9,9 +9,9 @@ export default function Team() {
 
     return (
         <>
-            {/* <TeamFacts /> */}
+            <TeamFacts />
             <TeamStatistics />
-            {/* <TeamSquads /> */}
+            <TeamSquad />
         </>
     );
 }
