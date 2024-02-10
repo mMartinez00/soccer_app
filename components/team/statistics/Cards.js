@@ -1,20 +1,30 @@
 import React from 'react';
 
-function totalCards(accumulator, currentValue) {
-    currentValue.total === null ? (currentValue.total = 0) : currentValue.total;
+function totalCards(cards) {
+    const sumOfCards = Object.values(cards).reduce(
+        (accumulator, currentValue) => {
+            currentValue.total === null
+                ? (currentValue.total = 0)
+                : currentValue.total;
 
-    return accumulator + currentValue.total;
+            return accumulator + currentValue.total;
+        },
+        0
+    );
+
+    return sumOfCards;
 }
 
 export default function Cards({ cards }) {
-    const yellowCards = Object.values(cards.yellow).reduce(totalCards, 0);
+    const yellowCards = totalCards(cards.yellow);
 
-    const redCards = Object.values(cards.red).reduce(totalCards, 0);
+    const redCards = totalCards(cards.red);
 
     return (
         <>
-            <p className="yellowCards">Yellow Cards: {yellowCards}</p>
-            <p className="redCards">Red Cards: {redCards}</p>
+            <h2 className="cardsHeading">Cards:</h2>
+            <p className="yellowCards">Yellow: {yellowCards}</p>
+            <p className="redCards">Red: {redCards}</p>
         </>
     );
 }
