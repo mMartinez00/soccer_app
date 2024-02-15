@@ -27,7 +27,13 @@ export default function TeamSquads() {
         <>
             {players &&
                 players.map((player) => {
-                    return <TeamPlayer key={player.id} player={player} />;
+                    return (
+                        <TeamPlayer
+                            key={player.id}
+                            player={player}
+                            season={query.season}
+                        />
+                    );
                 })}
         </>
     );

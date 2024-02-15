@@ -1,7 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
-export default function TeamPlayer({ player }) {
+export default function TeamPlayer({ player, season }) {
     return (
         <>
             <div className="playerPhoto">
@@ -13,7 +14,22 @@ export default function TeamPlayer({ player }) {
                 />
             </div>
             <div className="playerInfo">
-                <p className="name">Name: {player.name}</p>
+                <p className="name">
+                    Name:{' '}
+                    <span>
+                        <Link
+                            href={{
+                                pathname: `/players/${player.name}`,
+                                query: {
+                                    playerId: `${player.id}`,
+                                    season: `${season}`,
+                                },
+                            }}
+                        >
+                            {player.name}
+                        </Link>
+                    </span>
+                </p>
                 <p className="age">Age: {player.age}</p>
                 <p className="number">
                     Number: {player.number && player.number}

@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Fixtures from '@/components/Fixtures';
+import { useEffect } from 'react';
 
 export const getServerSideProps = async () => {
     let today = new Date().toISOString().split('T')[0];
@@ -65,14 +66,6 @@ export default function Home({ live, all }) {
 
     const liveGames = groupFixturesByLeague(live);
     const allGames = groupFixturesByLeague(all);
-
-    // console.log(
-    //     navigator.geolocation.getCurrentPosition(() => {
-    //         const altitude = GeolocationCoordinates.altitude;
-
-    //         return altitude;
-    //     })
-    // );
 
     return (
         <>
