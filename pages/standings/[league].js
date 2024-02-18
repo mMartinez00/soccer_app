@@ -16,9 +16,11 @@ export default function Standings() {
     );
 
     const standings = data ? data.response[0].league.standings : null;
-    const name = data ? data.response[0].league.name : null;
-    const logo = data ? data.response[0].league.logo : null;
-    const season = data ? data.response[0].league.season : null;
+    // const name = data ? data.response[0].league.name : null;
+    // const logo = data ? data.response[0].league.logo : null;
+    // const season = data ? data.response[0].league.season : null;
+    // data && console.log(data);
+    console.log(standings);
 
     if (isLoading)
         return (
@@ -29,11 +31,6 @@ export default function Standings() {
 
     return (
         <>
-            <League name={name} logo={logo} />
-            <h1>
-                {name} Table - {season}/{season + 1}
-            </h1>
-
             {standings.map((table, index) => (
                 <StandingsTable key={standings[index][0].group} table={table} />
             ))}

@@ -1,14 +1,14 @@
-import React from 'react'
+import React from 'react';
 
 export default function GoalsAgainst({ goalsAgainst }) {
     return (
         <>
-            <p className="goalsAgainst">
+            <h2 className="goalsAgainst">
                 Goals Against: {goalsAgainst.total.total}
-            </p>
+            </h2>
             <p className="goalsAgainstAverage">
                 Average: {goalsAgainst.average.total}
             </p>
         </>
-    )
+    );
 }
