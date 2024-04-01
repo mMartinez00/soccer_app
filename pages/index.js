@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Fixtures from '@/components/Fixtures';
-import { useEffect } from 'react';
 
 export const getServerSideProps = async () => {
     let today = new Date().toISOString().split('T')[0];
@@ -41,32 +40,29 @@ export const getServerSideProps = async () => {
     };
 };
 
-export default function Home({ live, all }) {
-    function groupFixturesByLeague(array) {
-        const groupedFixtures = array
-            .sort((a, b) => {
-                const leagueA = a.league.country.toUpperCase();
-                const leagueB = b.league.country.toUpperCase();
+function groupFixturesByLeague(array) {
+    const groupedFixtures = array
+        .sort((a, b) => {
+            const leagueA = a.league.country.toUpperCase();
+            const leagueB = b.league.country.toUpperCase();
 
-                return leagueA > leagueB ? 1 : leagueA < leagueB ? -1 : 0;
-            })
-            .reduce((a, b) => {
-                const key = `${b.league.country} - ${b.league.name}`;
-                if (!a[key]) {
-                    a[key] = [];
-                }
+            return leagueA > leagueB ? 1 : leagueA < leagueB ? -1 : 0;
+        })
+        .reduce((a, b) => {
+            const key = `${b.league.country} - ${b.league.name}`;
+            if (!a[key]) {
+                a[key] = [];
+            }
 
-                a[key].push(b);
+            a[key].push(b);
 
-                return a;
-            }, {});
+            return a;
+        }, {});
 
-        return groupedFixtures;
-    }
+    return groupedFixtures;
+}
 
-    const liveGames = groupFixturesByLeague(live);
-    const allGames = groupFixturesByLeague(all);
-
+export default function Home({ all, live }) {
     return (
         <>
             <Head>
@@ -82,7 +78,10 @@ export default function Home({ live, all }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Fixtures all={allGames} live={liveGames} />
+            <Fixtures
+                live={groupFixturesByLeague(live)}
+                all={groupFixturesByLeague(all)}
+            />
         </>
     );
 }
