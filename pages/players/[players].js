@@ -13,8 +13,9 @@ export default function Players() {
         fetcher
     );
 
-    data && console.log(data);
-    // query && console.log(query);
+    if (isLoading) {
+        return <h1>Loading...</h1>;
+    }
 
     return <div>Player</div>;
 }
