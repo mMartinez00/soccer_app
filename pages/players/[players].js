@@ -1,5 +1,6 @@
 import React from 'react';
 import useSWR from 'swr';
+import PlayerInfo from '@/components/players/PlayerInfo';
 import { useRouter } from 'next/router';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -16,6 +17,11 @@ export default function Players() {
     if (isLoading) {
         return <h1>Loading...</h1>;
     }
+    data && console.log(data);
 
-    return <div>Player</div>;
+    return (
+        <>
+            <PlayerInfo info={data.response[0].player} />
+        </>
+    );
 }
