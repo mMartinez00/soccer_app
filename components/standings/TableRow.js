@@ -1,17 +1,30 @@
 import React from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import Team from '../Team';
 import Form from './Form';
 
 export default function TableRow({ team }) {
+    const router = useRouter();
+    const { query } = router;
+
     return (
         <tr>
             <td className="row_cell rank">{team.rank}</td>
 
             <td className="row_cell team">
-                <Team
-                    key={`teamname: ${team.rank} ${team.team.id}`}
-                    team={team.team}
-                />
+                <Link
+                    href={{
+                        pathname: `/team/${team.team.name}`,
+                        query: {
+                            teamId: `${team.team.id}`,
+                            leagueId: `${query.leagueId}`,
+                            season: `${query.season}`,
+                        },
+                    }}
+                >
+                    <Team team={team.team} />
+                </Link>
             </td>
 
             <td className="row_cell ">{team.all.played}</td>
