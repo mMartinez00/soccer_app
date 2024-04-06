@@ -21,6 +21,8 @@ export default function Statistics() {
         fetcher
     );
 
+    // console.log(query);
+
     if (isLoading)
         return (
             <>

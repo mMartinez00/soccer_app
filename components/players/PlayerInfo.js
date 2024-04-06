@@ -20,7 +20,6 @@ function kgToPounds(kg) {
 }
 
 export default function PlayerInfo({ info }) {
-    console.log(info);
     return (
         <>
             <div className="PlayerInfo">
