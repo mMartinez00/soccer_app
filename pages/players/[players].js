@@ -15,15 +15,20 @@ export default function Players() {
         fetcher
     );
 
+    const player = data ? data.response[0].player : null;
+    const statistics = data ? data.response[0].statistics : null;
+    const position = data
+        ? data.response[0].statistics[0].games.position
+        : null;
+
     if (isLoading) {
         return <h1>Loading...</h1>;
     }
-    data && console.log(data);
 
     return (
         <>
-            <PlayerInfo info={data.response[0].player} />
-            <PlayerStatistics />
+            <PlayerInfo player={player} position={position} />
+            <PlayerStatistics statistics={statistics} />
         </>
     );
 }

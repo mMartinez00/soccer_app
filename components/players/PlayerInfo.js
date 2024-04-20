@@ -19,16 +19,16 @@ function kgToPounds(kg) {
     return `${Math.round(pounds)}lbs`;
 }
 
-export default function PlayerInfo({ info }) {
+export default function PlayerInfo({ player, position }) {
     return (
         <>
             <div className="PlayerInfo">
                 <div className="Player">
                     <div className="Name">
-                        <h1 className="PlayerName">{info.name}</h1>
+                        <h1 className="PlayerName">{player.name}</h1>
                         <div className="PlayerPhoto">
                             <Image
-                                src={info.photo}
+                                src={player.photo}
                                 width={200}
                                 height={200}
                                 alt="player_photo"
@@ -37,25 +37,27 @@ export default function PlayerInfo({ info }) {
                     </div>
                     <div className="Info">
                         <p className="PlayerFullName">
-                            Full Name: {info.firstname} {info.lastname}
+                            Full Name: {player.firstname} {player.lastname}
                         </p>
                         <p className="DOB">
                             Date of Birth:{' '}
-                            {new Date(info.birth.date).toLocaleDateString()}
+                            {new Date(player.birth.date).toLocaleDateString()}
                         </p>
                         <p className="POB">
-                            Place of Birth: {info.birth.place},{' '}
-                            {info.birth.country}
+                            Place of Birth: {player.birth.place},{' '}
+                            {player.birth.country}
                         </p>
                         <p className="Nationality">
-                            Nationality: {info.nationality}
+                            Nationality: {player.nationality}
                         </p>
                         <p className="Height">
-                            Height: {info.height} ({cmToFeet(info.height)})
+                            Height: {player.height} ({cmToFeet(player.height)})
                         </p>
                         <p className="Weight">
-                            Weight: {info.weight} ({kgToPounds(info.weight)})
+                            Weight: {player.weight} ({kgToPounds(player.weight)}
+                            )
                         </p>
+                        <p className="Position">Position: {position}</p>
                     </div>
                 </div>
             </div>
