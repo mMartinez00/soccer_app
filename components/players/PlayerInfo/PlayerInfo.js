@@ -23,7 +23,7 @@ export default function PlayerInfo({ player, position }) {
     return (
         <>
             <div className="PlayerInfo">
-                <div className="Player">
+                <div className="Player" style={{ display: 'flex' }}>
                     <div className="Name">
                         <h1 className="PlayerName">{player.name}</h1>
                         <div className="PlayerPhoto">
