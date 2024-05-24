@@ -1,17 +1,17 @@
 import React from 'react';
+import { buttons } from './table';
 
-export default function StatButtons({ stats }) {
-    function handleClick(e) {
-        stats = e.target.innerText;
-        // console.log(stats);
-        // console.log(e.target.innerText);
-    }
+export default function StatButtons({ handleClick }) {
     return (
         <>
             <div className="Buttons">
-                <button onClick={handleClick}>General</button>
-                <button onClick={handleClick}>Attacking</button>
-                <button onClick={handleClick}>Defending</button>
+                {buttons.map((button) => {
+                    return (
+                        <button key={button} onClick={(e) => handleClick(e)}>
+                            {button}
+                        </button>
+                    );
+                })}
             </div>
         </>
     );

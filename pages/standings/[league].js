@@ -20,7 +20,6 @@ export default function Standings() {
     // const logo = data ? data.response[0].league.logo : null;
     // const season = data ? data.response[0].league.season : null;
     // data && console.log(data);
-    console.log(data);
 
     if (isLoading)
         return (
