@@ -5,7 +5,7 @@ export default function TeamsTabs({ teams }) {
         <div className="Tabs" style={{ display: 'flex' }}>
             {teams.map((team) => {
                 return (
-                    <div key={team} className="Tab">
+                    <div key={team} className="Tab" style={{ margin: '5px' }}>
                         <span className="Team">{team}</span>
                     </div>
                 );

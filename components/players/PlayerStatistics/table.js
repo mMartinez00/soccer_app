@@ -13,7 +13,7 @@ const table = {
             'Subbed Out',
         ],
 
-        Objects: ['goals', 'shots', 'dribbles', 'penalty'],
+        Objects: ['games', 'fouls', 'passes', 'substitutes'],
     },
 
     Attacking: {
@@ -29,7 +29,7 @@ const table = {
             'Penalties Won',
         ],
 
-        Objects: ['games', 'fouls', 'passes', 'substitutes'],
+        Objects: ['goals', 'shots', 'dribbles', 'penalty'],
     },
 
     Defending: {

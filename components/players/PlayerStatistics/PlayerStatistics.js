@@ -20,15 +20,26 @@ export default function PlayerStatistics({ statistics }) {
         return a;
     }, {});
 
+    const data = Object.values(groupedByTeam);
+    const keys = Object.keys(groupedByTeam);
+    // console.log(keys);
+    // console.log(data);
+
     return (
         <>
             <div className="Statistics">
                 <TeamsTabs teams={Object.keys(groupedByTeam)} />
                 <StatButtons handleClick={handleCLick} />
-                <StatisticsTable
-                    statistics={groupedByTeam}
-                    tableHeaders={tableHeaders}
-                />
+                {data.map((a, index) => {
+                    // console.log(a);
+                    return (
+                        <StatisticsTable
+                            key={index}
+                            statistics={a}
+                            tableHeaders={tableHeaders}
+                        />
+                    );
+                })}
             </div>
         </>
     );
