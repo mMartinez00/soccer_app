@@ -19,7 +19,6 @@ const table = {
     Attacking: {
         headers: [
             'Goals',
-            'Goals Missed',
             'Assists',
             'Shots',
             'Shots on Target',
@@ -39,6 +38,7 @@ const table = {
             'Interceptions',
             'Yellow Card',
             'Red Card',
+            'Duels Total',
             'Duels Won',
             'Dribble Past',
             'Goals Saved',
@@ -47,7 +47,7 @@ const table = {
             'Penalties Commited',
         ],
 
-        Objects: ['tackles', 'cards', 'duels', 'penalty', 'goals'],
+        Objects: ['tackles', 'cards', 'duels', 'dribbles', 'penalty', 'goals'],
     },
 };
 

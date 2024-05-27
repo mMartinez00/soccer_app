@@ -7,7 +7,7 @@ export default function StatisticsTable({ tableHeaders, statistics }) {
         <>
             <table className="PlayersStatisticsTable">
                 <TableHeaders headers={tableHeaders} />
-                <TableBody statistics={statistics} />
+                <TableBody statistics={statistics} typeOfData={tableHeaders} />
             </table>
         </>
     );

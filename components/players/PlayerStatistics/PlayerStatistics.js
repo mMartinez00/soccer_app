@@ -4,10 +4,10 @@ import TeamsTabs from './TeamsTabs';
 import StatButtons from './StatButtons';
 
 export default function PlayerStatistics({ statistics }) {
-    const [tableHeaders, setTableHeaders] = useState('General');
+    const [playersStatistics, setPlayersStatistics] = useState('General');
 
     const handleCLick = (e) => {
-        setTableHeaders(e.target.innerText);
+        setPlayersStatistics(e.target.innerText);
     };
 
     const groupedByTeam = statistics.reduce((a, b) => {
@@ -36,7 +36,7 @@ export default function PlayerStatistics({ statistics }) {
                         <StatisticsTable
                             key={index}
                             statistics={a}
-                            tableHeaders={tableHeaders}
+                            tableHeaders={playersStatistics}
                         />
                     );
                 })}

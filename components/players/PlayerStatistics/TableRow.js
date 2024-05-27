@@ -1,23 +1,17 @@
 import React from 'react';
 import Image from 'next/image';
 import { table } from './table';
+import AttackingData from './AttackingData';
+import GeneralData from './GeneralData';
+import DefendingData from './DefendingData';
 
 function filterObj(stat, typeOfData) {
     const keys = Object.keys(stat);
-    // console.log(typeOfData);
-    // console.log(stat);
 
-    // const a = [];
     const filtered = keys
-        .filter((key, index) => {
-            // typeOfData.includes(key);
-            // console.log(typeOfData.includes(key));
+        .filter((key) => {
             if (typeOfData.includes(key)) {
-                // a.push(stat[key]);
-                // console.log(stat[key]);
-                // return { key: stat[key] };
                 return stat[key];
-                // console.log(stat[key]);
             }
         })
         .reduce((object, key) => {
@@ -29,12 +23,10 @@ function filterObj(stat, typeOfData) {
     return filtered;
 }
 
-export default function TableRow({ stat }) {
+export default function TableRow({ stat, typeOfData }) {
     const general = filterObj(stat, table.General.Objects);
     const attacking = filterObj(stat, table.Attacking.Objects);
     const defending = filterObj(stat, table.Defending.Objects);
-
-    console.log(general);
 
     return (
         <>
@@ -48,16 +40,13 @@ export default function TableRow({ stat }) {
                         height={25}
                     />
                 </td>
-                <td>{general.games.rating}</td>
-                <td>{general.games.appearences}</td>
-                <td>{general.games.lineups}</td>
-                <td>{general.games.minutes}</td>
-                <td>{general.fouls.commited}</td>
-                <td>{general.fouls.drawn}</td>
-                <td>{general.passes.total}</td>
-                <td>{general.passes.key}</td>
-                <td>{general.substitutes.in}</td>
-                <td>{general.substitutes.out}</td>
+                {typeOfData === 'Attacking' ? (
+                    <AttackingData data={attacking} />
+                ) : typeOfData === 'Defending' ? (
+                    <DefendingData data={defending} />
+                ) : (
+                    <GeneralData data={general} />
+                )}
             </tr>
         </>
     );
