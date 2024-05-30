@@ -53,4 +53,8 @@ const table = {
 
 const buttons = ['General', 'Attacking', 'Defending'];
 
-export { table, buttons };
+function convertNullToZero(value) {
+    return value === null ? (value = 0) : value;
+}
+
+export { table, buttons, convertNullToZero };

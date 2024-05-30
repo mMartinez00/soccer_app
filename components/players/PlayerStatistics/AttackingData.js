@@ -1,16 +1,17 @@
 import React from 'react';
+import { convertNullToZero } from './table';
 
 export default function AttackingData({ data }) {
     return (
         <>
-            <td>{data.goals.total}</td>
-            <td>{data.goals.assists}</td>
-            <td>{data.shots.total}</td>
-            <td>{data.shots.on}</td>
-            <td>{data.dribbles.attempts}</td>
-            <td>{data.dribbles.success}</td>
-            <td>{data.penalty.scored}</td>
-            <td>{data.penalty.won}</td>
+            <td>{convertNullToZero(data.goals.total)}</td>
+            <td>{convertNullToZero(data.goals.assists)}</td>
+            <td>{convertNullToZero(data.shots.total)}</td>
+            <td>{convertNullToZero(data.shots.on)}</td>
+            <td>{convertNullToZero(data.dribbles.attempts)}</td>
+            <td>{convertNullToZero(data.dribbles.success)}</td>
+            <td>{convertNullToZero(data.penalty.scored)}</td>
+            <td>{convertNullToZero(data.penalty.won)}</td>
         </>
     );
 }
