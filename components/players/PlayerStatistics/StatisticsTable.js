@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import TableHeaders from './TableHeaders';
 import TableBody from './TableBody';
 
-export default function StatisticsTable({ tableHeaders, statistics }) {
+const StatisticsTable = forwardRef((props, ref) => {
     return (
         <>
-            <table className="PlayersStatisticsTable">
-                <TableHeaders headers={tableHeaders} />
-                <TableBody statistics={statistics} typeOfData={tableHeaders} />
+            <table className="table" ref={ref}>
+                <TableHeaders headers={props.tableHeaders} />
+                <TableBody
+                    statistics={props.statistics}
+                    typeOfData={props.tableHeaders}
+                />
             </table>
         </>
     );
-}
+});
+
+StatisticsTable.displayName = 'StatisticsTable';
+
+export default StatisticsTable;
