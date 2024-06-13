@@ -1,5 +1,5 @@
 import React from 'react';
-import { table } from '@/components/players/PlayerStatistics/table';
+import { table } from '@/components/players/table';
 import Image from 'next/image';
 import TableRow from './TableRow';
 

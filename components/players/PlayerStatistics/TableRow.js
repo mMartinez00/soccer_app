@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { table } from './table';
+import { table } from '../table';
 import AttackingData from './AttackingData';
 import GeneralData from './GeneralData';
 import DefendingData from './DefendingData';

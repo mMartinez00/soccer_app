@@ -1,5 +1,5 @@
 import React from 'react';
-import { buttons } from './table';
+import { buttons } from '../table';
 
 export default function StatButtons({ handleClick }) {
     return (

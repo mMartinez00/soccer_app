@@ -1,5 +1,5 @@
 import React from 'react';
-import { convertNullToZero } from './table';
+import { convertNullToZero } from '@/components/players/utils';
 
 export default function GeneralData({ data }) {
     return (
@@ -7,12 +7,14 @@ export default function GeneralData({ data }) {
             <td>
                 {convertNullToZero(data.games.rating) === 0
                     ? 'N/A'
-                    : parseInt(convertNullToZero(data.games.rating)).toFixed(1)}
+                    : parseFloat(convertNullToZero(data.games.rating)).toFixed(
+                          1
+                      )}
             </td>
             <td>{convertNullToZero(data.games.appearences)}</td>
             <td>{convertNullToZero(data.games.lineups)}</td>
             <td>{convertNullToZero(data.games.minutes)}</td>
-            <td>{convertNullToZero(data.fouls.commited)}</td>
+            <td>{convertNullToZero(data.fouls.committed)}</td>
             <td>{convertNullToZero(data.fouls.drawn)}</td>
             <td>{convertNullToZero(data.passes.total)}</td>
             <td>{convertNullToZero(data.passes.key)}</td>

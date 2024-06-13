@@ -1,5 +1,5 @@
 import React from 'react';
-import { table } from './table';
+import { table } from '../table';
 
 export default function TableHeaders({ headers }) {
     const tableHeaders = function () {
