@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import Team from '../Team';
+import Team from '../fixtures/Team';
 import Form from './Form';
 
 export default function TableRow({ team }) {

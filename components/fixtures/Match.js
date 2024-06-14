@@ -3,15 +3,20 @@ import Link from 'next/link';
 import Team from './Team';
 import Score from './Score';
 import Time from './Time';
-import styles from '../styles/Match.module.css';
 
 export default function Match({ matches }) {
     return (
-        <div className={styles.Matches}>
+        <div>
             {matches &&
                 matches.map((match) => {
                     return (
-                        <div className={styles.Match} key={match.fixture.id}>
+                        <div
+                            style={{
+                                border: '1px green solid',
+                                display: 'flex',
+                            }}
+                            key={match.fixture.id}
+                        >
                             <Time time={match.fixture.status} />
                             <Link
                                 href={{

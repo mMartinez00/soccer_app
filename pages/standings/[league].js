@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
-import League from '@/components/League';
+import League from '@/components/fixtures/League';
 import StandingsTable from '@/components/standings/StandingsTable';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());

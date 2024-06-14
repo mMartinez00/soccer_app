@@ -1,5 +1,5 @@
 import React from 'react';
-import Country from './Country';
+import Country from '../Country';
 import League from './League';
 import styles from '@/styles/LeagueHeader.module.css';
 import Link from 'next/link';

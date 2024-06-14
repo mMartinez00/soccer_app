@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Fixtures from '@/components/Fixtures';
+import Fixtures from '@/components/fixtures/Fixtures';
 import { groupFixturesByLeague } from '@/utils/utils';
 
 export const getServerSideProps = async () => {
