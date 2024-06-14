@@ -2,24 +2,15 @@ import React, { useState, useRef } from 'react';
 import StatisticsTable from './StatisticsTable';
 import TeamsTabs from './TeamsTabs';
 import StatButtons from './StatButtons';
+import { groupedByTeam } from '@/utils/utils';
 
 export default function PlayerStatistics({ statistics }) {
     const [playersStatistics, setPlayersStatistics] = useState('General');
     const myTableRefs = useRef([]);
     const mySliderRef = useRef(null);
 
-    const groupedByTeam = statistics.reduce((a, b) => {
-        const team = b.team.name;
-        if (!a[team]) {
-            a[team] = [];
-        }
-
-        a[team].push(b);
-        return a;
-    }, {});
-
-    const data = Object.values(groupedByTeam);
-    const teams = Object.keys(groupedByTeam);
+    const data = Object.values(groupedByTeam(statistics));
+    const teams = Object.keys(groupedByTeam(statistics));
 
     const handleButtonCLick = (e) => {
         setPlayersStatistics(e.target.innerText);

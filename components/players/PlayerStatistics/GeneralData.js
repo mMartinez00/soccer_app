@@ -1,5 +1,5 @@
 import React from 'react';
-import { convertNullToZero } from '@/components/players/utils';
+import { convertNullToZero } from '@/utils/utils';
 
 export default function GeneralData({ data }) {
     return (

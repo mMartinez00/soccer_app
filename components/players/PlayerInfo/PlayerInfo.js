@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { cmToFeet, kgToPounds } from '@/components/players/utils';
+import { cmToFeet, kgToPounds } from '@/utils/utils';
 
 export default function PlayerInfo({ player, position }) {
     return (

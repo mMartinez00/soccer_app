@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Fixtures from '@/components/Fixtures';
+import { groupFixturesByLeague } from '@/utils/utils';
 
 export const getServerSideProps = async () => {
     let today = new Date().toISOString().split('T')[0];
@@ -39,28 +40,6 @@ export const getServerSideProps = async () => {
         },
     };
 };
-
-function groupFixturesByLeague(array) {
-    const groupedFixtures = array
-        .sort((a, b) => {
-            const leagueA = a.league.country.toUpperCase();
-            const leagueB = b.league.country.toUpperCase();
-
-            return leagueA > leagueB ? 1 : leagueA < leagueB ? -1 : 0;
-        })
-        .reduce((a, b) => {
-            const key = `${b.league.country} - ${b.league.name}`;
-            if (!a[key]) {
-                a[key] = [];
-            }
-
-            a[key].push(b);
-
-            return a;
-        }, {});
-
-    return groupedFixtures;
-}
 
 export default function Home({ all, live }) {
     return (
