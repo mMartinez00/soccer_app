@@ -1,7 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
-import Dropdown from '../../Dropdown';
 import Form from '../../standings/Form';
 import MatchesPlayed from './MatchesPlayed';
 import GoalsScored from './GoalsScored';
@@ -21,8 +20,6 @@ export default function Statistics() {
         fetcher
     );
 
-    // console.log(query);
-
     if (isLoading)
         return (
             <>
@@ -33,9 +30,6 @@ export default function Statistics() {
     return (
         <>
             <div className="statistics">
-                <p className="season">
-                    Season: <Dropdown />
-                </p>
                 <p className="form">
                     Form: <Form form={data.response.form} />
                 </p>
