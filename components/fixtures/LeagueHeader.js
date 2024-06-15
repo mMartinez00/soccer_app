@@ -1,5 +1,5 @@
 import React from 'react';
-import Country from '../Country';
+import Country from './Country';
 import League from './League';
 import styles from '@/styles/LeagueHeader.module.css';
 import Link from 'next/link';
@@ -7,6 +7,7 @@ import Link from 'next/link';
 
 export default function LeagueHeader({ league }) {
     // if the flag & logo property does not have a value refer to: https://github.com/vercel/next.js/discussions/29545
+    console.log(league);
 
     return (
         <>
