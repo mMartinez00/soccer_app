@@ -1,9 +1,7 @@
 import React from 'react';
 import Country from './Country';
 import League from './League';
-import styles from '@/styles/LeagueHeader.module.css';
 import Link from 'next/link';
-// import { useRouter } from "next/router";
 
 export default function LeagueHeader({ league }) {
     // if the flag & logo property does not have a value refer to: https://github.com/vercel/next.js/discussions/29545
