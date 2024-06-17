@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import styles from '../styles/Home.module.scss';
 import Fixtures from '@/components/fixtures/Fixtures';
 import { groupFixturesByLeague } from '@/utils/utils';
 
@@ -42,6 +43,7 @@ export const getServerSideProps = async () => {
 };
 
 export default function Home({ all, live }) {
+    console.log(all);
     return (
         <>
             <Head>

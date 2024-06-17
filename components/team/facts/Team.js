@@ -8,7 +8,7 @@ export default function Team({ team }) {
                 Name: {team.name}{' '}
                 <span className="teamLogo">
                     <Image
-                        src={team.logo}
+                        src={team.logo && team.logo}
                         width={100}
                         height={100}
                         alt="logo"

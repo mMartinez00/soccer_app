@@ -7,24 +7,30 @@ import Form from './Form';
 export default function TableRow({ team }) {
     const router = useRouter();
     const { query } = router;
+    // console.log(team.team);
+    // console.log(query);
 
     return (
         <tr>
             <td className="row_cell rank">{team.rank}</td>
 
             <td className="row_cell team">
-                <Link
-                    href={{
-                        pathname: `/team/${team.team.name}`,
-                        query: {
-                            teamId: `${team.team.id}`,
-                            leagueId: `${query.leagueId}`,
-                            season: `${query.season}`,
-                        },
-                    }}
-                >
-                    <Team team={team.team} />
-                </Link>
+                {team.team.id ? (
+                    <Link
+                        href={{
+                            pathname: `/team/${team.team.name}`,
+                            query: {
+                                teamId: `${team.team.id}`,
+                                leagueId: `${query.leagueId}`,
+                                season: `${query.season}`,
+                            },
+                        }}
+                    >
+                        <Team team={team.team} />
+                    </Link>
+                ) : (
+                    <span>{team.team.name}</span>
+                )}
             </td>
 
             <td className="row_cell ">{team.all.played}</td>
