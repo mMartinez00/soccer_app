@@ -15,6 +15,8 @@ export default function TeamFacts() {
         fetcher
     );
 
+    console.log(data);
+
     if (isLoading)
         return (
             <>
@@ -23,13 +25,9 @@ export default function TeamFacts() {
         );
 
     return (
-        <>
-            <div className="info">
-                <Team team={data.response[0].team} />
-            </div>
-            <div className="venue">
-                <Venue venue={data.response[0].venue} />
-            </div>
-        </>
+        <div className="TeamFacts" style={{ display: 'flex' }}>
+            <Team team={data.response[0].team} />
+            <Venue venue={data.response[0].venue} />
+        </div>
     );
 }
