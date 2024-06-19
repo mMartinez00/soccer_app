@@ -43,7 +43,6 @@ export const getServerSideProps = async () => {
 };
 
 export default function Home({ all, live }) {
-    console.log(all);
     return (
         <>
             <Head>

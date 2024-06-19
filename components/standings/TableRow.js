@@ -7,8 +7,6 @@ import Form from './Form';
 export default function TableRow({ team }) {
     const router = useRouter();
     const { query } = router;
-    // console.log(team.team);
-    // console.log(query);
 
     return (
         <tr>

@@ -1,7 +1,6 @@
 import React from 'react';
 import Team from './Team';
 import Venue from './Venue';
-import Image from 'next/image';
 import useSWR from 'swr';
 import { useRouter } from 'next/router';
 
