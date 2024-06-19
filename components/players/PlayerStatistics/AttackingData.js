@@ -1,5 +1,5 @@
 import React from 'react';
-import { convertNullToZero } from '../table';
+import { convertNullToZero } from '@/utils/utils';
 
 export default function AttackingData({ data }) {
     return (
