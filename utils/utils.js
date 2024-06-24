@@ -42,8 +42,8 @@ export function groupFixturesByLeague(array) {
     return groupedFixtures;
 }
 
-export function groupedByTeam(statistics) {
-    return statistics.reduce((a, b) => {
+export function groupedByTeam(array) {
+    return array.reduce((a, b) => {
         const team = b.team.name;
         if (!a[team]) {
             a[team] = [];

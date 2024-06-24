@@ -14,8 +14,6 @@ export default function TeamFacts() {
         fetcher
     );
 
-    console.log(data);
-
     if (isLoading)
         return (
             <>
