@@ -13,6 +13,14 @@ export default function TeamSquads() {
         fetcher
     );
 
+    if (data && data.response.length === 0) {
+        return (
+            <>
+                <h2>Team roster not found</h2>
+            </>
+        );
+    }
+
     const players = data ? data.response[0].players : null;
 
     if (isLoading) {

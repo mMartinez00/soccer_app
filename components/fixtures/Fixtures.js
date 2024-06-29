@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Toggle from './Toggle';
 import Competition from './Competition';
-import styles from '@/styles/Home.module.scss';
+// import styles from '@/styles/Home.module.scss';
 
 export default function Fixtures({ live, all }) {
     const [fixtures, setFixtures] = useState(all);
@@ -13,7 +13,7 @@ export default function Fixtures({ live, all }) {
     return (
         <>
             <Toggle handleClick={handleClick} />
-            <section className={styles.fixtures}>
+            <section>
                 {Object.entries(fixtures).map((fixture) => {
                     return (
                         <Competition
