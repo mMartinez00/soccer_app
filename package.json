@@ -7,7 +7,8 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "json-server": "json-server -w mock/mock.json --port 8000"
+        "json-server": "json-server -w mock/mock.json --port 8000",
+        "sass": "sass --watch styles/sass/main.scss:styles/main.css"
     },
     "dependencies": {
         "eslint": "8.46.0",

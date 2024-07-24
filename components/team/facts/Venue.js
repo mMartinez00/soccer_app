@@ -4,10 +4,10 @@ import Image from 'next/image';
 export default function Venue({ venue }) {
     return (
         <div className="Venue">
-            <p className="venueName">
+            <p className="Venue_Name">
                 Venue: {venue.name ? venue.name : 'N/A'}
                 <span
-                    className="venueImage"
+                    className="Venue_Image"
                     style={{
                         display: 'inline-block',
                         width: '100px',
@@ -24,15 +24,15 @@ export default function Venue({ venue }) {
                     )}
                 </span>
             </p>
-            <p className="venueCapacity">
+            <p className="Venue_Capacity">
                 Capacity:{' '}
                 {venue.capactiy ? venue.capactiy.toLocaleString() : 'N/A'}
             </p>
-            <p className="venueAddress">
+            <p className="Venue_Address">
                 Address:{' '}
                 {venue.address ? venue.address + ', ' + venue.city : 'N/A'}
             </p>
-            <p className="venueSurface">
+            <p className="Venue_Surface">
                 Surface: {/* Convert first letter of string to upper case */}
                 {venue.surface
                     ? venue.surface.charAt(0).toUpperCase() +

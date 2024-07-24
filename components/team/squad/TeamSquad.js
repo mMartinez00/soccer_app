@@ -1,48 +1,51 @@
 import React from 'react';
 import useSWR from 'swr';
 import { useRouter } from 'next/router';
-import TeamPlayer from './TeamPlayer';
+import { fetcher } from '@/utils/utils';
+import Squad from './Squad';
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+function useSquad(teamID) {
+    const { data, isLoading, error } = useSWR(`api/team/squads/${teamID}`);
+
+    return {
+        squad: data,
+        isLoading,
+        isError: error,
+    };
+}
 
 export default function TeamSquads() {
     const router = useRouter();
     const { query } = router;
     const { data, error, isLoading } = useSWR(
-        `/api/team/squads/${query.teamId}`,
+        `http://localhost:8000/response`,
         fetcher
     );
 
-    if (data && data.response.length === 0) {
-        return (
-            <>
-                <h2>Team roster not found</h2>
-            </>
-        );
-    }
+    // if (data && data.response.length === 0) {
+    //     return (
+    //         <>
+    //             <h2>Team roster not found</h2>
+    //         </>
+    //     );
+    // }
 
-    const players = data ? data.response[0].players : null;
+    // const players = data ? data.response[0].players : null;
+    const squad = data ? data[0].players : null;
 
-    if (isLoading) {
-        return (
-            <>
-                <h2>Loading...</h2>
-            </>
-        );
-    }
+    // if (isLoading) {
+    //     return (
+    //         <>
+    //             <h2>Loading...</h2>
+    //         </>
+    //     );
+    // }
+
+    // data && console.log(data);
 
     return (
-        <>
-            {players &&
-                players.map((player) => {
-                    return (
-                        <TeamPlayer
-                            key={player.id}
-                            player={player}
-                            season={query.season}
-                        />
-                    );
-                })}
-        </>
+        <div className="Team_Squad">
+            <Squad squad={squad} season={query.season} />
+        </div>
     );
 }

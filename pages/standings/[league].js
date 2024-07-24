@@ -25,6 +25,8 @@ export default function Standings() {
 
     const standings = data ? data.response[0].league.standings : null;
 
+    data && console.log(data);
+
     if (isLoading)
         return (
             <>
@@ -35,6 +37,7 @@ export default function Standings() {
     return (
         <>
             {standings.map((table, index) => (
+                // console.log(table)
                 <StandingsTable key={standings[index][0].group} table={table} />
             ))}
         </>

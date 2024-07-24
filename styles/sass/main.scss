@@ -1,3 +1,6 @@
-html {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+@import './abstracts/variables';
+@import './layout/layout.module.scss';
+@import './base/fonts_module.scss';
+@import './pages/fixtures_module';
+@import './components/competition_module';
+@import './abstracts/mixins';

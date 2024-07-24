@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Toggle from './Toggle';
 import Competition from './Competition';
-// import styles from '@/styles/Home.module.scss';
 
 export default function Fixtures({ live, all }) {
     const [fixtures, setFixtures] = useState(all);
@@ -11,7 +10,7 @@ export default function Fixtures({ live, all }) {
     };
 
     return (
-        <>
+        <div className="Fixtures">
             <Toggle handleClick={handleClick} />
             <section>
                 {Object.entries(fixtures).map((fixture) => {
@@ -24,6 +23,6 @@ export default function Fixtures({ live, all }) {
                     );
                 })}
             </section>
-        </>
+        </div>
     );
 }

@@ -6,43 +6,44 @@ import Time from './Time';
 
 export default function Match({ matches }) {
     return (
-        <div>
+        <div className="League_Matches">
             {matches &&
-                matches.map((match) => {
+                matches.map((match, index) => {
                     return (
                         <div
-                            style={{
-                                border: '1px green solid',
-                                display: 'flex',
-                            }}
+                            className={`Match_Row ${index + 1}`}
                             key={match.fixture.id}
                         >
-                            <Time time={match.fixture.status} />
-                            <Link
-                                href={{
-                                    pathname: `/team/${match.teams.home.name}`,
-                                    query: {
-                                        teamId: `${match.teams.home.id}`,
-                                        leagueId: `${match.league.id}`,
-                                        season: `${match.league.season}`,
-                                    },
-                                }}
-                            >
-                                <Team team={match.teams.home} />
-                            </Link>
-                            <Score score={match.score} />
-                            <Link
-                                href={{
-                                    pathname: `/team/${match.teams.away.name}`,
-                                    query: {
-                                        teamId: `${match.teams.away.id}`,
-                                        leagueId: `${match.league.id}`,
-                                        season: `${match.league.season}`,
-                                    },
-                                }}
-                            >
-                                <Team team={match.teams.away} />
-                            </Link>
+                            <div className="Match">
+                                <Time time={match.fixture.status} />
+                                <Link
+                                    className="Link"
+                                    href={{
+                                        pathname: `/team/${match.teams.home.name}`,
+                                        query: {
+                                            teamID: `${match.teams.home.id}`,
+                                            leagueID: `${match.league.id}`,
+                                            season: `${match.league.season}`,
+                                        },
+                                    }}
+                                >
+                                    <Team team={match.teams.home} />
+                                </Link>
+                                <Score score={match.score} />
+                                <Link
+                                    className="Link"
+                                    href={{
+                                        pathname: `/team/${match.teams.away.name}`,
+                                        query: {
+                                            teamID: `${match.teams.away.id}`,
+                                            leagueID: `${match.league.id}`,
+                                            season: `${match.league.season}`,
+                                        },
+                                    }}
+                                >
+                                    <Team team={match.teams.away} />
+                                </Link>
+                            </div>
                         </div>
                     );
                 })}

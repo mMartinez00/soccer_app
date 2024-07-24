@@ -1,18 +1,27 @@
 import React from 'react';
-import Team from './Team';
-import Venue from './Venue';
 import useSWR from 'swr';
 import { useRouter } from 'next/router';
+import { fetcher } from '@/utils/utils';
+import Team from './Team';
+import Venue from './Venue';
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+function useFacts(teamID) {
+    const { data, error, isLoading } = useSWR(
+        `/api/team/id/${teamID}`,
+        fetcher
+    );
+
+    return {
+        facts: data && data.response[0],
+        isLoading,
+        isError: error,
+    };
+}
 
 export default function TeamFacts() {
     const router = useRouter();
     const { query } = router;
-    const { data, error, isLoading } = useSWR(
-        `/api/team/id/${query.teamId}`,
-        fetcher
-    );
+    const { facts, isLoading, isError } = useFacts(query.teamID);
 
     if (isLoading)
         return (
@@ -21,10 +30,17 @@ export default function TeamFacts() {
             </>
         );
 
+    if (isError)
+        return (
+            <>
+                <h1>Error!</h1>
+            </>
+        );
+
     return (
-        <div className="TeamFacts" style={{ display: 'flex' }}>
-            <Team team={data.response[0].team} />
-            <Venue venue={data.response[0].venue} />
+        <div className="Team_Facts" style={{ display: 'flex' }}>
+            <Team team={facts.team} />
+            <Venue venue={facts.venue} />
         </div>
     );
 }

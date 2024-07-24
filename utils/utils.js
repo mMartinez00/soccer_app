@@ -53,3 +53,20 @@ export function groupedByTeam(array) {
         return a;
     }, {});
 }
+
+export const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
+export function totalCards(cards) {
+    const sumOfCards = Object.values(cards).reduce(
+        (accumulator, currentValue) => {
+            currentValue.total === null
+                ? (currentValue.total = 0)
+                : currentValue.total;
+
+            return accumulator + currentValue.total;
+        },
+        0
+    );
+
+    return sumOfCards;
+}

@@ -1,0 +1,53 @@
+@import '../abstracts/mixins';
+
+.Competition {
+    width: 100%;
+    border: 1px black solid;
+    border-radius: $borderRadius;
+    margin: 1.8rem 0;
+    overflow: hidden;
+    box-shadow: 0 2px 4px 2px $white-font-color;
+}
+
+.League_Header {
+    width: 100%;
+    height: 3.5rem;
+    .Link {
+        @include Link($color: $white-font-color);
+    }
+    padding: 8px 1rem;
+    background-color: #000;
+    border: 1px green solid;
+}
+
+.League_Matches {
+    border: 1px red solid;
+    color: $white-font-color;
+    .Link {
+        @include Link($color: $white-font-color);
+    }
+}
+
+@for $i from 1 through $max-match-rows {
+    .League_Matches > .Match_Row:nth-child(#{$i}) {
+        background-color: if($i % 2 == 0, #2f2e2e, rgb(68, 68, 68));
+    }
+}
+
+.Match_Row {
+    border: 1px blue solid;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Match {
+    border: 1px yellow solid;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
