@@ -25,6 +25,8 @@ export default function Players() {
         return <h1>Loading...</h1>;
     }
 
+    player && console.log(player);
+
     return (
         <>
             <PlayerInfo player={player} position={position} />

@@ -7,8 +7,8 @@ export default function Team({ team }) {
             <span className="Team">
                 <Image
                     src={team && team.logo}
-                    width={25}
-                    height={25}
+                    width={100}
+                    height={100}
                     alt="logo"
                 />{' '}
                 {team.name}

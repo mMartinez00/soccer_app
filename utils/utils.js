@@ -70,3 +70,7 @@ export function totalCards(cards) {
 
     return sumOfCards;
 }
+
+export function filterPosition(array, position) {
+    return array && array.filter((player) => player.position === position);
+}

@@ -5,10 +5,13 @@ import { fetcher } from '@/utils/utils';
 import Squad from './Squad';
 
 function useSquad(teamID) {
-    const { data, isLoading, error } = useSWR(`api/team/squads/${teamID}`);
+    const { data, isLoading, error } = useSWR(
+        `/api/team/squads/${teamID}`,
+        fetcher
+    );
 
     return {
-        squad: data,
+        data,
         isLoading,
         isError: error,
     };
@@ -17,31 +20,25 @@ function useSquad(teamID) {
 export default function TeamSquads() {
     const router = useRouter();
     const { query } = router;
-    const { data, error, isLoading } = useSWR(
-        `http://localhost:8000/response`,
-        fetcher
-    );
+    const { data, isLoading, isError } = useSquad(query.teamID);
 
-    // if (data && data.response.length === 0) {
-    //     return (
-    //         <>
-    //             <h2>Team roster not found</h2>
-    //         </>
-    //     );
-    // }
+    if (data && data.response.length === 0) {
+        return (
+            <>
+                <h2>Team roster not found</h2>
+            </>
+        );
+    }
 
-    // const players = data ? data.response[0].players : null;
-    const squad = data ? data[0].players : null;
+    const squad = data ? data.response[0].players : null;
 
-    // if (isLoading) {
-    //     return (
-    //         <>
-    //             <h2>Loading...</h2>
-    //         </>
-    //     );
-    // }
-
-    // data && console.log(data);
+    if (isLoading) {
+        return (
+            <>
+                <h2>Loading...</h2>
+            </>
+        );
+    }
 
     return (
         <div className="Team_Squad">

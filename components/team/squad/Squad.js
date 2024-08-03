@@ -1,9 +1,7 @@
 import React from 'react';
+import { filterPosition } from '@/utils/utils';
+import SquadTable from './SquadTable';
 import TeamPlayers from './TeamPlayers';
-
-function filterPosition(array, position) {
-    return array && array.filter((player) => player.position === position);
-}
 
 export default function Squad({ squad, season }) {
     const goalkeepers = squad && filterPosition(squad, 'Goalkeeper');
@@ -12,18 +10,26 @@ export default function Squad({ squad, season }) {
     const attackers = squad && filterPosition(squad, 'Attacker');
 
     return (
-        <div className="Squad" style={{ display: 'flex', color: 'white' }}>
-            <div className="Goalkeepers">
-                <TeamPlayers players={goalkeepers} season={season} />
+        <div className="Squad">
+            <div className="Goalkeepers_Container">
+                <div className="Goalkeepers">
+                    <TeamPlayers season={season} players={goalkeepers} />
+                </div>
             </div>
-            <div className="Defenders">
-                <TeamPlayers players={defenders} season={season} />
+            <div className="Defenders_Container">
+                <div className="Defenders">
+                    <TeamPlayers season={season} players={defenders} />
+                </div>
             </div>
-            <div className="Midfielders">
-                <TeamPlayers players={midfielders} season={season} />
+            <div className="Midfielders_Container">
+                <div className="Midfielders">
+                    <TeamPlayers season={season} players={midfielders} />
+                </div>
             </div>
-            <div className="Attackers">
-                <TeamPlayers players={attackers} season={season} />
+            <div className="Attackers_Container">
+                <div className="Attackers">
+                    <TeamPlayers season={season} players={attackers} />
+                </div>
             </div>
         </div>
     );

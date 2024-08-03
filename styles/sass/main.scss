@@ -1,6 +1,9 @@
 @import './abstracts/variables';
+@import './abstracts/mixins';
 @import './layout/layout.module.scss';
 @import './base/fonts_module.scss';
 @import './pages/fixtures_module';
+@import './pages//Team_module.scss';
 @import './components/competition_module';
-@import './abstracts/mixins';
+@import './components/TeamStatisitcsList_module.scss';
+@import './components/TeamSquad_module.scss';
