@@ -3,6 +3,7 @@ import useSWR from 'swr';
 import { useRouter } from 'next/router';
 import { fetcher } from '@/utils/utils';
 import Squad from './Squad';
+import Loading from '@/components/Loading';
 
 function useSquad(teamID) {
     const { data, isLoading, error } = useSWR(
@@ -35,7 +36,8 @@ export default function TeamSquads() {
     if (isLoading) {
         return (
             <>
-                <h2>Loading...</h2>
+                {/* <h2>Loading...</h2> */}
+                <Loading />
             </>
         );
     }

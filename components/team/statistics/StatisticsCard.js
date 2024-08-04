@@ -35,9 +35,6 @@ export default function StatisticsCard({ title, data }) {
                             {data.goals.for.total.total}
                         </span>{' '}
                         <br />
-                        {/* <span style={{ display: 'inline-block' }}>
-                            Average {data.goals.for.average.total}
-                        </span> */}
                     </>
                 );
             case 'Goals Against':
@@ -46,10 +43,6 @@ export default function StatisticsCard({ title, data }) {
                         <span style={{ display: 'inline-block' }}>
                             {data.goals.against.total.total}
                         </span>{' '}
-                        {/* <br />
-                        <span style={{ display: 'inline-block' }}>
-                            Average {data.goals.against.average.total}
-                        </span> */}
                     </>
                 );
             case 'Clean Sheets':
@@ -61,11 +54,17 @@ export default function StatisticsCard({ title, data }) {
             case 'Cards':
                 return (
                     <>
-                        <span style={{ display: 'inline-block' }}>
+                        <span
+                            className="Red_Card"
+                            style={{ display: 'inline-block' }}
+                        >
                             Red: {totalCards(data.cards.red)}
                         </span>{' '}
-                        <br />
-                        <span style={{ display: 'inline-block' }}>
+                        {/* <br /> */}
+                        <span
+                            className="Yellow_Card"
+                            style={{ display: 'inline-block' }}
+                        >
                             Yellow: {totalCards(data.cards.yellow)}
                         </span>
                     </>
@@ -75,8 +74,8 @@ export default function StatisticsCard({ title, data }) {
         }
     };
     return (
-        <div className="Card" style={{ border: 'red 1px solid' }}>
-            <h2>{title}</h2>
+        <div className="Card">
+            <h2 className="Card_Title">{title}</h2>
             <div className="Top_Statistics">{renderStatistics()}</div>
         </div>
     );

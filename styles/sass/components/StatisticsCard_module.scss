@@ -1,0 +1,28 @@
+.Card {
+    width: 150px;
+    height: 150px;
+    border: white 1px solid;
+    border-radius: $borderRadius;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Card_Title {
+    margin: 12px 0;
+    font-size: 18px;
+}
+
+.Top_Statistics {
+    font-size: 42px;
+}
+
+.Red_Card,
+.Yellow_Card {
+    font-size: 1rem;
+}
+
+strong {
+    font-size: 24px;
+}

@@ -4,6 +4,7 @@ import useSWR from 'swr';
 import { fetcher } from '@/utils/utils';
 import Form from '../../standings/Form';
 import TeamStatisticsList from './TeamStatisticsList';
+import Loading from '@/components/Loading';
 
 // function useStatistics(team, teamID, leagueID, season) {
 //     const { data, error, isLoading } = useSWR(
@@ -36,7 +37,7 @@ export default function Statistics() {
     if (isLoading)
         return (
             <>
-                <h1>Loading...</h1>
+                <Loading />
             </>
         );
 

@@ -21,8 +21,8 @@
 }
 
 .Player_Card {
-    width: 250px;
-    height: 250px;
+    width: $card-width;
+    height: $card-height;
     border-radius: $borderRadius;
     border: white 1px solid;
     margin: 1rem;

@@ -7,9 +7,9 @@ import TeamSquad from '@/components/team/squad/TeamSquad';
 export default function Team() {
     return (
         <div className="Team_Container">
-            {/* <TeamFacts /> */}
+            <TeamFacts />
             <TeamStatistics />
-            {/* <TeamSquad /> */}
+            <TeamSquad />
         </div>
     );
 }

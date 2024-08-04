@@ -68,7 +68,11 @@ export function totalCards(cards) {
         0
     );
 
-    return sumOfCards;
+    return (
+        <>
+            <strong>{sumOfCards}</strong>
+        </>
+    );
 }
 
 export function filterPosition(array, position) {

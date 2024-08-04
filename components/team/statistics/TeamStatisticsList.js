@@ -14,7 +14,7 @@ export default function TeamStatisticsList({ statistics }) {
     ];
 
     return (
-        <ul className="Statistics_List" style={{ display: 'flex' }}>
+        <ul className="Statistics_List">
             {cards_data.map((card) => {
                 return (
                     <li key={card} className="List_Item">

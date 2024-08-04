@@ -1,5 +1,4 @@
 .Team_Form {
-    border: red 1px solid;
     margin: 1rem;
     padding: 1rem;
 }
@@ -8,7 +7,7 @@
 .Draw,
 .Lost {
     border: 1px solid black;
-    border-radius: 2px;
+    border-radius: 4px;
     margin: 0 2px;
     padding: 4px;
     color: $white-font-color;

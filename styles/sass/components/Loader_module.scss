@@ -1,0 +1,44 @@
+.Loader {
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+    border-radius: 50%;
+    background: linear-gradient(
+                0deg,
+                rgba(225, 225, 225, 0.5) 30%,
+                /* Lighter Grey with 50% opacity */ transparent 0 70%,
+                rgb(200, 200, 200) 0 /* Solid Lighter Grey */
+            )
+            50%/8% 100%,
+        linear-gradient(
+                90deg,
+                rgba(220, 220, 220, 0.25) 30%,
+                /* Even Lighter Grey with 25% opacity */ transparent 0 70%,
+                rgba(220, 220, 220, 0.75) 0
+                    /* Even Lighter Grey with 75% opacity */
+            )
+            50%/100% 8%;
+    background-repeat: no-repeat;
+    animation: l23 1s infinite steps(12);
+}
+
+.Loader::before,
+.Loader::after {
+    content: '';
+    grid-area: 1 / 1;
+    border-radius: 50%;
+    background: inherit;
+    opacity: 0.915;
+    transform: rotate(30deg);
+}
+
+.Loader::after {
+    opacity: 0.83;
+    transform: rotate(60deg);
+}
+
+@keyframes l23 {
+    100% {
+        transform: rotate(1turn);
+    }
+}

@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { fetcher } from '@/utils/utils';
 import Team from './Team';
 import Venue from './Venue';
+import Loading from '@/components/Loading';
 
 function useFacts(teamID) {
     const { data, error, isLoading } = useSWR(
@@ -26,7 +27,7 @@ export default function TeamFacts() {
     if (isLoading)
         return (
             <>
-                <h1>Loading...</h1>
+                <Loading />
             </>
         );
 

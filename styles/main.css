@@ -554,7 +554,6 @@ main {
 }
 
 .Team_Form {
-  border: red 1px solid;
   margin: 1rem;
   padding: 1rem;
 }
@@ -563,7 +562,7 @@ main {
 .Draw,
 .Lost {
   border: 1px solid black;
-  border-radius: 2px;
+  border-radius: 4px;
   margin: 0 2px;
   padding: 4px;
   color: #f3f6f4;
@@ -579,6 +578,76 @@ main {
 
 .Lost {
   background-color: red;
+}
+
+.Statistics_List {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.List_Item {
+  margin: 0 12px;
+}
+
+.Card {
+  width: 150px;
+  height: 150px;
+  border: white 1px solid;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Card_Title {
+  margin: 12px 0;
+  font-size: 18px;
+}
+
+.Top_Statistics {
+  font-size: 42px;
+}
+
+.Red_Card,
+.Yellow_Card {
+  font-size: 1rem;
+}
+
+strong {
+  font-size: 24px;
+}
+
+.Loader {
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  border-radius: 50%;
+  background: linear-gradient(0deg, rgba(225, 225, 225, 0.5) 30%, transparent 0 70%, rgb(200, 200, 200) 0) 50%/8% 100%, linear-gradient(90deg, rgba(220, 220, 220, 0.25) 30%, transparent 0 70%, rgba(220, 220, 220, 0.75) 0) 50%/100% 8%;
+  background-repeat: no-repeat;
+  animation: l23 1s infinite steps(12);
+}
+
+.Loader::before,
+.Loader::after {
+  content: "";
+  grid-area: 1/1;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0.915;
+  transform: rotate(30deg);
+}
+
+.Loader::after {
+  opacity: 0.83;
+  transform: rotate(60deg);
+}
+
+@keyframes l23 {
+  100% {
+    transform: rotate(1turn);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
