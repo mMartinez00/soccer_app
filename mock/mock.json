@@ -1,394 +1,288 @@
 {
-    "get": "players/squads",
-    "parameters": { "team": "121" },
+    "get": "teams/statistics",
+    "parameters": {
+        "league": "71",
+        "team": "121",
+        "season": "2023"
+    },
     "errors": [],
-    "results": 1,
-    "paging": { "current": 1, "total": 1 },
-    "response": [
-        {
-            "team": {
-                "id": 121,
-                "name": "Palmeiras",
-                "logo": "https://media.api-sports.io/football/teams/121.png"
+    "results": 11,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": {
+        "league": {
+            "id": 71,
+            "name": "Serie A",
+            "country": "Brazil",
+            "logo": "https://media.api-sports.io/football/leagues/71.png",
+            "flag": "https://media.api-sports.io/flags/br.svg",
+            "season": 2023
+        },
+        "team": {
+            "id": 121,
+            "name": "Palmeiras",
+            "logo": "https://media.api-sports.io/football/teams/121.png"
+        },
+        "form": "WDWWWDDDWWLLDDDWWLWWWDWLLLLWWWWWLWDWWD",
+        "fixtures": {
+            "played": {
+                "home": 19,
+                "away": 19,
+                "total": 38
             },
-            "players": [
-                {
-                    "id": 10372,
-                    "name": "Marcelo Lomba",
-                    "age": 37,
-                    "number": 14,
-                    "position": "Goalkeeper",
-                    "photo": "https://media.api-sports.io/football/players/10372.png"
+            "wins": {
+                "home": 14,
+                "away": 6,
+                "total": 20
+            },
+            "draws": {
+                "home": 2,
+                "away": 8,
+                "total": 10
+            },
+            "loses": {
+                "home": 3,
+                "away": 5,
+                "total": 8
+            }
+        },
+        "goals": {
+            "for": {
+                "total": {
+                    "home": 35,
+                    "away": 29,
+                    "total": 64
                 },
-                {
-                    "id": 2410,
-                    "name": "Weverton",
-                    "age": 36,
-                    "number": 21,
-                    "position": "Goalkeeper",
-                    "photo": "https://media.api-sports.io/football/players/2410.png"
+                "average": {
+                    "home": "1.8",
+                    "away": "1.5",
+                    "total": "1.7"
                 },
-                {
-                    "id": 278331,
-                    "name": "Mateus Oliveira",
-                    "age": 21,
-                    "number": 24,
-                    "position": "Goalkeeper",
-                    "photo": "https://media.api-sports.io/football/players/278331.png"
-                },
-                {
-                    "id": 464019,
-                    "name": "Aranha",
-                    "age": 19,
-                    "number": null,
-                    "position": "Goalkeeper",
-                    "photo": "https://media.api-sports.io/football/players/464019.png"
-                },
-                {
-                    "id": 9916,
-                    "name": "Marcos Rocha",
-                    "age": 35,
-                    "number": 2,
-                    "position": "Defender",
-                    "photo": "https://media.api-sports.io/football/players/9916.png"
-                },
-                {
-                    "id": 279800,
-                    "name": "Vanderlan",
-                    "age": 21,
-                    "number": 6,
-                    "position": "Defender",
-                    "photo": "https://media.api-sports.io/football/players/279800.png"
-                },
-                {
-                    "id": 9917,
-                    "name": "Mayke",
-                    "age": 31,
-                    "number": 12,
-                    "position": "Defender",
-                    "photo": "https://media.api-sports.io/football/players/9917.png"
-                },
-                {
-                    "id": 2502,
-                    "name": "G. Gómez",
-                    "age": 30,
-                    "number": 15,
-                    "position": "Defender",
-                    "photo": "https://media.api-sports.io/football/players/2502.png"
-                },
-                {
-                    "id": 51466,
-                    "name": "J. Piquerez",
-                    "age": 25,
-                    "number": 22,
-                    "position": "Defender",
-                    "photo": "https://media.api-sports.io/football/players/51466.png"
-                },
-                {
-                    "id": 10083,
-                    "name": "Murilo",
-                    "age": 26,
-                    "number": 26,
-                    "position": "Defender",
-                    "photo": "https://media.api-sports.io/football/players/10083.png"
-                },
-                {
-                    "id": 237101,
-                    "name": "Gustavo Garcia",
-                    "age": 21,
-                    "number": 32,
-                    "position": "Defender",
-                    "photo": "https://media.api-sports.io/football/players/237101.png"
-                },
-                {
-                    "id": 312311,
-                    "name": "Michel",
-                    "age": 20,
-                    "number": 33,
-                    "position": "Defender",
-                    "photo": "https://media.api-sports.io/football/players/312311.png"
-                },
-                {
-                    "id": 348896,
-                    "name": "Kaiky Naves",
-                    "age": 21,
-                    "number": 34,
-                    "position": "Defender",
-                    "photo": "https://media.api-sports.io/football/players/348896.png"
-                },
-                {
-                    "id": 414359,
-                    "name": "Vitor Nunes",
-                    "age": 17,
-                    "number": 44,
-                    "position": "Defender",
-                    "photo": "https://media.api-sports.io/football/players/414359.png"
-                },
-                {
-                    "id": 415068,
-                    "name": "Benedetti",
-                    "age": 17,
-                    "number": 54,
-                    "position": "Defender",
-                    "photo": "https://media.api-sports.io/football/players/415068.png"
-                },
-                {
-                    "id": 464020,
-                    "name": "Gabriel Kidani",
-                    "age": 18,
-                    "number": null,
-                    "position": "Defender",
-                    "photo": "https://media.api-sports.io/football/players/464020.png"
-                },
-                {
-                    "id": 415066,
-                    "name": "Gilberto",
-                    "age": 18,
-                    "number": null,
-                    "position": "Defender",
-                    "photo": "https://media.api-sports.io/football/players/415066.png"
-                },
-                {
-                    "id": 425715,
-                    "name": "Arthur",
-                    "age": 18,
-                    "number": null,
-                    "position": "Defender",
-                    "photo": "https://media.api-sports.io/football/players/425715.png"
-                },
-                {
-                    "id": 6347,
-                    "name": "A. Moreno",
-                    "age": 24,
-                    "number": 5,
-                    "position": "Midfielder",
-                    "photo": "https://media.api-sports.io/football/players/6347.png"
-                },
-                {
-                    "id": 9932,
-                    "name": "Zé Rafael",
-                    "age": 30,
-                    "number": 8,
-                    "position": "Midfielder",
-                    "photo": "https://media.api-sports.io/football/players/9932.png"
-                },
-                {
-                    "id": 10527,
-                    "name": "Caio Paulista",
-                    "age": 25,
-                    "number": 16,
-                    "position": "Midfielder",
-                    "photo": "https://media.api-sports.io/football/players/10527.png"
-                },
-                {
-                    "id": 290868,
-                    "name": "Romulo",
-                    "age": 22,
-                    "number": 20,
-                    "position": "Midfielder",
-                    "photo": "https://media.api-sports.io/football/players/290868.png"
-                },
-                {
-                    "id": 9920,
-                    "name": "Raphael Veiga",
-                    "age": 28,
-                    "number": 23,
-                    "position": "Midfielder",
-                    "photo": "https://media.api-sports.io/football/players/9920.png"
-                },
-                {
-                    "id": 195111,
-                    "name": "Gabriel Menino",
-                    "age": 23,
-                    "number": 25,
-                    "position": "Midfielder",
-                    "photo": "https://media.api-sports.io/football/players/195111.png"
-                },
-                {
-                    "id": 195104,
-                    "name": "R. Rios",
-                    "age": 23,
-                    "number": 27,
-                    "position": "Midfielder",
-                    "photo": "https://media.api-sports.io/football/players/195104.png"
-                },
-                {
-                    "id": 279805,
-                    "name": "Fabinho",
-                    "age": 21,
-                    "number": 35,
-                    "position": "Midfielder",
-                    "photo": "https://media.api-sports.io/football/players/279805.png"
-                },
-                {
-                    "id": 306800,
-                    "name": "Jhon Jhon",
-                    "age": 21,
-                    "number": 40,
-                    "position": "Midfielder",
-                    "photo": "https://media.api-sports.io/football/players/306800.png"
-                },
-                {
-                    "id": 415069,
-                    "name": "Patrick Silva",
-                    "age": 19,
-                    "number": 65,
-                    "position": "Midfielder",
-                    "photo": "https://media.api-sports.io/football/players/415069.png"
-                },
-                {
-                    "id": 2412,
-                    "name": "Felipe Anderson",
-                    "age": 30,
-                    "number": null,
-                    "position": "Midfielder",
-                    "photo": "https://media.api-sports.io/football/players/2412.png"
-                },
-                {
-                    "id": 464021,
-                    "name": "Rafael Coutinho",
-                    "age": 18,
-                    "number": null,
-                    "position": "Midfielder",
-                    "photo": "https://media.api-sports.io/football/players/464021.png"
-                },
-                {
-                    "id": 415071,
-                    "name": "Thalys",
-                    "age": 18,
-                    "number": null,
-                    "position": "Midfielder",
-                    "photo": "https://media.api-sports.io/football/players/415071.png"
-                },
-                {
-                    "id": 279802,
-                    "name": "Pedro Lima",
-                    "age": 20,
-                    "number": null,
-                    "position": "Midfielder",
-                    "photo": "https://media.api-sports.io/football/players/279802.png"
-                },
-                {
-                    "id": 157148,
-                    "name": "Pedro Bicalho",
-                    "age": 22,
-                    "number": null,
-                    "position": "Midfielder",
-                    "photo": "https://media.api-sports.io/football/players/157148.png"
-                },
-                {
-                    "id": 422433,
-                    "name": "Silva",
-                    "age": 18,
-                    "number": null,
-                    "position": "Midfielder",
-                    "photo": "https://media.api-sports.io/football/players/422433.png"
-                },
-                {
-                    "id": 9939,
-                    "name": "Dudu",
-                    "age": 31,
-                    "number": 7,
-                    "position": "Attacker",
-                    "photo": "https://media.api-sports.io/football/players/9939.png"
-                },
-                {
-                    "id": 377122,
-                    "name": "Endrick",
-                    "age": 17,
-                    "number": 9,
-                    "position": "Attacker",
-                    "photo": "https://media.api-sports.io/football/players/377122.png"
-                },
-                {
-                    "id": 10143,
-                    "name": "Rony",
-                    "age": 28,
-                    "number": 10,
-                    "position": "Attacker",
-                    "photo": "https://media.api-sports.io/football/players/10143.png"
-                },
-                {
-                    "id": 9445,
-                    "name": "Bruno Rodrigues",
-                    "age": 26,
-                    "number": 11,
-                    "position": "Attacker",
-                    "photo": "https://media.api-sports.io/football/players/9445.png"
-                },
-                {
-                    "id": 237103,
-                    "name": "Lázaro",
-                    "age": 21,
-                    "number": 17,
-                    "position": "Attacker",
-                    "photo": "https://media.api-sports.io/football/players/237103.png"
-                },
-                {
-                    "id": 425733,
-                    "name": "Estêvão",
-                    "age": 17,
-                    "number": 41,
-                    "position": "Attacker",
-                    "photo": "https://media.api-sports.io/football/players/425733.png"
-                },
-                {
-                    "id": 295513,
-                    "name": "J. López",
-                    "age": 23,
-                    "number": 42,
-                    "position": "Attacker",
-                    "photo": "https://media.api-sports.io/football/players/295513.png"
-                },
-                {
-                    "id": 449244,
-                    "name": "Luighi Hanri",
-                    "age": 18,
-                    "number": 57,
-                    "position": "Attacker",
-                    "photo": "https://media.api-sports.io/football/players/449244.png"
-                },
-                {
-                    "id": 425714,
-                    "name": "Allan",
-                    "age": 20,
-                    "number": null,
-                    "position": "Attacker",
-                    "photo": "https://media.api-sports.io/football/players/425714.png"
-                },
-                {
-                    "id": 283701,
-                    "name": "Daniel",
-                    "age": 19,
-                    "number": null,
-                    "position": "Attacker",
-                    "photo": "https://media.api-sports.io/football/players/283701.png"
-                },
-                {
-                    "id": 464022,
-                    "name": "Wendell Sacramento",
-                    "age": 19,
-                    "number": null,
-                    "position": "Attacker",
-                    "photo": "https://media.api-sports.io/football/players/464022.png"
-                },
-                {
-                    "id": 414357,
-                    "name": "Riquelme Fillipi",
-                    "age": 17,
-                    "number": null,
-                    "position": "Attacker",
-                    "photo": "https://media.api-sports.io/football/players/414357.png"
-                },
-                {
-                    "id": 353953,
-                    "name": "Edney Henrique Santos da Silva",
-                    "age": 18,
-                    "number": null,
-                    "position": "Attacker",
-                    "photo": "https://media.api-sports.io/football/players/353953.png"
+                "minute": {
+                    "0-15": {
+                        "total": 7,
+                        "percentage": "11.11%"
+                    },
+                    "16-30": {
+                        "total": 11,
+                        "percentage": "17.46%"
+                    },
+                    "31-45": {
+                        "total": 7,
+                        "percentage": "11.11%"
+                    },
+                    "46-60": {
+                        "total": 10,
+                        "percentage": "15.87%"
+                    },
+                    "61-75": {
+                        "total": 9,
+                        "percentage": "14.29%"
+                    },
+                    "76-90": {
+                        "total": 13,
+                        "percentage": "20.63%"
+                    },
+                    "91-105": {
+                        "total": 6,
+                        "percentage": "9.52%"
+                    },
+                    "106-120": {
+                        "total": null,
+                        "percentage": null
+                    }
                 }
-            ]
+            },
+            "against": {
+                "total": {
+                    "home": 12,
+                    "away": 21,
+                    "total": 33
+                },
+                "average": {
+                    "home": "0.6",
+                    "away": "1.1",
+                    "total": "0.9"
+                },
+                "minute": {
+                    "0-15": {
+                        "total": 3,
+                        "percentage": "8.82%"
+                    },
+                    "16-30": {
+                        "total": 7,
+                        "percentage": "20.59%"
+                    },
+                    "31-45": {
+                        "total": 6,
+                        "percentage": "17.65%"
+                    },
+                    "46-60": {
+                        "total": 5,
+                        "percentage": "14.71%"
+                    },
+                    "61-75": {
+                        "total": 7,
+                        "percentage": "20.59%"
+                    },
+                    "76-90": {
+                        "total": 5,
+                        "percentage": "14.71%"
+                    },
+                    "91-105": {
+                        "total": 1,
+                        "percentage": "2.94%"
+                    },
+                    "106-120": {
+                        "total": null,
+                        "percentage": null
+                    }
+                }
+            }
+        },
+        "biggest": {
+            "streak": {
+                "wins": 5,
+                "draws": 3,
+                "loses": 4
+            },
+            "wins": {
+                "home": "5-0",
+                "away": "0-5"
+            },
+            "loses": {
+                "home": "0-2",
+                "away": "3-0"
+            },
+            "goals": {
+                "for": {
+                    "home": 5,
+                    "away": 5
+                },
+                "against": {
+                    "home": 2,
+                    "away": 3
+                }
+            }
+        },
+        "clean_sheet": {
+            "home": 9,
+            "away": 7,
+            "total": 16
+        },
+        "failed_to_score": {
+            "home": 2,
+            "away": 6,
+            "total": 8
+        },
+        "penalty": {
+            "scored": {
+                "total": 2,
+                "percentage": "100.00%"
+            },
+            "missed": {
+                "total": 0,
+                "percentage": "0%"
+            },
+            "total": 2
+        },
+        "lineups": [
+            {
+                "formation": "4-2-3-1",
+                "played": 26
+            },
+            {
+                "formation": "3-4-1-2",
+                "played": 8
+            },
+            {
+                "formation": "4-3-1-2",
+                "played": 2
+            },
+            {
+                "formation": "3-5-2",
+                "played": 1
+            },
+            {
+                "formation": "4-3-3",
+                "played": 1
+            }
+        ],
+        "cards": {
+            "yellow": {
+                "0-15": {
+                    "total": 6,
+                    "percentage": "6.38%"
+                },
+                "16-30": {
+                    "total": 9,
+                    "percentage": "9.57%"
+                },
+                "31-45": {
+                    "total": 17,
+                    "percentage": "18.09%"
+                },
+                "46-60": {
+                    "total": 13,
+                    "percentage": "13.83%"
+                },
+                "61-75": {
+                    "total": 13,
+                    "percentage": "13.83%"
+                },
+                "76-90": {
+                    "total": 21,
+                    "percentage": "22.34%"
+                },
+                "91-105": {
+                    "total": 13,
+                    "percentage": "13.83%"
+                },
+                "106-120": {
+                    "total": null,
+                    "percentage": null
+                },
+                "": {
+                    "total": 2,
+                    "percentage": "2.13%"
+                }
+            },
+            "red": {
+                "0-15": {
+                    "total": null,
+                    "percentage": null
+                },
+                "16-30": {
+                    "total": null,
+                    "percentage": null
+                },
+                "31-45": {
+                    "total": null,
+                    "percentage": null
+                },
+                "46-60": {
+                    "total": 2,
+                    "percentage": "50.00%"
+                },
+                "61-75": {
+                    "total": 1,
+                    "percentage": "25.00%"
+                },
+                "76-90": {
+                    "total": null,
+                    "percentage": null
+                },
+                "91-105": {
+                    "total": 1,
+                    "percentage": "25.00%"
+                },
+                "106-120": {
+                    "total": null,
+                    "percentage": null
+                }
+            }
         }
-    ]
+    }
 }

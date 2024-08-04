@@ -1,6 +1,5 @@
 import React from 'react';
 import { filterPosition } from '@/utils/utils';
-import SquadTable from './SquadTable';
 import TeamPlayers from './TeamPlayers';
 
 export default function Squad({ squad, season }) {

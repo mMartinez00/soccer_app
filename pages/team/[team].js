@@ -8,8 +8,8 @@ export default function Team() {
     return (
         <div className="Team_Container">
             {/* <TeamFacts /> */}
-            {/* <TeamStatistics /> */}
-            <TeamSquad />
+            <TeamStatistics />
+            {/* <TeamSquad /> */}
         </div>
     );
 }

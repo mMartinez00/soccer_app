@@ -553,4 +553,32 @@ main {
   padding: 10px;
 }
 
+.Team_Form {
+  border: red 1px solid;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.Won,
+.Draw,
+.Lost {
+  border: 1px solid black;
+  border-radius: 2px;
+  margin: 0 2px;
+  padding: 4px;
+  color: #f3f6f4;
+}
+
+.Won {
+  background-color: green;
+}
+
+.Draw {
+  background-color: grey;
+}
+
+.Lost {
+  background-color: red;
+}
+
 /*# sourceMappingURL=main.css.map */
