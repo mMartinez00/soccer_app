@@ -1,13 +1,26 @@
+.Team_Squad {
+    margin: 1rem 0;
+}
+
 .Squad {
     width: 100%;
     height: 100%;
+    color: white;
 }
 
 .Goalkeepers_Container,
 .Defenders_Container,
 .Midfielders_Container,
 .Attackers_Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin-bottom: 1rem;
+}
+
+.Position_Heading {
+    font-size: 42px;
 }
 
 .Goalkeepers,
@@ -35,7 +48,7 @@
 }
 
 .Player_Card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     box-shadow: 1px 2px 8px 2px white;
 }
 

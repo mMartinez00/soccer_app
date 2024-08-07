@@ -23,6 +23,7 @@ export default function TeamFacts() {
     const router = useRouter();
     const { query } = router;
     const { facts, isLoading, isError } = useFacts(query.teamID);
+    console.log(facts);
 
     if (isLoading)
         return (
@@ -39,7 +40,7 @@ export default function TeamFacts() {
         );
 
     return (
-        <div className="Team_Facts" style={{ display: 'flex' }}>
+        <div className="Team_Facts">
             <Team team={facts.team} />
             <Venue venue={facts.venue} />
         </div>

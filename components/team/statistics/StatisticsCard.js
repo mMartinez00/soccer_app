@@ -60,7 +60,6 @@ export default function StatisticsCard({ title, data }) {
                         >
                             Red: {totalCards(data.cards.red)}
                         </span>{' '}
-                        {/* <br /> */}
                         <span
                             className="Yellow_Card"
                             style={{ display: 'inline-block' }}

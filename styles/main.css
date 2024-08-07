@@ -475,20 +475,61 @@ main {
   align-items: center;
 }
 
+.Team_Statistics {
+  width: 100%;
+  height: 100%;
+  margin: 1rem 0;
+}
+
+.All_Statistics_List {
+  width: 100%;
+  height: 100%;
+  margin: 1rem 0;
+}
+
 .Statistics_List {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
   list-style-type: none;
+}
+
+.Team_Form {
+  margin: 1rem;
+  padding: 1rem;
+  color: white;
+}
+
+.List_Item {
+  margin: 0 12px;
+}
+
+.Team_Squad {
+  margin: 1rem 0;
 }
 
 .Squad {
   width: 100%;
   height: 100%;
+  color: white;
 }
 
 .Goalkeepers_Container,
 .Defenders_Container,
 .Midfielders_Container,
 .Attackers_Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin-bottom: 1rem;
+}
+
+.Position_Heading {
+  font-size: 42px;
 }
 
 .Goalkeepers,
@@ -516,7 +557,7 @@ main {
 }
 
 .Player_Card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
   box-shadow: 1px 2px 8px 2px white;
 }
 
@@ -553,11 +594,6 @@ main {
   padding: 10px;
 }
 
-.Team_Form {
-  margin: 1rem;
-  padding: 1rem;
-}
-
 .Won,
 .Draw,
 .Lost {
@@ -578,16 +614,6 @@ main {
 
 .Lost {
   background-color: red;
-}
-
-.Statistics_List {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.List_Item {
-  margin: 0 12px;
 }
 
 .Card {
@@ -648,6 +674,31 @@ strong {
   100% {
     transform: rotate(1turn);
   }
+}
+.Team_Facts {
+  width: 100%;
+  height: 100%;
+  margin: 1rem 0;
+  display: flex;
+  color: white;
+}
+
+.Team,
+.Venue {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Team_Logo_Container,
+.Venue_Image_Container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=main.css.map */

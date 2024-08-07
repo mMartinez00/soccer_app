@@ -36,7 +36,6 @@ export default function TeamSquads() {
     if (isLoading) {
         return (
             <>
-                {/* <h2>Loading...</h2> */}
                 <Loading />
             </>
         );

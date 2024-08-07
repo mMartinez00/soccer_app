@@ -1,0 +1,25 @@
+.Team_Facts {
+    width: 100%;
+    height: 100%;
+    margin: 1rem 0;
+    display: flex;
+    color: white;
+}
+
+.Team,
+.Venue {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Team_Logo_Container,
+.Venue_Image_Container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
