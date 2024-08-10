@@ -3,14 +3,15 @@ import Image from 'next/image';
 import { cmToFeet, kgToPounds } from '@/utils/utils';
 
 export default function PlayerInfo({ player, position }) {
+    // console.log(player, position);
     return (
         <div className="PlayerInfo">
             <div className="Player" style={{ display: 'flex' }}>
                 <div className="Name">
-                    <h1 className="PlayerName">{player.name}</h1>
+                    <h1 className="PlayerName">{player && player.name}</h1>
                     <div className="PlayerPhoto">
                         <Image
-                            src={player.photo}
+                            src={player && player.photo}
                             width={200}
                             height={200}
                             alt="player_photo"
@@ -19,26 +20,31 @@ export default function PlayerInfo({ player, position }) {
                 </div>
                 <div className="Info">
                     <p className="PlayerFullName">
-                        Full Name: {player.firstname} {player.lastname}
+                        Full Name: {player && player.firstname}{' '}
+                        {player && player.lastname}
                     </p>
                     <p className="DOB">
                         Date of Birth:{' '}
-                        {new Date(player.birth.date).toLocaleDateString()}
+                        {new Date(
+                            player && player.birth.date
+                        ).toLocaleDateString()}
                     </p>
                     <p className="POB">
-                        Place of Birth: {player.birth.place},{' '}
-                        {player.birth.country}
+                        Place of Birth: {player && player.birth.place},{' '}
+                        {player && player.birth.country}
                     </p>
                     <p className="Nationality">
-                        Nationality: {player.nationality}
+                        Nationality: {player && player.nationality}
                     </p>
                     <p className="Height">
-                        Height: {player.height} ({cmToFeet(player.height)})
+                        Height: {player && player.height} (
+                        {/* {cmToFeet(player && player.height)}) */}
                     </p>
                     <p className="Weight">
-                        Weight: {player.weight} ({kgToPounds(player.weight)})
+                        Weight: {player && player.weight} (
+                        {/* {kgToPounds(player && player.weight)}) */}
                     </p>
-                    <p className="Position">Position: {position}</p>
+                    <p className="Position">Position: {position && position}</p>
                 </div>
             </div>
         </div>
