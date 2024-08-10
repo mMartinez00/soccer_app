@@ -9,7 +9,9 @@ const fetchData = async (query) => {
             },
         }
     );
+
     const data = await response.json();
+
     return data;
 };
 

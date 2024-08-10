@@ -14,7 +14,7 @@ export default function TeamPlayers({ players, season }) {
                                 href={{
                                     pathname: `/players/${player.name}`,
                                     query: {
-                                        playerId: `${player.id}`,
+                                        playerID: `${player.id}`,
                                         season: `${season}`,
                                     },
                                 }}
