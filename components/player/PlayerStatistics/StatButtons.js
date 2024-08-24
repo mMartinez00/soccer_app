@@ -4,10 +4,16 @@ import { buttons } from '../table';
 export default function StatButtons({ handleClick }) {
     return (
         <>
-            <div className="Buttons">
-                {buttons.map((button) => {
+            <div className="Statistics_Buttons">
+                {buttons.map((button, index) => {
                     return (
-                        <button key={button} onClick={(e) => handleClick(e)}>
+                        <button
+                            className={`Button ${button}_Button ${
+                                index === 0 ? 'Active' : null
+                            }`}
+                            key={button}
+                            onClick={(e) => handleClick(e)}
+                        >
                             {button}
                         </button>
                     );

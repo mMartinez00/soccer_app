@@ -1,29 +1,23 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import TableHeaders from './TableHeaders';
 import TableBody from './TableBody';
 
-const StatisticsTable = forwardRef((props, ref) => {
+export default function StatisticsTable(props, index) {
+    console.log(props);
+    // console.log(ref);
+    // const a = groupedByTeam(props.statistics);
+    // console.log(a);
     return (
         <>
             <table
-                className={`table ${props.statistics[0].team.name}`}
-                ref={ref}
-                style={{
-                    width: '100%',
-                    border: 'green dotted 1px',
-                    flex: '0 0 100%',
-                }}
+                className={`Table-${props.data.index} ${props.data.tableRows[0].team.name}`}
             >
                 <TableHeaders headers={props.tableHeaders} />
                 <TableBody
-                    statistics={props.statistics}
+                    rows={props.data.tableRows}
                     typeOfData={props.tableHeaders}
                 />
             </table>
         </>
     );
-});
-
-StatisticsTable.displayName = 'StatisticsTable';
-
-export default StatisticsTable;
+}

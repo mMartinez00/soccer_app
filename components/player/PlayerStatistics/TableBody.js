@@ -3,19 +3,20 @@ import React from 'react';
 // import Image from 'next/image';
 import TableRow from './TableRow';
 
-export default function TableBody({ statistics, typeOfData }) {
+export default function TableBody({ rows, typeOfData }) {
     return (
         <>
             <tbody>
-                {statistics.map((stat) => {
-                    return (
-                        <TableRow
-                            key={stat.league.name}
-                            stat={stat}
-                            typeOfData={typeOfData}
-                        />
-                    );
-                })}
+                {rows &&
+                    rows.map((stat) => {
+                        return (
+                            <TableRow
+                                key={stat.league.name}
+                                stat={stat}
+                                typeOfData={typeOfData}
+                            />
+                        );
+                    })}
             </tbody>
         </>
     );

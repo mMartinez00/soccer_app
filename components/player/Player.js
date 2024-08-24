@@ -2,7 +2,7 @@ import React from 'react';
 import useSWR from 'swr';
 import { fetcher } from '@/utils/utils';
 import { useRouter } from 'next/router';
-import PlayerInfo from './PlayerInfo/PlayerInfo';
+import PlayerProfile from './PlayerProfile/PlayerProfile';
 import PlayerStatistics from './PlayerStatistics/PlayerStatistics';
 
 // function usePlayer(playerID, season) {
@@ -47,8 +47,8 @@ export default function Player() {
 
     return (
         <>
-            <PlayerInfo player={player} position={position} />
-            {/* <PlayerStatistics statistics={statistics} /> */}
+            {/* <PlayerProfile player={player} position={position} /> */}
+            <PlayerStatistics statistics={statistics} />
         </>
     );
 }

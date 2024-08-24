@@ -2,24 +2,24 @@ import React from 'react';
 import Image from 'next/image';
 import { cmToFeet, kgToPounds } from '@/utils/utils';
 
-export default function PlayerInfo({ player, position }) {
-    // console.log(player, position);
+export default function PlayerProfile({ player, position }) {
     return (
-        <div className="PlayerInfo">
-            <div className="Player" style={{ display: 'flex' }}>
-                <div className="Name">
-                    <h1 className="PlayerName">{player && player.name}</h1>
-                    <div className="PlayerPhoto">
+        <div className="Player_Profile">
+            <div className="Profile">
+                <div className="Player_Name">
+                    <h1 className="Name">{player && player.name}</h1>
+                    <div className="Profile_Photo">
                         <Image
                             src={player && player.photo}
                             width={200}
                             height={200}
                             alt="player_photo"
+                            className="Photo"
                         />
                     </div>
                 </div>
-                <div className="Info">
-                    <p className="PlayerFullName">
+                <div className="Profile_Info">
+                    <p className="FullName">
                         Full Name: {player && player.firstname}{' '}
                         {player && player.lastname}
                     </p>
@@ -38,11 +38,11 @@ export default function PlayerInfo({ player, position }) {
                     </p>
                     <p className="Height">
                         Height: {player && player.height} (
-                        {/* {cmToFeet(player && player.height)}) */}
+                        {cmToFeet(player && player.height)})
                     </p>
                     <p className="Weight">
                         Weight: {player && player.weight} (
-                        {/* {kgToPounds(player && player.weight)}) */}
+                        {kgToPounds(player && player.weight)})
                     </p>
                     <p className="Position">Position: {position && position}</p>
                 </div>

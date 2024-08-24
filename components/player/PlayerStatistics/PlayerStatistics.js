@@ -2,59 +2,37 @@ import React, { useState, useRef } from 'react';
 import StatisticsTable from './StatisticsTable';
 import TeamsTabs from './TeamsTabs';
 import StatButtons from './StatButtons';
-import { groupedByTeam } from '@/utils/utils';
+import { playerStatisticsArray, groupedByTeam } from '@/utils/utils';
 
 export default function PlayerStatistics({ statistics }) {
     const [playersStatistics, setPlayersStatistics] = useState('General');
-    const myTableRefs = useRef([]);
     const mySliderRef = useRef(null);
 
-    const data = Object.values(groupedByTeam(statistics));
-    const teams = Object.keys(groupedByTeam(statistics));
+    const a = groupedByTeam(playerStatisticsArray);
 
     const handleButtonCLick = (e) => {
         setPlayersStatistics(e.target.innerText);
     };
 
     const handleTabClick = (e, index) => {
-        let slider = mySliderRef;
-        let currPos = parseInt(mySliderRef.current.dataset.pos);
-        let newPos = parseInt(e.target.dataset.pos);
-
-        let newDirection = newPos > currPos ? 'right' : 'left';
-        let currentDirection = newPos < currPos ? 'right' : 'left';
-        slider.current.dataset.pos = newPos;
-
-        console.log(slider);
+        mySliderRef.current.dataset.tablePos = index + 1;
     };
 
     return (
         <>
-            <div className="Statistics" style={{ overflow: 'hidden' }}>
-                <TeamsTabs teams={teams} handleClick={handleTabClick} />
+            <div className="Player_Statistics">
+                <TeamsTabs
+                    teams={['Palmeiras', 'Paraguay']}
+                    handleClick={handleTabClick}
+                />
                 <StatButtons handleClick={handleButtonCLick} />
-                <div
-                    className="Tables"
-                    style={{
-                        width: '100%',
-                        height: '200px',
-                        border: '1px red solid',
-                        position: 'relative',
-                        // overflow: 'hidden',
-                    }}
-                >
+                <div className="Tables">
                     <div
                         className="Table_Container_Slider"
-                        data-pos="0"
+                        data-table-pos="1"
                         ref={mySliderRef}
-                        style={{
-                            // background: 'black',
-                            display: 'flex',
-                            width: '100%',
-                            position: 'absolute',
-                        }}
                     >
-                        {data.map((teamData, index) => {
+                        {/* {data.map((teamData, index) => {
                             const tableRef = (el) =>
                                 (myTableRefs.current[index] = el);
 
@@ -65,6 +43,21 @@ export default function PlayerStatistics({ statistics }) {
                                         statistics={teamData}
                                         tableHeaders={playersStatistics}
                                         ref={tableRef}
+                                    />
+                                </>
+                            );
+                        })} */}
+
+                        {Object.values(a).map((table, index) => {
+                            return (
+                                <>
+                                    <StatisticsTable
+                                        key={index}
+                                        data={{
+                                            tableRows: table,
+                                            index: index + 1,
+                                        }}
+                                        tableHeaders={playersStatistics}
                                     />
                                 </>
                             );

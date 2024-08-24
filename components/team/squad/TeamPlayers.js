@@ -12,7 +12,7 @@ export default function TeamPlayers({ players, season }) {
                             <Link
                                 className="Player_Link"
                                 href={{
-                                    pathname: `/players/${player.name}`,
+                                    pathname: `/player/${player.name}`,
                                     query: {
                                         playerID: `${player.id}`,
                                         season: `${season}`,

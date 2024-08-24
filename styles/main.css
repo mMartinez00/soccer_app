@@ -26,6 +26,12 @@ main {
   height: 100%;
 }
 
+.Player_Container {
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
 .Competition {
   width: 100%;
   border: 1px black solid;
@@ -506,6 +512,49 @@ main {
   margin: 0 12px;
 }
 
+.Player_Profile {
+  width: 100%;
+  height: 100%;
+  margin-top: 1rem;
+}
+
+.Profile {
+  width: 90%;
+  margin: auto;
+  display: flex;
+}
+
+.Player_Name {
+  flex: 1;
+}
+
+.Profile_Info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.6rem;
+  padding-left: 1rem;
+  border-left: 1px white dashed;
+}
+
+.Name {
+  text-align: center;
+  padding: 8px;
+}
+
+.Profile_Photo {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border-radius: 50%;
+  border: 1px white solid;
+}
+
+.Photo {
+  border-radius: inherit;
+}
+
 .Team_Squad {
   margin: 1rem 0;
 }
@@ -698,6 +747,91 @@ strong {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.Player_Statistics {
+  width: 100%;
+  height: 100%;
+}
+
+.Tables {
+  width: 100%;
+  height: 300px;
+  border: 1px red solid;
+}
+
+.Table_Container_Slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  top: 0;
+  left: 0;
+}
+
+.Table {
+  position: absolute;
+  width: 100%;
+  flex: 0 0 100%;
+  top: 0;
+  left: 0;
+}
+
+thead tr th {
+  background-color: black;
+  padding: 8px;
+}
+
+.Tabs {
+  display: flex;
+  margin-bottom: 1rem;
+  border: 1px white solid;
+}
+
+.Tab {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.Tab.Active {
+  background-color: #022543;
+}
+
+.Tab:hover {
+  background-color: #022543;
+}
+
+.Statistics_Buttons {
+  margin-bottom: 1rem;
+}
+
+.General_Button.Active {
+  background-color: rgb(220, 0, 0);
+  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+  color: white;
+}
+
+.General_Button,
+.Attacking_Button,
+.Defending_Button {
+  padding: 6px 14px;
+  font-size: 1rem;
+  margin: 0 1rem 0 0;
+  border-radius: 6px;
+  border: 0;
+  background-color: white;
+  color: #031525;
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.Button:hover {
+  transform: scale(98%);
 }
 
 /*# sourceMappingURL=main.css.map */
