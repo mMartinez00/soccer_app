@@ -3,15 +3,8 @@
     margin-bottom: 1rem;
 }
 
-.General_Button.Active {
-    background-color: rgba(220, 0, 0, 1);
-    background-image: linear-gradient(
-        to top left,
-        rgba(0, 0, 0, 0.2),
-        rgba(0, 0, 0, 0.2) 30%,
-        rgba(0, 0, 0, 0)
-    );
-    color: white;
+.Button:hover {
+    transform: scale(98%);
 }
 
 .General_Button,
@@ -29,6 +22,15 @@
     cursor: pointer;
 }
 
-.Button:hover {
-    transform: scale(98%);
+.General_Button.Active,
+.Attacking_Button.Active,
+.Defending_Button.Active {
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(
+        to top left,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0)
+    );
+    color: white;
 }
