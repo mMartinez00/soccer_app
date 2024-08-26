@@ -38,7 +38,7 @@ const table = {
             'Interceptions',
             'Yellow Card',
             'Red Card',
-            'Duels Total',
+            'Total Duels',
             'Duels Won',
             'Dribble Past',
             'Goals Saved',

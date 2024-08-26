@@ -2,20 +2,28 @@ import React, { useState, useRef } from 'react';
 import StatisticsTable from './StatisticsTable';
 import TeamsTabs from './TeamsTabs';
 import StatButtons from './StatButtons';
-import { playerStatisticsArray, groupedByTeam } from '@/utils/utils';
+import {
+    playerStatisticsArray,
+    groupedByTeam,
+    toggleActiveClass,
+} from '@/utils/utils';
 
 export default function PlayerStatistics({ statistics }) {
     const [playersStatistics, setPlayersStatistics] = useState('General');
     const mySliderRef = useRef(null);
-
-    const a = groupedByTeam(playerStatisticsArray);
+    const playersStatisticsGroupedByTeam = groupedByTeam(playerStatisticsArray);
+    const tables = Object.values(playersStatisticsGroupedByTeam);
 
     const handleButtonCLick = (e) => {
         setPlayersStatistics(e.target.innerText);
+
+        toggleActiveClass(e);
     };
 
     const handleTabClick = (e, index) => {
         mySliderRef.current.dataset.tablePos = index + 1;
+
+        toggleActiveClass(e);
     };
 
     return (
@@ -32,31 +40,14 @@ export default function PlayerStatistics({ statistics }) {
                         data-table-pos="1"
                         ref={mySliderRef}
                     >
-                        {/* {data.map((teamData, index) => {
-                            const tableRef = (el) =>
-                                (myTableRefs.current[index] = el);
-
+                        {tables.map((row, index) => {
+                            const teamName = row[0].team.name;
                             return (
                                 <>
                                     <StatisticsTable
-                                        key={teamData[0].team.name}
-                                        statistics={teamData}
-                                        tableHeaders={playersStatistics}
-                                        ref={tableRef}
-                                    />
-                                </>
-                            );
-                        })} */}
-
-                        {Object.values(a).map((table, index) => {
-                            return (
-                                <>
-                                    <StatisticsTable
-                                        key={index}
-                                        data={{
-                                            tableRows: table,
-                                            index: index + 1,
-                                        }}
+                                        key={teamName}
+                                        index={index + 1}
+                                        tableRows={row}
                                         tableHeaders={playersStatistics}
                                     />
                                 </>
