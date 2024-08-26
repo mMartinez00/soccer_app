@@ -82,6 +82,16 @@ export function filterPosition(array, position) {
     return array && array.filter((player) => player.position === position);
 }
 
+export function toggleActiveClass(e) {
+    e.target.parentElement.childNodes.forEach((el) =>
+        el.classList.remove('Active')
+    );
+
+    e.target.className += e.target.className.includes('Active')
+        ? ''
+        : ' Active';
+}
+
 export const playerStatisticsArray = [
     {
         team: {

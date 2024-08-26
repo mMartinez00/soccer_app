@@ -9,7 +9,7 @@ export default function StatButtons({ handleClick }) {
                     return (
                         <button
                             className={`Button ${button}_Button ${
-                                index === 0 ? 'Active' : null
+                                index === 0 ? 'Active' : ''
                             }`}
                             key={button}
                             onClick={(e) => handleClick(e)}
