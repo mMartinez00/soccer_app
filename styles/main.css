@@ -752,48 +752,16 @@ strong {
 .Player_Statistics {
   width: 100%;
   height: 100%;
-}
-
-.Table_Container_Slider {
-  width: 100%;
-  height: 250px;
-  position: relative;
-  border: 1px red solid;
-  text-align: center;
-  overflow: hidden;
-}
-
-[class^=Table-] {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  z-index: 10;
-  transition: left 0.6s ease-out;
-}
-
-.Table_Container_Slider[data-table-pos="1"] .Table-1 {
-  left: 0;
-  z-index: 100;
-  background-color: red;
-}
-
-.Table_Container_Slider[data-table-pos="2"] .Table-2 {
-  left: 0;
-  z-index: 100;
-  background-color: black;
-}
-
-thead tr th {
-  background-color: black;
-  padding: 8px;
+  margin: 1rem 0;
 }
 
 .Tabs {
+  width: 100%;
+  height: 3.2rem;
   display: flex;
   margin-bottom: 1rem;
-  border: 1px white solid;
+  border-top: 1px solid black;
+  box-shadow: 0 4px 6px 4px black;
 }
 
 .Tab {
@@ -804,44 +772,112 @@ thead tr th {
   color: white;
   font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.5s ease;
 }
 
 .Tab.Active {
-  background-color: #022543;
+  background-color: #003e74;
 }
 
 .Tab:hover {
-  background-color: #022543;
+  background-color: #002749;
 }
 
 .Statistics_Buttons {
   margin-bottom: 1rem;
+  padding: 0.8rem 0 0 0.8rem;
+}
+
+.Button {
+  padding: 6px 14px;
+  font-size: 1rem;
+  margin: 0 1.2rem 0 0;
+  border-radius: 6px;
+  border: 0;
+  background-color: white;
+  color: #031525;
+  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: transform 0.5s ease;
 }
 
 .Button:hover {
   transform: scale(98%);
 }
 
-.General_Button,
-.Attacking_Button,
-.Defending_Button {
-  padding: 6px 14px;
-  font-size: 1rem;
-  margin: 0 1rem 0 0;
-  border-radius: 6px;
-  border: 0;
-  background-color: white;
-  color: #031525;
-  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
-  cursor: pointer;
-}
-
-.General_Button.Active,
-.Attacking_Button.Active,
-.Defending_Button.Active {
+.Button.Active {
   background-color: rgb(220, 0, 0);
   background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
   color: white;
+}
+
+.Tables {
+  width: 100%;
+  height: 100%;
+}
+
+.Table_Container_Slider {
+  width: 100%;
+  height: 250px;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  border: white 2px dashed;
+}
+
+[class^=Table-] {
+  table-layout: fixed;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-collapse: collapse;
+  top: 0;
+  left: 100%;
+  z-index: 10;
+  transition: left 0.6s ease-out;
+  border: 2px green solid;
+}
+
+.Table_Container_Slider[data-table-pos="1"] .Table-1 {
+  left: 0;
+  z-index: 100;
+}
+
+.Table_Container_Slider[data-table-pos="2"] .Table-2 {
+  left: 0;
+  z-index: 100;
+}
+
+.Table_Container_Slider[data-table-pos="3"] .Table-3 {
+  left: 0;
+  z-index: 100;
+}
+
+.Table_Container_Slider[data-table-pos="4"] .Table-4 {
+  left: 0;
+  z-index: 100;
+}
+
+.Table_Container_Slider[data-table-pos="5"] .Table-5 {
+  left: 0;
+  z-index: 100;
+}
+
+thead th {
+  background-color: black;
+  padding: 8px;
+}
+
+tbody tr {
+  border: white 1px solid;
+}
+
+thead th:nth-child(1) {
+  width: 16em;
+}
+
+thead th:not(:first-child) {
+  width: 30%;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -82,6 +82,24 @@ export function filterPosition(array, position) {
     return array && array.filter((player) => player.position === position);
 }
 
+export function filterObj(stat, typeOfData) {
+    const keys = Object.keys(stat);
+
+    const filtered = keys
+        .filter((key) => {
+            if (typeOfData.includes(key)) {
+                return stat[key];
+            }
+        })
+        .reduce((object, key) => {
+            return Object.assign(object, {
+                [key]: stat[key],
+            });
+        }, {});
+
+    return filtered;
+}
+
 export function toggleActiveClass(e) {
     e.target.parentElement.childNodes.forEach((el) =>
         el.classList.remove('Active')
