@@ -3,58 +3,58 @@ import Head from 'next/head';
 import Fixtures from '@/components/fixtures/Fixtures';
 import { groupFixturesByLeague } from '@/utils/utils';
 
-// export const getServerSideProps = async () => {
-//     let today = new Date().toISOString().split('T')[0];
-
-//     const response1 = await fetch(
-//         `https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all`,
-//         {
-//             method: 'GET',
-//             headers: {
-//                 'X-RapidAPI-Key': process.env.API_KEY,
-//                 'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
-//             },
-//         }
-//     );
-
-//     const response2 = await fetch(
-//         `https://api-football-v1.p.rapidapi.com/v3/fixtures?timezone=America/New_York&date=${today}`,
-//         {
-//             method: 'GET',
-//             headers: {
-//                 'X-RapidAPI-Key': process.env.API_KEY,
-//                 'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
-//             },
-//         }
-//     );
-
-//     const allPromises = await Promise.all([response1, response2]);
-
-//     const live = await allPromises[0].json();
-
-//     const all = await allPromises[1].json();
-
-//     return {
-//         props: {
-//             live: live.response,
-//             all: all.response,
-//         },
-//     };
-// };
-
 export const getServerSideProps = async () => {
-    const response = await fetch('http://localhost:8000/response');
+    let today = new Date().toISOString().split('T')[0];
 
-    const data = await response.json();
+    const response1 = await fetch(
+        `https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all`,
+        {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': process.env.API_KEY,
+                'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
+            },
+        }
+    );
+
+    const response2 = await fetch(
+        `https://api-football-v1.p.rapidapi.com/v3/fixtures?timezone=America/New_York&date=${today}`,
+        {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': process.env.API_KEY,
+                'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
+            },
+        }
+    );
+
+    const allPromises = await Promise.all([response1, response2]);
+
+    const live = await allPromises[0].json();
+
+    const all = await allPromises[1].json();
 
     return {
         props: {
-            data,
+            live: live.response,
+            all: all.response,
         },
     };
 };
 
-export default function Home({ data }) {
+// export const getServerSideProps = async () => {
+//     const response = await fetch('http://localhost:8000/response');
+
+//     const data = await response.json();
+
+//     return {
+//         props: {
+//             data,
+//         },
+//     };
+// };
+
+export default function Home({ live, all }) {
     return (
         <>
             <Head>
@@ -70,12 +70,12 @@ export default function Home({ data }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            {/* <Fixtures
+            <Fixtures
                 live={groupFixturesByLeague(live)}
                 all={groupFixturesByLeague(all)}
-            /> */}
+            />
 
-            <Fixtures all={groupFixturesByLeague(data)} />
+            {/* <Fixtures all={groupFixturesByLeague(data)} /> */}
         </>
     );
 }

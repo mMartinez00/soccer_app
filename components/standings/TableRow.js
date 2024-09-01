@@ -18,8 +18,8 @@ export default function TableRow({ team }) {
                         href={{
                             pathname: `/team/${team.team.name}`,
                             query: {
-                                teamId: `${team.team.id}`,
-                                leagueId: `${query.leagueId}`,
+                                teamID: `${team.team.id}`,
+                                leagueID: `${query.leagueId}`,
                                 season: `${query.season}`,
                             },
                         }}

@@ -23,7 +23,7 @@ export default function Player() {
     const router = useRouter();
     const { query } = router;
     const { data, isLoading, isError } = usePlayer(
-        query.playerId,
+        query.playerID,
         query.season
     );
 

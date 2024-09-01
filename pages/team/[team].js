@@ -1,5 +1,4 @@
 import React from 'react';
-import { useRouter } from 'next/router.js';
 import TeamFacts from '@/components/team/facts/TeamFacts';
 import TeamStatistics from '@/components/team/statistics/TeamStatistics';
 import TeamSquad from '@/components/team/squad/TeamSquad';
