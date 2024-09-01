@@ -516,6 +516,7 @@ main {
   width: 100%;
   height: 100%;
   margin-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .Profile {
@@ -535,7 +536,6 @@ main {
   justify-content: center;
   line-height: 1.6rem;
   padding-left: 1rem;
-  border-left: 1px white dashed;
 }
 
 .Name {
@@ -760,27 +760,29 @@ strong {
   height: 3.2rem;
   display: flex;
   margin-bottom: 1rem;
-  border-top: 1px solid black;
-  box-shadow: 0 4px 6px 4px black;
 }
 
 .Tab {
-  background-color: inherit;
-  border: none;
+  margin: 0 8px 0 1rem;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 8px;
   outline: none;
   padding: 14px 16px;
-  color: white;
+  color: #002749;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.5s ease;
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 2px rgb(0, 0, 0);
 }
 
 .Tab.Active {
   background-color: #003e74;
+  color: white;
 }
 
 .Tab:hover {
-  background-color: #002749;
+  transform: scale(98%);
 }
 
 .Statistics_Buttons {
@@ -814,15 +816,16 @@ strong {
 .Tables {
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .Table_Container_Slider {
-  width: 100%;
-  height: 250px;
+  width: 98%;
+  height: 300px;
   position: relative;
-  text-align: center;
   overflow: hidden;
-  border: white 2px dashed;
+  border-radius: 8px;
 }
 
 [class^=Table-] {
@@ -835,7 +838,6 @@ strong {
   left: 100%;
   z-index: 10;
   transition: left 0.6s ease-out;
-  border: 2px green solid;
 }
 
 .Table_Container_Slider[data-table-pos="1"] .Table-1 {
@@ -863,21 +865,37 @@ strong {
   z-index: 100;
 }
 
-thead th {
+thead tr {
   background-color: black;
-  padding: 8px;
 }
 
-tbody tr {
-  border: white 1px solid;
+thead th {
+  padding: 8px;
+  font-size: 14px;
 }
 
 thead th:nth-child(1) {
-  width: 16em;
+  width: 18em;
 }
 
 thead th:not(:first-child) {
   width: 30%;
+}
+
+tbody tr {
+  height: 1.6rem;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgb(36, 35, 35);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgb(77, 77, 77);
+}
+
+tbody tr td {
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */

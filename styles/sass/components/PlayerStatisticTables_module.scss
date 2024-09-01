@@ -1,16 +1,16 @@
 .Tables {
     width: 100%;
     height: 100%;
-    // border: 1px red solid;
+    display: flex;
+    justify-content: center;
 }
 
 .Table_Container_Slider {
-    width: 100%;
-    height: 250px;
+    width: 98%;
+    height: 300px;
     position: relative;
-    text-align: center;
     overflow: hidden;
-    border: white 2px dashed;
+    border-radius: 8px;
 }
 
 [class^='Table-'] {
@@ -23,43 +23,44 @@
     left: 100%;
     z-index: 10;
     transition: left 0.6s ease-out;
-    border: 2px green solid;
 }
 
 @for $i from 1 through 5 {
     .Table_Container_Slider[data-table-pos='#{$i}'] .Table-#{$i} {
         left: 0;
         z-index: 100;
-        // background-color: red;
     }
 }
 
-// .Table_Container_Slider[data-table-pos='1'] .Table-1 {
-//     left: 0;
-//     z-index: 100;
-//     background-color: red;
-// }
-
-// .Table_Container_Slider[data-table-pos='2'] .Table-2 {
-//     left: 0;
-//     z-index: 100;
-//     background-color: black;
-// }
-
-thead th {
+thead tr {
     background-color: black;
-    padding: 8px;
-    // border: yellow 1px solid;
 }
 
-tbody tr {
-    border: white 1px solid;
+thead th {
+    padding: 8px;
+    font-size: 14px;
 }
 
 thead th:nth-child(1) {
-    width: 16em;
+    width: 18em;
 }
 
 thead th:not(:first-child) {
     width: 30%;
+}
+
+tbody tr {
+    height: 1.6rem;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgb(36, 35, 35);
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgb(77, 77, 77);
+}
+
+tbody tr td {
+    text-align: center;
 }
