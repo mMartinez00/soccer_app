@@ -12,7 +12,7 @@ export default function LeagueHeader({ league }) {
                 href={{
                     pathname: `/standings/${league.name}`,
                     query: {
-                        leagueId: `${league.id}`,
+                        leagueID: `${league.id}`,
                         season: `${league.season}`,
                     },
                 }}

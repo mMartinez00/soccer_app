@@ -28,10 +28,18 @@
     }
 }
 
-@for $i from 1 through $max-match-rows {
-    .League_Matches > .Match_Row:nth-child(#{$i}) {
-        background-color: if($i % 2 == 0, #2f2e2e, rgb(68, 68, 68));
-    }
+// @for $i from 1 through $max-match-rows {
+//     .League_Matches > .Match_Row:nth-child(#{$i}) {
+//         background-color: if($i % 2 == 0, #2f2e2e, rgb(68, 68, 68));
+//     }
+// }
+
+.League_Matches > .Match_Row:nth-child(odd) {
+    background-color: rgb(68, 68, 68);
+}
+
+.League_Matches > .Match_Row:nth-child(even) {
+    background-color: #2f2e2e;
 }
 
 .Match_Row {

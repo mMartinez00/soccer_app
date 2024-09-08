@@ -6,7 +6,7 @@ export default function StandingsTable({ table }) {
     return (
         <>
             <h2>{table[0].group}</h2>
-            <table>
+            <table className={`Standings_Table ${table[0].group}`}>
                 <TableHead />
 
                 <TableBody table={table} />

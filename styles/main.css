@@ -32,6 +32,15 @@ main {
   color: white;
 }
 
+.League {
+  width: 100%;
+  height: 100%;
+}
+
+.League_Name {
+  color: white;
+}
+
 .Competition {
   width: 100%;
   border: 1px black solid;
@@ -62,403 +71,11 @@ main {
   color: #f3f6f4;
 }
 
-.League_Matches > .Match_Row:nth-child(1) {
+.League_Matches > .Match_Row:nth-child(odd) {
   background-color: rgb(68, 68, 68);
 }
 
-.League_Matches > .Match_Row:nth-child(2) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(3) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(4) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(5) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(6) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(7) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(8) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(9) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(10) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(11) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(12) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(13) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(14) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(15) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(16) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(17) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(18) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(19) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(20) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(21) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(22) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(23) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(24) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(25) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(26) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(27) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(28) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(29) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(30) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(31) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(32) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(33) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(34) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(35) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(36) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(37) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(38) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(39) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(40) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(41) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(42) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(43) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(44) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(45) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(46) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(47) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(48) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(49) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(50) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(51) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(52) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(53) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(54) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(55) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(56) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(57) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(58) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(59) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(60) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(61) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(62) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(63) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(64) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(65) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(66) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(67) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(68) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(69) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(70) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(71) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(72) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(73) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(74) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(75) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(76) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(77) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(78) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(79) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(80) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(81) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(82) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(83) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(84) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(85) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(86) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(87) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(88) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(89) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(90) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(91) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(92) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(93) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(94) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(95) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(96) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(97) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(98) {
-  background-color: #2f2e2e;
-}
-
-.League_Matches > .Match_Row:nth-child(99) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(100) {
+.League_Matches > .Match_Row:nth-child(even) {
   background-color: #2f2e2e;
 }
 
@@ -896,6 +513,21 @@ tbody tr:nth-child(even) {
 
 tbody tr td {
   text-align: center;
+}
+
+.League_Tables {
+  width: 90%;
+  height: 100%;
+}
+
+.Standings_Table {
+  table-layout: fixed;
+  border: 1px white solid;
+  color: white;
+}
+
+.Standings_Table tbody tr {
+  width: 1.6em;
 }
 
 /*# sourceMappingURL=main.css.map */

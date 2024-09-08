@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import Team from '../fixtures/Team';
+import Image from 'next/image';
 import Form from './Form';
 
 export default function TableRow({ team }) {
@@ -24,7 +24,13 @@ export default function TableRow({ team }) {
                             },
                         }}
                     >
-                        <Team team={team.team} />
+                        <Image
+                            src={team.team.logo}
+                            width={25}
+                            height={25}
+                            alt={`${team.team.name}`}
+                        />{' '}
+                        {team.team.name}
                     </Link>
                 ) : (
                     <span>{team.team.name}</span>
