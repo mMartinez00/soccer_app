@@ -44,7 +44,7 @@ export default function Standings() {
     }
 
     return (
-        <div className="League">
+        <div className="League_Standings">
             <h1 className="League_Name">
                 {data[0].league.country} - {data[0].league.name}{' '}
                 {data[0].league.season} - {data[0].league.season + 1}

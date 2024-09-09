@@ -1,14 +1,81 @@
+// Variables
+$border-color: #999;
+$text-color: white;
+$padding: 0.5rem;
+$table-layout: fixed;
+
+// Mixins
+@mixin text-align-center {
+    text-align: center;
+}
+
+// League Tables Wrapper
 .League_Tables {
     width: 90%;
     height: 100%;
 }
 
+// Standings Table
 .Standings_Table {
-    table-layout: fixed;
-    border: 1px white solid;
-    color: white;
-}
+    table-layout: $table-layout;
+    width: 100%;
+    border-collapse: collapse;
+    color: $text-color;
 
-.Standings_Table tbody tr {
-    width: 1.6em;
+    // Table Head
+    thead {
+        tr {
+            height: 2.4rem;
+
+            th {
+                font-size: 1rem;
+                padding: $padding;
+                border: 1px solid $border-color;
+                &:nth-child(1),
+                &:nth-child(3),
+                &:nth-child(4),
+                &:nth-child(5),
+                &:nth-child(6),
+                &:nth-child(7),
+                &:nth-child(8) {
+                    @include text-align-center;
+                    width: 5%;
+                }
+
+                &:nth-child(2) {
+                    width: 35%;
+                    text-align: left;
+                }
+
+                &:nth-child(9) {
+                    width: 20%;
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+    // Table Body
+    tbody {
+        tr {
+            td {
+                padding: $padding;
+                border: 1px solid $border-color;
+
+                @include text-align-center;
+                &:nth-child(2) {
+                    text-align: left;
+                }
+
+                &:nth-child(9) {
+                    text-align: left;
+                }
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
 }
