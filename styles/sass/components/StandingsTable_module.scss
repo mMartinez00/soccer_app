@@ -11,8 +11,14 @@ $table-layout: fixed;
 
 // League Tables Wrapper
 .League_Tables {
-    width: 90%;
+    width: 100%;
     height: 100%;
+}
+
+.Table_Container {
+    width: 80%;
+    height: 100%;
+    margin: auto;
 }
 
 // Standings Table
