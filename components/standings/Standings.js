@@ -20,20 +20,18 @@ function useStandings(league, leagueID, season) {
 export default function Standings() {
     const router = useRouter();
     const { query } = router;
-    // const { data, isLoading, isError } = useStandings(
-    //     query.league,
-    //     query.leagueId,
-    //     query.season
-    // );
-    const { data, error, isLoading } = useSWR(
-        `http://localhost:8000/response`,
-        fetcher
+    const { data, isLoading, isError } = useStandings(
+        query.league,
+        query.leagueID,
+        query.season
     );
 
-    const league = data && data[0].league;
-    // data && console.log(data[0].league);
+    // const league = data && data[0].league;
 
-    console.log(league);
+    // const standings = data && data.standings;
+    // console.log(standings);
+    data && console.log(data);
+    query && console.log(query);
 
     if (isLoading) {
         return (
@@ -46,11 +44,12 @@ export default function Standings() {
     return (
         <div className="League_Standings">
             <h1 className="League_Name">
-                {data[0].league.country} - {data[0].league.name}{' '}
-                {data[0].league.season} - {data[0].league.season + 1}
+                {data.response[0].league.country} -{' '}
+                {data.response[0].league.name} {data.response[0].league.season}{' '}
+                - {data.response[0].league.season + 1}
             </h1>
             <div className="League_Tables">
-                {data[0].league.standings.map((table) => {
+                {data.response[0].league.standings.map((table) => {
                     return <StandingsTable key={table.group} table={table} />;
                 })}
             </div>

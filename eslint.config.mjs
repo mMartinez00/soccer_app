@@ -8,6 +8,12 @@ export default [
             parser: babelParser,
             parserOptions: {
                 requireConfigFile: false,
+                babelOptions: {
+                    presets: ['@babel/preset-react'],
+                },
+                ecmaFeatures: {
+                    jsx: true,
+                },
             },
         },
     },
