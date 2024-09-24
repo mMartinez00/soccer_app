@@ -51,6 +51,6 @@ const table = {
     },
 };
 
-const buttons = ['General', 'Attacking', 'Defending'];
+const statisticsButtons = ['General', 'Attacking', 'Defending'];
 
-export { table, buttons };
+export { table, statisticsButtons };

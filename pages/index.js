@@ -55,6 +55,7 @@ export const getServerSideProps = async () => {
 // };
 
 export default function Home({ live, all }) {
+    console.log(live);
     return (
         <>
             <Head>
@@ -70,10 +71,12 @@ export default function Home({ live, all }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Fixtures
-                live={groupFixturesByLeague(live)}
-                all={groupFixturesByLeague(all)}
-            />
+            <div className="Fixtures_Container">
+                <Fixtures
+                    live={groupFixturesByLeague(live)}
+                    all={groupFixturesByLeague(all)}
+                />
+            </div>
 
             {/* <Fixtures all={groupFixturesByLeague(data)} /> */}
         </>

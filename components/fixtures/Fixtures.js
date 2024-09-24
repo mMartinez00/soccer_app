@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Toggle from './Toggle';
+import Button from '../Button';
 import Competition from './Competition';
 
 export default function Fixtures({ live, all }) {
@@ -11,7 +11,8 @@ export default function Fixtures({ live, all }) {
 
     return (
         <div className="Fixtures">
-            <Toggle handleClick={handleClick} />
+            <Button type="Toggle" children="Live" handleClick={handleClick} />
+
             <section>
                 {Object.entries(fixtures).map((fixture) => {
                     return (

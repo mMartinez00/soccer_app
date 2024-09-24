@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import StatisticsTable from './StatisticsTable';
-import TeamsTabs from './TeamsTabs';
-import StatButtons from './StatButtons';
+import Button from '@/components/Button';
+import { statisticsButtons } from '../table';
 import { groupedByTeam, toggleActiveClass } from '@/utils/utils';
 
 export default function PlayerStatistics({ statistics }) {
@@ -26,8 +26,29 @@ export default function PlayerStatistics({ statistics }) {
     return (
         <>
             <div className="Player_Statistics">
-                <TeamsTabs teams={teams} handleClick={handleTabClick} />
-                <StatButtons handleClick={handleButtonCLick} />
+                <div className="Tabs">
+                    {teams.map((team, index) => (
+                        <Button
+                            key={team}
+                            type="Tab"
+                            children={team}
+                            index={index}
+                            handleClick={handleTabClick}
+                        />
+                    ))}
+                </div>
+                <div className="Stat_Buttons">
+                    {statisticsButtons.map((button) => {
+                        return (
+                            <Button
+                                key={button}
+                                type="Statistics"
+                                children={button}
+                                handleClick={handleButtonCLick}
+                            />
+                        );
+                    })}
+                </div>
                 <div className="Tables">
                     <div
                         className="Table_Container_Slider"
