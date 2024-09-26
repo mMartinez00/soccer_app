@@ -1,0 +1,28 @@
+.Button {
+    padding: 6px 14px;
+    font-size: 1rem;
+    margin: 0 0.8rem;
+    border-radius: 6px;
+    border: 0;
+    background-color: white;
+    color: #031525;
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.6),
+        inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.Button:hover {
+    transform: scale(98%);
+}
+
+.Button.Active {
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(
+        to top left,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0)
+    );
+    color: white;
+}
