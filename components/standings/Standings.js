@@ -26,13 +26,6 @@ export default function Standings() {
         query.season
     );
 
-    // const league = data && data[0].league;
-
-    // const standings = data && data.standings;
-    // console.log(standings);
-    data && console.log(data);
-    query && console.log(query);
-
     if (isLoading) {
         return (
             <>

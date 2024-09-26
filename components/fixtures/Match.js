@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Match({ matches }) {
-    // console.log(matches);
     return (
         <div className="League_Matches">
             {matches &&
@@ -16,8 +15,9 @@ export default function Match({ matches }) {
                             <div className="Match">
                                 <p className="Match_Time">
                                     {match.fixture.status.long}{' '}
-                                    {match.fixture.status.elapsed}
-                                    {"'"}
+                                    {match.fixture.status.elapsed !== null
+                                        ? match.fixture.status.elapsed + "'"
+                                        : ''}
                                 </p>
                                 <p className="Home_Team">
                                     <Link
