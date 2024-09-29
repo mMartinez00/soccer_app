@@ -8,9 +8,9 @@ export default function Competition({ league, matches }) {
 
     return (
         <div className="Competition">
-            <div className="Competition_League">
+            <div className="Competition__League">
                 <Link
-                    className="Comepetition_Link"
+                    className="Competition__Link"
                     href={{
                         pathname: `/standings/${league.name}`,
                         query: {
@@ -19,25 +19,25 @@ export default function Competition({ league, matches }) {
                         },
                     }}
                 >
-                    <h1 className="Competitiom_League-Name">
+                    <h1 className="Competitiom__League-Name">
                         <span className="Country">
                             {league.flag && (
                                 <Image
                                     src={league.flag}
                                     width={25}
                                     height={25}
-                                    alt="competition_country-flag"
+                                    alt="competition__country-flag"
                                 />
                             )}{' '}
                             {league.country}
                         </span>
                         {' - '}
-                        <span className="Competition_League-Logo-Name">
+                        <span className="Competition__League-Logo-Name">
                             <Image
                                 src={league.logo}
                                 width={25}
                                 height={25}
-                                alt="Competition_league-logo"
+                                alt="Competition__league-logo"
                             />{' '}
                             {league.name}
                         </span>
@@ -46,7 +46,13 @@ export default function Competition({ league, matches }) {
             </div>
 
             <div className="Competition__Matches">
-                <Match matches={matches} />
+                {matches.map((match) => {
+                    return (
+                        <>
+                            <Match match={match} />
+                        </>
+                    );
+                })}
             </div>
         </div>
     );

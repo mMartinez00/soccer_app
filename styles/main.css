@@ -28,6 +28,10 @@ main {
   padding: 0.8rem;
 }
 
+.Button.Toggle {
+  margin: 0;
+}
+
 .Team_Container {
   width: 100%;
   height: 100%;
@@ -60,63 +64,18 @@ main {
   box-shadow: 0 2px 4px 2px #f3f6f4;
 }
 
-.League_Header {
+.Competition__League {
   width: 100%;
   height: 3.5rem;
-  padding: 8px 1rem;
-  background-color: #000;
-  border: 1px green solid;
-}
-.League_Header .Link {
-  text-decoration: none;
-  color: #f3f6f4;
-}
-
-.League_Matches {
-  border: 1px red solid;
-  color: #f3f6f4;
-}
-.League_Matches .Link {
-  text-decoration: none;
-  color: #f3f6f4;
-}
-
-.League_Matches > .Match_Row:nth-child(odd) {
-  background-color: rgb(68, 68, 68);
-}
-
-.League_Matches > .Match_Row:nth-child(even) {
-  background-color: #2f2e2e;
-}
-
-.Match_Row {
-  border: 1px blue solid;
-  width: 100%;
-  height: 4rem;
+  background-color: black;
   display: flex;
-  justify-content: center;
   align-items: center;
+  padding: 1rem;
 }
 
-.Match {
-  border: 1px yellow solid;
-  width: 90%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.Time {
-  border: 1px red solid;
-}
-
-.Team {
-  border: 1px green solid;
-}
-
-.Match_Score {
-  border: 1px white solid;
+.Competition__Link {
+  color: white;
+  text-decoration: none;
 }
 
 .Team_Statistics {
@@ -571,6 +530,60 @@ tbody tr td {
   background-color: rgb(220, 0, 0);
   background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
   color: white;
+}
+
+.Match__Container {
+  width: 100%;
+  height: 4.2rem;
+}
+
+.Match__Container:nth-child(odd) {
+  background-color: #e7e7e7;
+}
+
+.Match__Container:nth-child(even) {
+  background-color: #c4c4c4;
+}
+
+.Match__Row {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Match {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Match__Time {
+  position: absolute;
+  left: 10px;
+  border: 1px red solid;
+}
+
+.Match__Team a {
+  color: #1e1e1e;
+  text-decoration: none;
+}
+
+.Match__Team--Home {
+  border: 1px green solid;
+}
+
+.Match__Team--Away {
+  border: 1px orange solid;
+}
+
+.Match__Score {
+  border: 1px black solid;
+  margin: 0 8px;
 }
 
 /*# sourceMappingURL=main.css.map */
