@@ -1,5 +1,4 @@
 import Head from 'next/head';
-// import styles from '../styles/Home.module.scss';
 import Fixtures from '@/components/fixtures/Fixtures';
 import { groupFixturesByLeague } from '@/utils/utils';
 
@@ -70,7 +69,7 @@ export default function Home({ live, all }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <div className="Fixtures_Container">
+            <div className="Fixtures__Container">
                 <Fixtures
                     live={groupFixturesByLeague(live)}
                     all={groupFixturesByLeague(all)}

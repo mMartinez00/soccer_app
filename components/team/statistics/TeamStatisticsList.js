@@ -13,6 +13,10 @@ export default function TeamStatisticsList({ statistics }) {
         'Cards',
     ];
 
+    {
+        statistics;
+    }
+
     return (
         <ul className="Statistics_List">
             {cards_data.map((card) => {

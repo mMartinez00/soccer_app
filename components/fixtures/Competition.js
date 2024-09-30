@@ -49,7 +49,7 @@ export default function Competition({ league, matches }) {
                 {matches.map((match) => {
                     return (
                         <>
-                            <Match match={match} />
+                            <Match key={match.fixture.id} match={match} />
                         </>
                     );
                 })}

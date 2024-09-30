@@ -43,6 +43,8 @@ export default function Statistics() {
             </>
         );
 
+    // console.log(query);
+
     return (
         <>
             <div className="Team_Statistics">

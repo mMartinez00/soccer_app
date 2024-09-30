@@ -19,7 +19,7 @@ export default function TableRow({ team }) {
                             pathname: `/team/${team.team.name}`,
                             query: {
                                 teamID: `${team.team.id}`,
-                                leagueID: `${query.leagueId}`,
+                                leagueID: `${query.leagueID}`,
                                 season: `${query.season}`,
                             },
                         }}

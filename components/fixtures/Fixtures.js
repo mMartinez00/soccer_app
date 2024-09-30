@@ -1,19 +1,28 @@
 import React, { useState } from 'react';
 import Button from '../Button';
 import Competition from './Competition';
+import MatchDate from '../MatchDate';
 
 export default function Fixtures({ live, all }) {
     const [fixtures, setFixtures] = useState(all);
 
-    const handleClick = () => {
+    const handleClick = (e) => {
         fixtures === all ? setFixtures(live) : setFixtures(all);
+
+        e.target.classList.toggle('Active');
     };
 
     return (
         <div className="Fixtures">
-            <Button type="Toggle" children="Live" handleClick={handleClick} />
-
-            <section>
+            <div className="Fixtures__Controls">
+                <Button
+                    type="Toggle"
+                    children="Live"
+                    handleClick={handleClick}
+                />
+                <MatchDate />
+            </div>
+            <section className="Fixtures__List">
                 {Object.entries(fixtures).map((fixture) => {
                     return (
                         <Competition

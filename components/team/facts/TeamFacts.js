@@ -23,7 +23,6 @@ export default function TeamFacts() {
     const router = useRouter();
     const { query } = router;
     const { facts, isLoading, isError } = useFacts(query.teamID);
-    console.log(facts);
 
     if (isLoading)
         return (

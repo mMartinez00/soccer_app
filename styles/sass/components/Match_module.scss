@@ -31,7 +31,6 @@
 .Match__Time {
     position: absolute;
     left: 10px;
-    border: 1px red solid;
 }
 
 .Match__Team a {
@@ -39,15 +38,6 @@
     text-decoration: none;
 }
 
-.Match__Team--Home {
-    border: 1px green solid;
-}
-
-.Match__Team--Away {
-    border: 1px orange solid;
-}
-
 .Match__Score {
-    border: 1px black solid;
     margin: 0 8px;
 }
