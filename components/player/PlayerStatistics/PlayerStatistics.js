@@ -38,12 +38,13 @@ export default function PlayerStatistics({ statistics }) {
                     ))}
                 </div>
                 <div className="Stat_Buttons">
-                    {statisticsButtons.map((button) => {
+                    {statisticsButtons.map((button, index) => {
                         return (
                             <Button
                                 key={button}
                                 type="Statistics"
                                 children={button}
+                                index={index}
                                 handleClick={handleButtonCLick}
                             />
                         );

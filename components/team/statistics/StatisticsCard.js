@@ -6,66 +6,65 @@ export default function StatisticsCard({ title, data }) {
         switch (title) {
             case 'Matches':
                 return (
-                    <span style={{ display: 'inline-block' }}>
+                    <p style={{ display: 'inline-block' }}>
                         {data.fixtures.played.total}
-                    </span>
+                    </p>
                 );
             case 'Wins':
                 return (
-                    <span style={{ display: 'inline-block' }}>
+                    <p style={{ display: 'inline-block' }}>
                         {data.fixtures.wins.total}
-                    </span>
+                    </p>
                 );
             case 'Draws':
                 return (
-                    <span style={{ display: 'inline-block' }}>
+                    <p style={{ display: 'inline-block' }}>
                         {data.fixtures.draws.total}
-                    </span>
+                    </p>
                 );
             case 'Loses':
                 return (
-                    <span style={{ display: 'inline-block' }}>
+                    <p style={{ display: 'inline-block' }}>
                         {data.fixtures.loses.total}
-                    </span>
+                    </p>
                 );
             case 'Goals':
                 return (
                     <>
-                        <span style={{ display: 'inline-block' }}>
+                        <p style={{ display: 'inline-block' }}>
                             {data.goals.for.total.total}
-                        </span>{' '}
-                        <br />
+                        </p>
                     </>
                 );
             case 'Goals Against':
                 return (
                     <>
-                        <span style={{ display: 'inline-block' }}>
+                        <p style={{ display: 'inline-block' }}>
                             {data.goals.against.total.total}
-                        </span>{' '}
+                        </p>
                     </>
                 );
             case 'Clean Sheets':
                 return (
-                    <span style={{ display: 'inline-block' }}>
+                    <p style={{ display: 'inline-block' }}>
                         {data.clean_sheet.total}
-                    </span>
+                    </p>
                 );
             case 'Cards':
                 return (
                     <>
-                        <span
+                        <p
                             className="Red_Card"
                             style={{ display: 'inline-block' }}
                         >
                             Red: {totalCards(data.cards.red)}
-                        </span>{' '}
-                        <span
+                        </p>
+                        <p
                             className="Yellow_Card"
                             style={{ display: 'inline-block' }}
                         >
                             Yellow: {totalCards(data.cards.yellow)}
-                        </span>
+                        </p>
                     </>
                 );
             default:
