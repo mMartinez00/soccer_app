@@ -5,7 +5,7 @@ import TeamSquad from '@/components/team/squad/TeamSquad';
 
 export default function Team() {
     return (
-        <div className="Team_Container">
+        <div className="Team__Container">
             <TeamFacts />
             <TeamStatistics />
             <TeamSquad />

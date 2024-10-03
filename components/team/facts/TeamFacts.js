@@ -39,7 +39,7 @@ export default function TeamFacts() {
         );
 
     return (
-        <div className="Team_Facts">
+        <div className="Team__Facts">
             <Team team={facts.team} />
             <Venue venue={facts.venue} />
         </div>
