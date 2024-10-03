@@ -29,7 +29,15 @@ export default function Standings() {
     if (isLoading) {
         return (
             <>
-                <h1>Loading...</h1>
+                <h2>Loading...</h2>
+            </>
+        );
+    }
+
+    if (data.response.length === 0) {
+        return (
+            <>
+                <h3>No Data</h3>
             </>
         );
     }

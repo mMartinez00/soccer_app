@@ -5,12 +5,14 @@ export default function Venue({ venue }) {
     return (
         <div className="Venue">
             <div className="Venue_Image_Container">
-                <Image
-                    src={venue && venue.image}
-                    width={100}
-                    height={100}
-                    alt="venue"
-                />
+                {venue.image && (
+                    <Image
+                        src={venue.image}
+                        width={100}
+                        height={100}
+                        alt="venue"
+                    />
+                )}
             </div>
             <div className="Content">
                 <p className="Venue_Name">
