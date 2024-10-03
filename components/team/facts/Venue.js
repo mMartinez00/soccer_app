@@ -4,33 +4,33 @@ import Image from 'next/image';
 export default function Venue({ venue }) {
     return (
         <div className="Venue">
-            <div className="Venue_Image_Container">
+            <div className="Venue__Image-Container">
                 {venue.image && (
                     <Image
                         src={venue.image}
                         width={100}
                         height={100}
-                        alt="venue"
+                        alt="Venue__Image"
                     />
                 )}
             </div>
-            <div className="Content">
-                <p className="Venue_Name">
+            <div className="Venue__Content">
+                <p className="Venue__Name">
                     Venue: {venue && venue.name ? venue.name : 'N/A'}
                 </p>
-                <p className="Venue_Capacity">
+                <p className="Venue__Capacity">
                     Capacity:{' '}
                     {venue && venue.capactiy
                         ? venue.capactiy.toLocaleString()
                         : 'N/A'}
                 </p>
-                <p className="Venue_Address">
+                <p className="Venue__Address">
                     Address:{' '}
                     {venue && venue.address
                         ? venue.address + ', ' + venue.city
                         : 'N/A'}
                 </p>
-                <p className="Venue_Surface">
+                <p className="Venue__Surface">
                     Surface:{' '}
                     {/* Convert first letter of string to upper case */}
                     {venue && venue.surface
