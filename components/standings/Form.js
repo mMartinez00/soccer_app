@@ -27,9 +27,5 @@ export default function Form({ form }) {
         );
     };
 
-    return (
-        <>
-            <span className="Form">{formatGameResults(form)}</span>
-        </>
-    );
+    return <p className="Form">Form: {formatGameResults(form)}</p>;
 }

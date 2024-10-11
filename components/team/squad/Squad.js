@@ -10,27 +10,27 @@ export default function Squad({ squad, season }) {
 
     return (
         <div className="Squad">
-            <div className="Goalkeepers_Container">
-                <h2 className="Position_Heading">Goalkeepers</h2>
-                <div className="Goalkeepers">
+            <div className="Squad__Position-Container Squad__Position-Container--Goalkeepers ">
+                <h2 className="Squad__Position-Heading">Goalkeepers</h2>
+                <div className="Squad__Players Squad__Players--Goalkeepers">
                     <TeamPlayers season={season} players={goalkeepers} />
                 </div>
             </div>
-            <div className="Defenders_Container">
-                <h2 className="Position_Heading">Defenders</h2>
-                <div className="Defenders">
+            <div className="Squad__Position-Container Squad__Position-Container--Defenders">
+                <h2 className="Squad__Position-Heading">Defenders</h2>
+                <div className="Squad__Players Squad__Players--Defenders">
                     <TeamPlayers season={season} players={defenders} />
                 </div>
             </div>
-            <div className="Midfielders_Container">
-                <h2 className="Position_Heading">Midfielders</h2>
-                <div className="Midfielders">
+            <div className="Squad__Position-Container Squad__Position-Container--Midfielders">
+                <h2 className="Squad__Position-Heading">Midfielders</h2>
+                <div className="Squad__Players Squad__Players--Midfielders">
                     <TeamPlayers season={season} players={midfielders} />
                 </div>
             </div>
-            <div className="Attackers_Container">
-                <h2 className="Position_Heading">Attackers</h2>
-                <div className="Attackers">
+            <div className="Squad__Position-Container Squad__Position-Container--Attackers">
+                <h2 className="Squad__Position-Heading">Attackers</h2>
+                <div className="Squad__Players Squad__Players--Attackers">
                     <TeamPlayers season={season} players={attackers} />
                 </div>
             </div>

@@ -46,9 +46,9 @@ export default function Statistics() {
     return (
         <>
             <div className="Team__Statistics">
-                <p className="Team__Form">
-                    Form: <Form form={statistics.form} />
-                </p>
+                <div className="Team__Form">
+                    <Form form={statistics.form} />
+                </div>
                 <div className="Team-Statistics__List">
                     <TeamStatisticsList statistics={statistics} />
                 </div>

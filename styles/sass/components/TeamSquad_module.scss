@@ -18,10 +18,7 @@
     color: white;
 }
 
-.Goalkeepers_Container,
-.Defenders_Container,
-.Midfielders_Container,
-.Attackers_Container {
+.Squad__Position-Container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,14 +26,11 @@
     margin-bottom: 1rem;
 }
 
-.Position_Heading {
+.Squad__Position-Heading {
     font-size: 42px;
 }
 
-.Goalkeepers,
-.Defenders,
-.Midfielders,
-.Attackers {
+.Squad__Players {
     display: flex;
     justify-content: space-around;
     align-items: center;
