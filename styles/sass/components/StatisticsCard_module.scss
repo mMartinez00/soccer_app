@@ -1,4 +1,4 @@
-.Card {
+.Statistics-Card {
     width: 150px;
     height: 150px;
     border: white 1px solid;
@@ -9,12 +9,12 @@
     flex-direction: column;
 }
 
-.Card_Title {
+.Statistics-Card__Title {
     margin: 12px 0;
     font-size: 18px;
 }
 
-.Top_Statistics {
+.Statistics-Card__Content {
     font-size: 42px;
 }
 

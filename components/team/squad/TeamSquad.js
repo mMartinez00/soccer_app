@@ -25,9 +25,9 @@ export default function TeamSquads() {
 
     if (data && data.response.length === 0) {
         return (
-            <>
-                <h2>Team roster not found</h2>
-            </>
+            <div className="Team__Squad">
+                <h2>Squad Unavailable</h2>
+            </div>
         );
     }
 
@@ -35,14 +35,14 @@ export default function TeamSquads() {
 
     if (isLoading) {
         return (
-            <>
+            <div className="Team__Squad">
                 <Loading />
-            </>
+            </div>
         );
     }
 
     return (
-        <div className="Team_Squad">
+        <div className="Team__Squad">
             <Squad squad={squad} season={query.season} />
         </div>
     );

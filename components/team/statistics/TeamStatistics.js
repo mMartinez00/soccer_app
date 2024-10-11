@@ -43,15 +43,13 @@ export default function Statistics() {
             </>
         );
 
-    // console.log(query);
-
     return (
         <>
-            <div className="Team_Statistics">
-                <p className="Team_Form">
+            <div className="Team__Statistics">
+                <p className="Team__Form">
                     Form: <Form form={statistics.form} />
                 </p>
-                <div className="All_Statistics_List">
+                <div className="Team-Statistics__List">
                     <TeamStatisticsList statistics={statistics} />
                 </div>
             </div>

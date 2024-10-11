@@ -23,19 +23,20 @@ export default function TeamFacts() {
     const router = useRouter();
     const { query } = router;
     const { facts, isLoading, isError } = useFacts(query.teamID);
+    console.log(facts);
 
     if (isLoading)
         return (
-            <>
+            <div className="Team__Facts">
                 <Loading />
-            </>
+            </div>
         );
 
     if (isError)
         return (
-            <>
-                <h1>Error!</h1>
-            </>
+            <div className="Team__Facts">
+                <h2>Error</h2>
+            </div>
         );
 
     return (

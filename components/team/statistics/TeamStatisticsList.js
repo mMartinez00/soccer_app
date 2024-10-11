@@ -13,15 +13,11 @@ export default function TeamStatisticsList({ statistics }) {
         'Cards',
     ];
 
-    {
-        statistics;
-    }
-
     return (
-        <ul className="Statistics_List">
+        <ul className="Statistics__List">
             {cards_data.map((card) => {
                 return (
-                    <li key={card} className="List_Item">
+                    <li key={card} className="List__Item">
                         <StatisticsCard
                             key={card}
                             title={card}
