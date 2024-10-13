@@ -3,6 +3,9 @@ $secondary-color: #9197ae; // Secondary color (for buttons, borders, etc.)
 $light-color: #eff6ee; // Light background or font color
 $accent-color: #860912; // Accent color (for highlights, buttons, etc.)
 
+// Box Shadow
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+
 // Border Radius
 $border-radius: 8px; // Standard border radius
 $border-radius-circle: 50%; // Full circular shape (for avatars, icons, etc.)

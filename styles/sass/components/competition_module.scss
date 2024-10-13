@@ -2,11 +2,16 @@
 
 .Competition {
     width: 100%;
-    border: 1px black solid;
+    border: 1px solid black;
     border-radius: $border-radius;
     margin: 1.8rem 0;
     overflow: hidden;
-    box-shadow: 0 2px 4px 2px $white-font-color;
+    @include box-shadow(
+        0px,
+        4px,
+        10px,
+        $light-color
+    ); // Using the mixin for box shadow
 }
 
 .Competition__League {
@@ -19,6 +24,6 @@
 }
 
 .Competition__Link {
-    color: white;
+    color: $light-color; // Referring to the defined white color variable
     text-decoration: none;
 }
