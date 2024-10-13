@@ -6,7 +6,7 @@
 }
 
 html {
-  background-color: #031525;
+  background-color: #273043;
   font-family: "Roboto Mono", monospace;
   font-weight: 200;
 }
@@ -68,7 +68,7 @@ main {
   border-radius: 8px;
   margin: 1.8rem 0;
   overflow: hidden;
-  box-shadow: 0 2px 4px 2px #f3f6f4;
+  box-shadow: 0 2px 4px 2px #eff6ee;
 }
 
 .Competition__League {
@@ -108,6 +108,7 @@ main {
 }
 
 .Team__Form {
+  display: flex;
   margin: 1rem;
   padding: 1rem;
   color: white;
@@ -251,7 +252,7 @@ main {
   border-radius: 4px;
   margin: 0 2px;
   padding: 4px;
-  color: #f3f6f4;
+  color: #eff6ee;
 }
 
 .Won {
@@ -531,7 +532,7 @@ tbody tr td {
 }
 
 .Button.Active {
-  background-color: rgb(220, 0, 0);
+  background-color: #860912;
   background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
   color: white;
 }

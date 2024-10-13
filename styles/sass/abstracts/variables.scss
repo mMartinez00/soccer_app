@@ -1,8 +1,17 @@
-$base-color: #031525;
-$borderRadius: 8px;
-$primary-font: 'Roboto Mono', monospace;
-$white-font-color: #f3f6f4;
-$dark-font-color: #252121;
-$max-match-rows: 100;
-$card-width: 250px;
-$card-height: 250px;
+$base-color: #273043; // Dark base color (primary background or accents)
+$secondary-color: #9197ae; // Secondary color (for buttons, borders, etc.)
+$light-color: #eff6ee; // Light background or font color
+$accent-color: #860912; // Accent color (for highlights, buttons, etc.)
+
+// Border Radius
+$border-radius: 8px; // Standard border radius
+$border-radius-circle: 50%; // Full circular shape (for avatars, icons, etc.)
+
+// Typography
+$primary-font: 'Roboto Mono', monospace; // Primary font
+$white-font-color: $light-color; // Light font color
+$dark-font-color: $base-color; // Dark font color
+
+// Card Dimensions
+$card-width: 250px; // Standard card width
+$card-height: 250px; // Standard card height

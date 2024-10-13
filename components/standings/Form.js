@@ -27,5 +27,5 @@ export default function Form({ form }) {
         );
     };
 
-    return <p className="Form">Form: {formatGameResults(form)}</p>;
+    return <p className="Form">{formatGameResults(form)}</p>;
 }

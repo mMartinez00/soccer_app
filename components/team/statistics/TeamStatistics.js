@@ -47,7 +47,7 @@ export default function Statistics() {
         <>
             <div className="Team__Statistics">
                 <div className="Team__Form">
-                    <Form form={statistics.form} />
+                    Form: <Form form={statistics.form} />
                 </div>
                 <div className="Team-Statistics__List">
                     <TeamStatisticsList statistics={statistics} />
