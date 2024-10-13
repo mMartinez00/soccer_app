@@ -351,7 +351,7 @@ strong {
   align-items: center;
 }
 
-.Player_Statistics {
+.Player-Statistics {
   width: 100%;
   height: 100%;
   margin: 1rem 0;
@@ -362,14 +362,14 @@ strong {
   padding: 0.8rem 0 0 0.8rem;
 }
 
-.Tables {
+.Player-Statistics__Tables {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
 }
 
-.Table_Container_Slider {
+.Player-Statistics__Slider {
   width: 98%;
   height: 300px;
   position: relative;
@@ -377,7 +377,7 @@ strong {
   border-radius: 8px;
 }
 
-[class^=Table-] {
+[class^=Statistics] {
   table-layout: fixed;
   width: 100%;
   height: 100%;
@@ -389,27 +389,27 @@ strong {
   transition: left 0.6s ease-out;
 }
 
-.Table_Container_Slider[data-table-pos="1"] .Table-1 {
+.Player-Statistics__Slider[data-table-pos="1"] .Statistics-Table--1 {
   left: 0;
   z-index: 100;
 }
 
-.Table_Container_Slider[data-table-pos="2"] .Table-2 {
+.Player-Statistics__Slider[data-table-pos="2"] .Statistics-Table--2 {
   left: 0;
   z-index: 100;
 }
 
-.Table_Container_Slider[data-table-pos="3"] .Table-3 {
+.Player-Statistics__Slider[data-table-pos="3"] .Statistics-Table--3 {
   left: 0;
   z-index: 100;
 }
 
-.Table_Container_Slider[data-table-pos="4"] .Table-4 {
+.Player-Statistics__Slider[data-table-pos="4"] .Statistics-Table--4 {
   left: 0;
   z-index: 100;
 }
 
-.Table_Container_Slider[data-table-pos="5"] .Table-5 {
+.Player-Statistics__Slider[data-table-pos="5"] .Statistics-Table--5 {
   left: 0;
   z-index: 100;
 }

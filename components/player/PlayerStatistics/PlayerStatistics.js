@@ -25,8 +25,8 @@ export default function PlayerStatistics({ statistics }) {
 
     return (
         <>
-            <div className="Player_Statistics">
-                <div className="Tabs">
+            <div className="Player-Statistics">
+                <div className="Player-Statistics__Tabs">
                     {teams.map((team, index) => (
                         <Button
                             key={team}
@@ -37,7 +37,7 @@ export default function PlayerStatistics({ statistics }) {
                         />
                     ))}
                 </div>
-                <div className="Stat_Buttons">
+                <div className="Player-Statistics__Buttons">
                     {statisticsButtons.map((button, index) => {
                         return (
                             <Button
@@ -50,9 +50,9 @@ export default function PlayerStatistics({ statistics }) {
                         );
                     })}
                 </div>
-                <div className="Tables">
+                <div className="Player-Statistics__Tables">
                     <div
-                        className="Table_Container_Slider"
+                        className="Player-Statistics__Slider"
                         data-table-pos="1"
                         ref={mySliderRef}
                     >
