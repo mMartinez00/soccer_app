@@ -40,9 +40,9 @@ export default function Player() {
     }
 
     return (
-        <>
+        <div className="Player__Container">
             <PlayerProfile player={player} position={position} />
             <PlayerStatistics statistics={statistics} />
-        </>
+        </div>
     );
 }

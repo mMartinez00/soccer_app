@@ -3,7 +3,7 @@ import Player from '@/components/player/Player';
 
 export default function Players() {
     return (
-        <div className="Player_Container">
+        <div className="Player">
             <Player />
         </div>
     );

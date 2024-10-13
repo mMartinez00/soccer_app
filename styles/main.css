@@ -44,7 +44,7 @@ main {
   height: 100%;
 }
 
-.Player_Container {
+.Player__Container {
   width: 100%;
   height: 100%;
   color: white;
@@ -117,47 +117,48 @@ main {
   margin: 0 8px;
 }
 
-.Player_Profile {
+.Player-Profile {
   width: 100%;
   height: 100%;
   margin-top: 1rem;
   padding-bottom: 1rem;
 }
 
-.Profile {
+.Player-Profile__Container {
   width: 90%;
   margin: auto;
   display: flex;
 }
 
-.Player_Name {
+.Player-Profile__Header {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.Profile_Info {
+.Player-Profile__Name {
+  padding: 12px 0;
+}
+
+.Player-Profile__Photo-Container {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.Player-Profile__Photo {
+  border-radius: inherit;
+}
+
+.Player-Profile__Info {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   line-height: 1.6rem;
   padding-left: 1rem;
-}
-
-.Name {
-  text-align: center;
-  padding: 8px;
-}
-
-.Profile_Photo {
-  width: 200px;
-  height: 200px;
-  margin: auto;
-  border-radius: 50%;
-  border: 1px white solid;
-}
-
-.Photo {
-  border-radius: inherit;
 }
 
 .Team__Squad {

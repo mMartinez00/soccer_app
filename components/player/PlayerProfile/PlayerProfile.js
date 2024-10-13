@@ -4,47 +4,51 @@ import { cmToFeet, kgToPounds } from '@/utils/utils';
 
 export default function PlayerProfile({ player, position }) {
     return (
-        <div className="Player_Profile">
-            <div className="Profile">
-                <div className="Player_Name">
-                    <h1 className="Name">{player && player.name}</h1>
-                    <div className="Profile_Photo">
+        <div className="Player-Profile">
+            <div className="Player-Profile__Container">
+                <div className="Player-Profile__Header">
+                    <h1 className="Player-Profile__Name">
+                        {player && player.name}
+                    </h1>
+                    <div className="Player-Profile__Photo-Container">
                         <Image
                             src={player && player.photo}
                             width={200}
                             height={200}
-                            alt="player_photo"
-                            className="Photo"
+                            alt={`Photo of ${player.firstname} ${player.lastname}`}
+                            className="Player-Profile__Photo"
                         />
                     </div>
                 </div>
-                <div className="Profile_Info">
-                    <p className="FullName">
+                <div className="Player-Profile__Info">
+                    <p className="Player-Profile__Full-Name">
                         Full Name: {player && player.firstname}{' '}
                         {player && player.lastname}
                     </p>
-                    <p className="DOB">
+                    <p className="Player-Profile__DOB">
                         Date of Birth:{' '}
                         {new Date(
                             player && player.birth.date
                         ).toLocaleDateString()}
                     </p>
-                    <p className="POB">
+                    <p className="Player-Profile__POB">
                         Place of Birth: {player && player.birth.place},{' '}
                         {player && player.birth.country}
                     </p>
-                    <p className="Nationality">
+                    <p className="Player-Profile__Nationality">
                         Nationality: {player && player.nationality}
                     </p>
-                    <p className="Height">
+                    <p className="Player-Profile__Height">
                         Height: {player && player.height} (
                         {cmToFeet(player && player.height)})
                     </p>
-                    <p className="Weight">
+                    <p className="Player-Profile__Weight">
                         Weight: {player && player.weight} (
                         {kgToPounds(player && player.weight)})
                     </p>
-                    <p className="Position">Position: {position && position}</p>
+                    <p className="Player-Profile__Position">
+                        Position: {position && position}
+                    </p>
                 </div>
             </div>
         </div>
