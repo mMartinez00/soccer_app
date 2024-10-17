@@ -378,7 +378,7 @@ strong {
   border-radius: 8px;
 }
 
-[class^=Statistics] {
+table[class^=Statistics] {
   table-layout: fixed;
   width: 100%;
   height: 100%;
