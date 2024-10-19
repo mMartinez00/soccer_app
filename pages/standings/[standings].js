@@ -3,7 +3,7 @@ import Standings from '@/components/standings/Standings';
 
 export default function LeagueStandings() {
     return (
-        <div className="Standings_Container">
+        <div className="Standings">
             <Standings />
         </div>
     );

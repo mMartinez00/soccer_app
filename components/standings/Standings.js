@@ -29,7 +29,9 @@ export default function Standings() {
     if (isLoading) {
         return (
             <>
-                <h2>Loading...</h2>
+                <div className="Standings__Container">
+                    <h2>Loading...</h2>
+                </div>
             </>
         );
     }
@@ -37,19 +39,21 @@ export default function Standings() {
     if (data.response.length === 0) {
         return (
             <>
-                <h3>No Data</h3>
+                <div className="Standings__Container">
+                    <h2>No Data</h2>
+                </div>
             </>
         );
     }
 
     return (
-        <div className="League_Standings">
-            <h1 className="League_Name">
+        <div className="Standings__Container">
+            <h1 className="Standings__League-Name">
                 {data.response[0].league.country} -{' '}
                 {data.response[0].league.name} {data.response[0].league.season}{' '}
                 - {data.response[0].league.season + 1}
             </h1>
-            <div className="League_Tables">
+            <div className="Standings__Tables">
                 {data.response[0].league.standings.map((table) => {
                     return <StandingsTable key={table.group} table={table} />;
                 })}

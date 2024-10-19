@@ -10,9 +10,11 @@ export default function TableRow({ team }) {
 
     return (
         <tr>
-            <td className="row_cell rank">{team.rank}</td>
+            <td className="Standings-Table__Cell Standings-Table__Cell--Rank">
+                {team.rank}
+            </td>
 
-            <td className="row_cell team">
+            <td className="Standings-Table__Cell Standings-Table__Cell--Team">
                 {team.team.id ? (
                     <Link
                         href={{
@@ -37,19 +39,33 @@ export default function TableRow({ team }) {
                 )}
             </td>
 
-            <td className="row_cell ">{team.all.played}</td>
+            <td className="Standings-Table__Cell Standings-Table__Cell--Played">
+                {team.all.played}
+            </td>
 
-            <td className="row_cell ">{team.all.win}</td>
+            <td className="Standings-Table__Cell Standings-Table__Cell--Win">
+                {team.all.win}
+            </td>
 
-            <td className="row_cell">{team.all.draw}</td>
+            <td className="Standings-Table__Cell Standings-Table__Cell--Draw">
+                {team.all.draw}
+            </td>
 
-            <td className="row_cell lose">{team.all.lose}</td>
+            <td className="Standings-Table__Cell Standings-Table__Cell--Lose">
+                {team.all.lose}
+            </td>
 
-            <td className="row_cell goalsDiff">{team.goalsDiff}</td>
+            <td className="Standings-Table__Cell Standings-Table__Cell--Goals-Diff">
+                {team.goalsDiff}
+            </td>
 
-            <td className="row_cell points">{team.points}</td>
+            <td className="Standings-Table__Cell Standings-Table__Cell--Points">
+                {team.points}
+            </td>
 
-            <td className="row_cell form">{<Form form={team.form} />}</td>
+            <td className="Standings-Table__Cell Standings-Table__Cell--Form">
+                {<Form form={team.form} />}
+            </td>
         </tr>
     );
 }

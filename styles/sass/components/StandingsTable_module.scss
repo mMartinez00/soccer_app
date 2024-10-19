@@ -1,13 +1,4 @@
-// Variables
-$border-color: #999;
-$text-color: rgb(46, 46, 46);
-$padding: 0.5rem;
-$table-layout: fixed;
-
-// Mixins
-@mixin text-align-center {
-    text-align: center;
-}
+@import '../abstracts/variables.scss';
 
 // League Tables Wrapper
 .League_Tables {

@@ -6,3 +6,8 @@
 @mixin box-shadow($x, $y, $blur, $color) {
     box-shadow: $x $y $blur $color;
 }
+
+// Mixins
+@mixin text-align-center {
+    text-align: center;
+}
