@@ -3,6 +3,7 @@ import { fetcher } from '@/utils/utils';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import StandingsTable from './StandingsTable';
+import Loading from '../Loading';
 
 function useStandings(league, leagueID, season) {
     const { data, error, isLoading } = useSWR(
@@ -30,7 +31,7 @@ export default function Standings() {
         return (
             <>
                 <div className="Standings__Container">
-                    <h2>Loading...</h2>
+                    <Loading />
                 </div>
             </>
         );

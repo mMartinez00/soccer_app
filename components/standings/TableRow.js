@@ -35,7 +35,7 @@ export default function TableRow({ team }) {
                         {team.team.name}
                     </Link>
                 ) : (
-                    <span>{team.team.name}</span>
+                    <span className="Team-Name">{team.team.name}</span>
                 )}
             </td>
 

@@ -50,16 +50,9 @@ main {
   color: white;
 }
 
-.League_Standings {
+.Standings {
   width: 100%;
   height: 100%;
-}
-
-.League_Name {
-  color: white;
-  padding-left: 1rem;
-  margin: 1rem 0;
-  font-size: 2.4em;
 }
 
 .Competition {
@@ -298,6 +291,7 @@ strong {
 
 .Loader {
   width: 50px;
+  margin: 1rem;
   aspect-ratio: 1;
   display: grid;
   border-radius: 50%;
@@ -448,70 +442,98 @@ tbody tr td {
   text-align: center;
 }
 
-.League_Tables {
+.Standings__Container {
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-
-.Table_Group {
-  margin: 1rem 0;
+.Standings__League-Name {
+  margin: 1rem;
+  color: #eff6ee;
+}
+.Standings h2 {
+  margin: 1rem;
   font-size: 2em;
-  color: #ccc;
+  color: #eff6ee;
 }
 
-.Table_Container {
+.Standings__Tables {
   width: 75%;
   height: 100%;
-  margin: 1rem auto;
 }
 
-.Standings_Table {
+.Standings-Table__Container {
+  width: 100%;
+  height: 100%;
+}
+
+.Standings-Table {
   table-layout: fixed;
   width: 100%;
+  margin: 1rem 0;
+  border: 1px solid #363535;
   border-collapse: collapse;
   color: rgb(46, 46, 46);
 }
-.Standings_Table thead tr {
-  color: #fff;
+.Standings-Table__Group {
+  margin: 1rem 0;
+  color: #eff6ee;
+  font-size: 1.8em;
+}
+.Standings-Table thead tr {
+  background-color: #363535;
+  color: #eff6ee;
   height: 2.4rem;
 }
-.Standings_Table thead tr th {
+.Standings-Table thead tr th {
   font-size: 1rem;
   padding: 0.5rem;
 }
-.Standings_Table thead tr th:nth-child(1), .Standings_Table thead tr th:nth-child(3), .Standings_Table thead tr th:nth-child(4), .Standings_Table thead tr th:nth-child(5), .Standings_Table thead tr th:nth-child(6), .Standings_Table thead tr th:nth-child(7), .Standings_Table thead tr th:nth-child(8) {
+.Standings-Table thead tr th:nth-child(1), .Standings-Table thead tr th:nth-child(3), .Standings-Table thead tr th:nth-child(4), .Standings-Table thead tr th:nth-child(5), .Standings-Table thead tr th:nth-child(6), .Standings-Table thead tr th:nth-child(7), .Standings-Table thead tr th:nth-child(8) {
   text-align: center;
   width: 5%;
 }
-.Standings_Table thead tr th:nth-child(2) {
+.Standings-Table thead tr th:nth-child(2) {
   width: 35%;
   text-align: left;
 }
-.Standings_Table thead tr th:nth-child(9) {
+.Standings-Table thead tr th:nth-child(9) {
   width: 15%;
   text-align: left;
 }
-.Standings_Table tbody tr {
-  background-color: #fff;
+.Standings-Table tbody tr {
+  border-bottom: 1px solid #363535;
 }
-.Standings_Table tbody tr td {
+.Standings-Table tbody tr td {
   padding: 0.5rem;
-  border-bottom: 1px solid #d7d7d7;
   text-align: center;
 }
-.Standings_Table tbody tr td:nth-child(2) {
+.Standings-Table tbody tr td:nth-child(2) {
   text-align: left;
 }
-.Standings_Table tbody tr td:nth-child(8) {
+.Standings-Table tbody tr td:nth-child(8) {
   font-weight: 800;
 }
-.Standings_Table tbody tr td:nth-child(9) {
+.Standings-Table tbody tr td:nth-child(9) {
   text-align: left;
 }
-.Standings_Table tbody tr td a {
+.Standings-Table tbody tr td a {
   color: rgb(46, 46, 46);
   text-decoration: none;
   font-weight: bolder;
+}
+.Standings-Table tbody tr td span.Team-Name {
+  font-weight: bolder;
+  padding-left: 2.2rem;
+}
+.Standings-Table tbody tr:nth-child(even) {
+  background-color: #9f9f9f;
+}
+.Standings-Table tbody tr:nth-child(odd) {
+  background-color: #eff6ee;
 }
 
 .Button {
@@ -520,7 +542,7 @@ tbody tr td {
   margin: 0 0.8rem;
   border-radius: 6px;
   border: 0;
-  background-color: #9197ae;
+  background-color: #9f9f9f;
   color: #eff6ee;
   box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
   cursor: pointer;

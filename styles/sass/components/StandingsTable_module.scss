@@ -1,34 +1,58 @@
 @import '../abstracts/variables.scss';
 
+.Standings {
+    &__Container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__League-Name {
+        margin: 1rem;
+        color: $light-color;
+    }
+
+    h2 {
+        margin: 1rem;
+        font-size: 2em;
+        color: $light-color;
+    }
+}
+
 // League Tables Wrapper
-.League_Tables {
-    width: 100%;
-    height: 100%;
-}
-
-.Table_Group {
-    margin: 1rem 0;
-    font-size: 2em;
-    color: #ccc;
-}
-
-.Table_Container {
+.Standings__Tables {
     width: 75%;
     height: 100%;
-    margin: 1rem auto;
 }
 
 // Standings Table
-.Standings_Table {
+.Standings-Table__Container {
+    width: 100%;
+    height: 100%;
+}
+
+.Standings-Table {
     table-layout: $table-layout;
     width: 100%;
+    margin: 1rem 0;
+    border: 1px solid $dark-color;
     border-collapse: collapse;
     color: $text-color;
+
+    &__Group {
+        margin: 1rem 0;
+        color: $white-font-color;
+        font-size: 1.8em;
+    }
 
     // Table Head
     thead {
         tr {
-            color: #fff;
+            background-color: $dark-color;
+            color: $white-font-color;
             height: 2.4rem;
 
             th {
@@ -61,9 +85,9 @@
     // Table Body
     tbody {
         tr {
+            border-bottom: 1px solid $dark-color;
             td {
                 padding: $padding;
-                border-bottom: 1px solid #d7d7d7;
 
                 @include text-align-center;
                 &:nth-child(2) {
@@ -83,8 +107,19 @@
                     text-decoration: none;
                     font-weight: bolder;
                 }
+
+                span.Team-Name {
+                    font-weight: bolder;
+                    padding-left: 2.2rem;
+                }
             }
-            background-color: #fff;
+
+            &:nth-child(even) {
+                background-color: $even-table-row;
+            }
+            &:nth-child(odd) {
+                background-color: $odd-table-row;
+            }
         }
     }
 }
