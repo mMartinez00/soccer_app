@@ -476,7 +476,7 @@ tbody tr td {
   margin: 1rem 0;
   border: 1px solid #363535;
   border-collapse: collapse;
-  color: rgb(46, 46, 46);
+  color: #363535;
 }
 .Standings-Table__Group {
   margin: 1rem 0;
@@ -521,7 +521,7 @@ tbody tr td {
   text-align: left;
 }
 .Standings-Table tbody tr td a {
-  color: rgb(46, 46, 46);
+  color: #363535;
   text-decoration: none;
   font-weight: bolder;
 }

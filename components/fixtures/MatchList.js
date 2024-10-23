@@ -3,7 +3,7 @@ import Button from '../Button';
 import Competition from './Competition';
 import MatchDate from '../MatchDate';
 
-export default function Fixtures({ live, all }) {
+export default function MatchList({ live, all }) {
     const [fixtures, setFixtures] = useState(all);
 
     const handleClick = (e) => {

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Fixtures from '@/components/fixtures/Fixtures';
+import MatchList from '@/components/fixtures/MatchList';
 import { groupFixturesByLeague } from '@/utils/utils';
 
 export const getServerSideProps = async () => {
@@ -69,8 +69,8 @@ export default function Home({ live, all }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <div className="Fixtures__Container">
-                <Fixtures
+            <div className="MatchList">
+                <MatchList
                     live={groupFixturesByLeague(live)}
                     all={groupFixturesByLeague(all)}
                 />
