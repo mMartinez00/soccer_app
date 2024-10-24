@@ -4,31 +4,32 @@ import Competition from './Competition';
 import MatchDate from '../MatchDate';
 
 export default function MatchList({ live, all }) {
-    const [fixtures, setFixtures] = useState(all);
+    const [matches, setMatches] = useState(all);
+    const [isActive, setIsActive] = useState(false);
 
     const handleClick = (e) => {
-        fixtures === all ? setFixtures(live) : setFixtures(all);
-
-        e.target.classList.toggle('Active');
+        setMatches((matches) => (matches === all ? live : all));
+        setIsActive(!isActive);
     };
-
     return (
-        <div className="Fixtures">
-            <div className="Fixtures__Controls">
+        <div className="Matches">
+            <div className="Matches__Controls">
                 <Button
                     type="Toggle"
-                    children="Live"
                     handleClick={handleClick}
-                />
+                    isActive={isActive}
+                >
+                    Live
+                </Button>
                 <MatchDate />
             </div>
-            <section className="Fixtures__List">
-                {Object.entries(fixtures).map((fixture) => {
+            <section className="Matches__List">
+                {Object.entries(matches).map(([league, leagueMatches]) => {
                     return (
                         <Competition
-                            key={fixture[0]}
-                            league={fixture[1][0].league}
-                            matches={fixture[1]}
+                            key={league}
+                            league={leagueMatches[0].league}
+                            matches={leagueMatches}
                         />
                     );
                 })}

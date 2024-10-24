@@ -1,11 +1,18 @@
 import React from 'react';
 
-export default function Button({ type, children, handleClick, index }) {
-    const className = `Button ${type} ${index === 0 ? 'Active ' : ''}`;
+export default function Button({
+    type,
+    children,
+    handleClick,
+    index,
+    isActive,
+}) {
     return (
         <>
             <button
-                className={className}
+                className={`Button ${type} ${isActive ? 'Active' : ''} ${
+                    index === 0 ? 'Active ' : ''
+                }`}
                 onClick={(e) => handleClick(e, index)}
             >
                 {children}
