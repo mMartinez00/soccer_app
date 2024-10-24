@@ -7,10 +7,11 @@ export default function MatchList({ live, all }) {
     const [matches, setMatches] = useState(all);
     const [isActive, setIsActive] = useState(false);
 
-    const handleClick = (e) => {
+    const handleClick = () => {
         setMatches((matches) => (matches === all ? live : all));
         setIsActive(!isActive);
     };
+
     return (
         <div className="Matches">
             <div className="Matches__Controls">

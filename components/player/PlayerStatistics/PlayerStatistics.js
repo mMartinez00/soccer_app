@@ -31,10 +31,11 @@ export default function PlayerStatistics({ statistics }) {
                         <Button
                             key={team}
                             type="Tab"
-                            children={team}
                             index={index}
                             handleClick={handleTabClick}
-                        />
+                        >
+                            {team}
+                        </Button>
                     ))}
                 </div>
                 <div className="Player-Statistics__Buttons">
@@ -43,10 +44,11 @@ export default function PlayerStatistics({ statistics }) {
                             <Button
                                 key={button}
                                 type="Statistics"
-                                children={button}
                                 index={index}
                                 handleClick={handleButtonCLick}
-                            />
+                            >
+                                {button}
+                            </Button>
                         );
                     })}
                 </div>

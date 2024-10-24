@@ -10,8 +10,8 @@ export default function Button({
     return (
         <>
             <button
-                className={`Button ${type} ${isActive ? 'Active' : ''} ${
-                    index === 0 ? 'Active ' : ''
+                className={`Button Button-${type} ${isActive ? 'Active' : ''} ${
+                    index === 0 ? 'Active' : ''
                 }`}
                 onClick={(e) => handleClick(e, index)}
             >
