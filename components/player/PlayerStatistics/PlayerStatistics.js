@@ -2,25 +2,26 @@ import React, { useState, useRef } from 'react';
 import StatisticsTable from './StatisticsTable';
 import Button from '@/components/Button';
 import { statisticsButtons } from '../table';
-import { groupedByTeam, toggleActiveClass } from '@/utils/utils';
+import { groupedByTeam } from '@/utils/utils';
 
 export default function PlayerStatistics({ statistics }) {
-    const [playersStatistics, setPlayersStatistics] = useState('General');
-    const mySliderRef = useRef(null);
-    const playersStatisticsGroupedByTeam = groupedByTeam(statistics);
-    const tables = Object.values(playersStatisticsGroupedByTeam);
-    const teams = Object.keys(playersStatisticsGroupedByTeam);
+    const [currentStatistics, setCurrentStatistic] = useState('General');
+    const [activeTab, setActiveTab] = useState(0);
+    const [activeButton, setActiveButton] = useState(statisticsButtons[0]);
+    const sliderRef = useRef(null);
 
-    const handleButtonCLick = (e) => {
-        setPlayersStatistics(e.target.innerText);
+    const statisticsGroupedByTeam = groupedByTeam(statistics);
+    const tables = Object.values(statisticsGroupedByTeam);
+    const teams = Object.keys(statisticsGroupedByTeam);
 
-        toggleActiveClass(e);
+    const handleButtonCLick = (button) => {
+        setCurrentStatistic(button);
+        setActiveButton(button);
     };
 
-    const handleTabClick = (e, index) => {
-        mySliderRef.current.dataset.tablePos = index + 1;
-
-        toggleActiveClass(e);
+    const handleTabClick = (index) => {
+        sliderRef.current.dataset.tablePos = index + 1;
+        setActiveTab(index);
     };
 
     return (
@@ -30,9 +31,11 @@ export default function PlayerStatistics({ statistics }) {
                     {teams.map((team, index) => (
                         <Button
                             key={team}
-                            type="Tab"
                             index={index}
-                            handleClick={handleTabClick}
+                            handleClick={() => handleTabClick(index)}
+                            className={`Button Button-Tab ${
+                                activeTab === index ? 'Active' : ''
+                            }`}
                         >
                             {team}
                         </Button>
@@ -43,9 +46,11 @@ export default function PlayerStatistics({ statistics }) {
                         return (
                             <Button
                                 key={button}
-                                type="Statistics"
                                 index={index}
-                                handleClick={handleButtonCLick}
+                                handleClick={() => handleButtonCLick(button)}
+                                className={`Button Button-Statistics ${
+                                    activeButton === button ? 'Active' : ''
+                                }`}
                             >
                                 {button}
                             </Button>
@@ -56,19 +61,17 @@ export default function PlayerStatistics({ statistics }) {
                     <div
                         className="Player-Statistics__Slider"
                         data-table-pos="1"
-                        ref={mySliderRef}
+                        ref={sliderRef}
                     >
                         {tables.map((row, index) => {
                             const teamName = row[0].team.name;
                             return (
-                                <>
-                                    <StatisticsTable
-                                        key={teamName}
-                                        index={index + 1}
-                                        tableRows={row}
-                                        tableHeaders={playersStatistics}
-                                    />
-                                </>
+                                <StatisticsTable
+                                    key={teamName}
+                                    index={index + 1}
+                                    tableRows={row}
+                                    tableHeaders={currentStatistics}
+                                />
                             );
                         })}
                     </div>

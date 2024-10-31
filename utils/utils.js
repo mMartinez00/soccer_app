@@ -99,13 +99,3 @@ export function filterObj(stat, typeOfData) {
 
     return filtered;
 }
-
-export function toggleActiveClass(e) {
-    const buttons = e.target.parentElement.childNodes;
-
-    buttons.forEach((el) => el.classList.remove('Active'));
-
-    e.target.className += e.target.className.includes('Active')
-        ? ''
-        : ' Active';
-}

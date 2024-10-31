@@ -16,9 +16,10 @@ export default function MatchList({ live, all }) {
         <div className="Matches">
             <div className="Matches__Controls">
                 <Button
-                    type="Toggle"
-                    handleClick={handleClick}
-                    isActive={isActive}
+                    handleClick={() => handleClick()}
+                    className={`Button Button-Toggle ${
+                        isActive ? 'Active' : ''
+                    }`}
                 >
                     Live
                 </Button>
