@@ -6,7 +6,7 @@
 }
 
 .Player-Statistics__Slider {
-    width: 98%;
+    width: 100%;
     height: 300px;
     position: relative;
     overflow: hidden;
@@ -33,33 +33,34 @@ table[class^='Statistics'] {
     }
 }
 
-thead tr {
-    background-color: black;
+.Statistics-Table thead tr {
+    background-color: $dark-color;
 }
 
-thead th {
-    padding: 8px;
+.Statistics-Table th {
+    padding: 6px;
     font-size: 14px;
 }
 
-thead th:nth-child(1) {
-    width: 18em;
+.Statistics-Table th:nth-child(1) {
+    width: 20em;
 }
 
-thead th:not(:first-child) {
+.Statistics-Table th:not(:first-child) {
     width: 30%;
 }
 
 tbody tr {
-    height: 1.6rem;
+    color: $dark-color;
+    border-bottom: 1px solid $dark-color;
 }
 
 tbody tr:nth-child(odd) {
-    background-color: rgb(36, 35, 35);
+    background-color: $odd-table-row;
 }
 
 tbody tr:nth-child(even) {
-    background-color: rgb(77, 77, 77);
+    background-color: $even-table-row;
 }
 
 tbody tr td {

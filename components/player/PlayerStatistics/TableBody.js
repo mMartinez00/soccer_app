@@ -1,6 +1,4 @@
 import React from 'react';
-// import { table } from '@/components/players/table';
-// import Image from 'next/image';
 import TableRow from './TableRow';
 
 export default function TableBody({ rows, typeOfData }) {

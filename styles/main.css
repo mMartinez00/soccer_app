@@ -352,6 +352,22 @@ strong {
   margin: 1rem 0;
 }
 
+.Player-Statistics__Container {
+  width: 95%;
+  height: 100%;
+  margin: auto;
+}
+
+.Player-Statistics__Tabs {
+  width: 100%;
+  height: 3em;
+  margin-bottom: 1rem;
+}
+
+.Player-Statistics__Buttons {
+  margin-bottom: 1rem;
+}
+
 .Statistics_Buttons {
   margin-bottom: 1rem;
   padding: 0.8rem 0 0 0.8rem;
@@ -365,7 +381,7 @@ strong {
 }
 
 .Player-Statistics__Slider {
-  width: 98%;
+  width: 100%;
   height: 300px;
   position: relative;
   overflow: hidden;
@@ -409,33 +425,34 @@ table[class^=Statistics] {
   z-index: 100;
 }
 
-thead tr {
-  background-color: black;
+.Statistics-Table thead tr {
+  background-color: #363535;
 }
 
-thead th {
-  padding: 8px;
+.Statistics-Table th {
+  padding: 6px;
   font-size: 14px;
 }
 
-thead th:nth-child(1) {
-  width: 18em;
+.Statistics-Table th:nth-child(1) {
+  width: 20em;
 }
 
-thead th:not(:first-child) {
+.Statistics-Table th:not(:first-child) {
   width: 30%;
 }
 
 tbody tr {
-  height: 1.6rem;
+  color: #363535;
+  border-bottom: 1px solid #363535;
 }
 
 tbody tr:nth-child(odd) {
-  background-color: rgb(36, 35, 35);
+  background-color: #eff6ee;
 }
 
 tbody tr:nth-child(even) {
-  background-color: rgb(77, 77, 77);
+  background-color: #9f9f9f;
 }
 
 tbody tr td {
@@ -539,8 +556,7 @@ tbody tr td {
 .Button {
   padding: 6px 16px;
   font-size: 1rem;
-  margin: 0 0.8rem;
-  border-radius: 6px;
+  border-radius: 4px;
   border: 0;
   background-color: #9f9f9f;
   color: #eff6ee;
@@ -551,6 +567,16 @@ tbody tr td {
 
 .Button:hover {
   transform: scale(98%);
+}
+
+.Button-Tab {
+  height: 100%;
+  background-color: #9f9f9f;
+  box-shadow: 0;
+}
+
+.Button-Statistics {
+  margin-right: 12px;
 }
 
 .Button.Active {

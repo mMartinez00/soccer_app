@@ -25,8 +25,8 @@ export default function PlayerStatistics({ statistics }) {
     };
 
     return (
-        <>
-            <div className="Player-Statistics">
+        <div className="Player-Statistics">
+            <div className="Player-Statistics__Container">
                 <div className="Player-Statistics__Tabs">
                     {teams.map((team, index) => (
                         <Button
@@ -77,6 +77,6 @@ export default function PlayerStatistics({ statistics }) {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
