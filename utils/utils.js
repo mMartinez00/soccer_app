@@ -20,8 +20,8 @@ export function convertNullToZero(value) {
     return value === null ? (value = 0) : value;
 }
 
-export function groupFixturesByLeague(array) {
-    const groupedFixtures = array
+export function groupMatchesByLeague(array) {
+    const groupedMatches = array
         .sort((a, b) => {
             const leagueA = a.league.country.toUpperCase();
             const leagueB = b.league.country.toUpperCase();
@@ -39,7 +39,7 @@ export function groupFixturesByLeague(array) {
             return a;
         }, {});
 
-    return groupedFixtures;
+    return groupedMatches;
 }
 
 export function groupedByTeam(array) {

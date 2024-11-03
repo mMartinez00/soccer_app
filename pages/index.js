@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import MatchList from '@/components/fixtures/MatchList';
-import { groupFixturesByLeague } from '@/utils/utils';
+import { groupMatchesByLeague } from '@/utils/utils';
 
 export const getServerSideProps = async () => {
     let today = new Date().toISOString().split('T')[0];
@@ -71,12 +71,10 @@ export default function Home({ live, all }) {
 
             <div className="MatchList">
                 <MatchList
-                    live={groupFixturesByLeague(live)}
-                    all={groupFixturesByLeague(all)}
+                    live={groupMatchesByLeague(live)}
+                    all={groupMatchesByLeague(all)}
                 />
             </div>
-
-            {/* <Fixtures all={groupFixturesByLeague(data)} /> */}
         </>
     );
 }

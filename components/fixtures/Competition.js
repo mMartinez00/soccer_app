@@ -19,14 +19,14 @@ export default function Competition({ league, matches }) {
                         },
                     }}
                 >
-                    <h1 className="Competitiom__League-Name">
+                    <h1 className="Competition__League-Name">
                         <span className="Country">
                             {league.flag && (
                                 <Image
                                     src={league.flag}
                                     width={25}
                                     height={25}
-                                    alt="competition__country-flag"
+                                    alt={`${league.country} flag`}
                                 />
                             )}{' '}
                             {league.country}
@@ -37,7 +37,7 @@ export default function Competition({ league, matches }) {
                                 src={league.logo}
                                 width={25}
                                 height={25}
-                                alt="Competition__league-logo"
+                                alt={`${league.name} logo`}
                             />{' '}
                             {league.name}
                         </span>
@@ -47,11 +47,7 @@ export default function Competition({ league, matches }) {
 
             <div className="Competition__Matches">
                 {matches.map((match) => {
-                    return (
-                        <>
-                            <Match key={match.fixture.id} match={match} />
-                        </>
-                    );
+                    return <Match key={match.fixture.id} match={match} />;
                 })}
             </div>
         </div>
