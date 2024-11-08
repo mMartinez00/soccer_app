@@ -3,8 +3,17 @@
     color: $color;
 }
 
-@mixin box-shadow($x, $y, $blur, $color) {
-    box-shadow: $x $y $blur $color;
+// box-shadow mixin
+@mixin box-shadow($level: medium) {
+    @if $level == light {
+        box-shadow: $box-shadow-light;
+    } @else if $level == medium {
+        box-shadow: $box-shadow-medium;
+    } @else if $level == dark {
+        box-shadow: $box-shadow-dark;
+    } @else {
+        box-shadow: none;
+    }
 }
 
 // Mixins

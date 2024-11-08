@@ -13,7 +13,7 @@ export default function MatchList({ live, all }) {
     };
 
     return (
-        <div className="Matches">
+        <div className="Matches__Container">
             <div className="Matches__Controls">
                 <Button
                     handleClick={() => handleClick()}

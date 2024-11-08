@@ -2,58 +2,58 @@ import Head from 'next/head';
 import MatchList from '@/components/fixtures/MatchList';
 import { groupMatchesByLeague } from '@/utils/utils';
 
-export const getServerSideProps = async () => {
-    let today = new Date().toISOString().split('T')[0];
-
-    const response1 = await fetch(
-        `https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all`,
-        {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': process.env.API_KEY,
-                'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
-            },
-        }
-    );
-
-    const response2 = await fetch(
-        `https://api-football-v1.p.rapidapi.com/v3/fixtures?timezone=America/New_York&date=${today}`,
-        {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': process.env.API_KEY,
-                'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
-            },
-        }
-    );
-
-    const allPromises = await Promise.all([response1, response2]);
-
-    const live = await allPromises[0].json();
-
-    const all = await allPromises[1].json();
-
-    return {
-        props: {
-            live: live.response,
-            all: all.response,
-        },
-    };
-};
-
 // export const getServerSideProps = async () => {
-//     const response = await fetch('http://localhost:8000/response');
+//     let today = new Date().toISOString().split('T')[0];
 
-//     const data = await response.json();
+//     const response1 = await fetch(
+//         `https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all`,
+//         {
+//             method: 'GET',
+//             headers: {
+//                 'X-RapidAPI-Key': process.env.API_KEY,
+//                 'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
+//             },
+//         }
+//     );
+
+//     const response2 = await fetch(
+//         `https://api-football-v1.p.rapidapi.com/v3/fixtures?timezone=America/New_York&date=${today}`,
+//         {
+//             method: 'GET',
+//             headers: {
+//                 'X-RapidAPI-Key': process.env.API_KEY,
+//                 'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
+//             },
+//         }
+//     );
+
+//     const allPromises = await Promise.all([response1, response2]);
+
+//     const live = await allPromises[0].json();
+
+//     const all = await allPromises[1].json();
 
 //     return {
 //         props: {
-//             data,
+//             live: live.response,
+//             all: all.response,
 //         },
 //     };
 // };
 
-export default function Home({ live, all }) {
+export const getServerSideProps = async () => {
+    const response = await fetch('http://localhost:8000/response');
+
+    const data = await response.json();
+
+    return {
+        props: {
+            data,
+        },
+    };
+};
+
+export default function Home({ data }) {
     return (
         <>
             <Head>
@@ -69,11 +69,13 @@ export default function Home({ live, all }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <div className="MatchList">
-                <MatchList
+            <div className="Matches">
+                {/* <MatchList
                     live={groupMatchesByLeague(live)}
                     all={groupMatchesByLeague(all)}
-                />
+                /> */}
+                <MatchList all={groupMatchesByLeague(data)} />
+                {/* {console.log(groupMatchesByLeague(data))} */}
             </div>
         </>
     );

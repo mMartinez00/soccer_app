@@ -1,41 +1,42 @@
 .Button {
-    padding: 6px 16px;
-    font-size: 1rem;
-    border-radius: 4px;
-    border: 0;
+    padding: $button-padding;
+    font-size: $button-font-size;
+    border-radius: $button-border-radius;
+    border: none;
     background-color: $secondary-color;
-    color: $light-color;
-    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.6),
-        inset -2px -2px 3px rgba(0, 0, 0, 0.6);
-    cursor: pointer;
-    transition: transform 0.5s ease;
-}
-
-.Button:hover {
-    transform: scale(98%);
-}
-
-.Button-Tab {
-    height: 100%;
-    background-color: $secondary-color;
-    box-shadow: 0;
-}
-
-.Button-Statistics {
-    margin-right: 12px;
-}
-
-.Button.Active {
-    background-color: $accent-color;
     background-image: linear-gradient(
         to top left,
         rgba(0, 0, 0, 0.2),
         rgba(0, 0, 0, 0.2) 30%,
         rgba(0, 0, 0, 0)
     );
-    color: white;
+    color: $light-color;
+    box-shadow: $box-shadow-inset-deep;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    &:hover {
+        background-image: linear-gradient(
+            to top left,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4) 30%,
+            rgba(0, 0, 0, 0)
+        );
+    }
+
+    &.Active {
+        background-color: $accent-color;
+    }
+
+    &.Toggle {
+        margin: 0;
+    }
 }
 
-.Button.Toggle {
-    margin: 0;
+.Button-Tab {
+    height: 100%;
+}
+
+.Button-Statistics {
+    margin-right: 1rem;
 }

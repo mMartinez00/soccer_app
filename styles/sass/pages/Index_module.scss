@@ -1,22 +1,34 @@
-.Fixtures__Container {
-    width: 70%;
+.Matches {
+    width: 100%;
+    height: 100%;
+    // border: 1px green solid;
+}
+
+.Matches__Container {
+    // border: 1px yellow solid;
+    width: 90%;
     margin: auto;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.Fixtures__Controls {
+.Matches__Controls {
+    width: 100%;
+    height: 4.5rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    // border: 1px red solid;
 }
 
-.Fixtures {
+.Match__Date .Date {
+    font-size: 3em;
+    color: $light-color;
+}
+
+.Matches__List {
     width: 100%;
-    padding: 0.8rem;
-}
-
-.Date {
-    font-size: 2em;
-    color: white;
+    // border: white 1px solid;
 }
