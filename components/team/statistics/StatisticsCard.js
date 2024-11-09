@@ -1,5 +1,6 @@
 import React from 'react';
 import { totalCards } from '@/utils/utils';
+import Image from 'next/image';
 
 export default function StatisticsCard({ title, data }) {
     const renderStatistics = () => {
@@ -30,10 +31,22 @@ export default function StatisticsCard({ title, data }) {
                 return (
                     <>
                         <p className="Red_Card">
-                            Red: {totalCards(data.cards.red)}
+                            <Image
+                                src="/red.png"
+                                width={25}
+                                height={25}
+                                alt="red card"
+                            />{' '}
+                            {totalCards(data.cards.red)}
                         </p>
                         <p className="Yellow_Card">
-                            Yellow: {totalCards(data.cards.yellow)}
+                            <Image
+                                src="/yellow-card.png"
+                                width={30}
+                                height={30}
+                                alt="yellow card"
+                            />
+                            {totalCards(data.cards.yellow)}
                         </p>
                     </>
                 );
