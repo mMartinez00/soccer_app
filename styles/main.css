@@ -129,7 +129,7 @@ main {
 }
 
 .List__Item {
-  margin: 0 8px;
+  margin: 0 6px;
 }
 
 .Player-Profile {
@@ -282,9 +282,9 @@ main {
 }
 
 .Statistics-Card {
-  width: 150px;
-  height: 150px;
-  border: white 1px solid;
+  width: 160px;
+  height: 160px;
+  border: #eff6ee 1px solid;
   border-radius: 8px;
   display: flex;
   justify-content: center;
@@ -293,21 +293,18 @@ main {
 }
 
 .Statistics-Card__Title {
-  margin: 12px 0;
-  font-size: 18px;
+  margin-bottom: 8px;
+  font-size: 1.2em;
 }
 
 .Statistics-Card__Content {
-  font-size: 42px;
+  font-size: 3rem;
 }
 
-.Red_Card,
-.Yellow_Card {
-  font-size: 1rem;
-}
-
-strong {
-  font-size: 24px;
+.Red__Card,
+.Yellow__Card {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
 }
 
 .Loader {

@@ -14,37 +14,31 @@ export default function StatisticsCard({ title, data }) {
             case 'Loses':
                 return <p>{data.fixtures.loses.total}</p>;
             case 'Goals':
-                return (
-                    <>
-                        <p>{data.goals.for.total.total}</p>
-                    </>
-                );
+                return <p>{data.goals.for.total.total}</p>;
+
             case 'Goals Against':
-                return (
-                    <>
-                        <p>{data.goals.against.total.total}</p>
-                    </>
-                );
+                return <p>{data.goals.against.total.total}</p>;
+
             case 'Clean Sheets':
                 return <p>{data.clean_sheet.total}</p>;
             case 'Cards':
                 return (
                     <>
-                        <p className="Red_Card">
+                        <p className="Red__Card">
                             <Image
                                 src="/red.png"
                                 width={25}
                                 height={25}
-                                alt="red card"
+                                alt="Red Card"
                             />{' '}
                             {totalCards(data.cards.red)}
                         </p>
-                        <p className="Yellow_Card">
+                        <p className="Yellow__Card">
                             <Image
                                 src="/yellow-card.png"
-                                width={30}
-                                height={30}
-                                alt="yellow card"
+                                width={25}
+                                height={25}
+                                alt="Yellow Card"
                             />
                             {totalCards(data.cards.yellow)}
                         </p>
