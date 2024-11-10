@@ -5,10 +5,12 @@ import TeamSquad from '@/components/team/squad/TeamSquad';
 
 export default function Team() {
     return (
-        <div className="Team__Container">
-            <TeamFacts />
-            <TeamStatistics />
-            <TeamSquad />
+        <div className="Team">
+            <div className="Team__Container">
+                <TeamFacts />
+                <TeamStatistics />
+                <TeamSquad />
+            </div>
         </div>
     );
 }

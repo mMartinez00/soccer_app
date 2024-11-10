@@ -3,11 +3,10 @@
     height: 100%;
     margin: 1rem 0;
     display: flex;
-    color: white;
 }
 
-.Team,
-.Venue {
+.Team__Details,
+.Team__Venue {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -16,10 +15,11 @@
 }
 
 .Team__Logo-Container,
-.Venue__Image-Container {
+.Team__VenueImageContainer {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 1rem;
 }

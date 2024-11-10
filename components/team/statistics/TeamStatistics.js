@@ -31,16 +31,16 @@ export default function Statistics() {
 
     if (isLoading)
         return (
-            <>
+            <div className="Team__Statistics">
                 <Loading />
-            </>
+            </div>
         );
 
     if (isError)
         return (
-            <>
-                <h1>Error!</h1>
-            </>
+            <div className="Team__Statistics">
+                <h2 className="Error">There was an error!</h2>
+            </div>
         );
 
     return (
