@@ -11,6 +11,7 @@
     position: relative;
     overflow: hidden;
     border-radius: 8px;
+    @include box-shadow(dark);
 }
 
 table[class^='Statistics'] {
@@ -35,6 +36,7 @@ table[class^='Statistics'] {
 
 .Statistics-Table thead tr {
     background-color: $dark-color;
+    color: $white-font-color;
 }
 
 .Statistics-Table th {

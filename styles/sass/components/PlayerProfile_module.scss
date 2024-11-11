@@ -3,6 +3,7 @@
     height: 100%;
     margin-top: 1rem;
     padding-bottom: 1rem;
+    color: $white-font-color;
 }
 
 .Player-Profile__Container {
@@ -27,6 +28,7 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;
+    @include box-shadow(dark);
 }
 
 .Player-Profile__Photo {

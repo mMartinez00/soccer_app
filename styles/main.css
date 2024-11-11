@@ -138,6 +138,7 @@ main {
   height: 100%;
   margin-top: 1rem;
   padding-bottom: 1rem;
+  color: #f4f7f9;
 }
 
 .Player-Profile__Container {
@@ -162,6 +163,7 @@ main {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .Player-Profile__Photo {
@@ -418,6 +420,7 @@ main {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 table[class^=Statistics] {
@@ -459,6 +462,7 @@ table[class^=Statistics] {
 
 .Statistics-Table thead tr {
   background-color: #363535;
+  color: #f4f7f9;
 }
 
 .Statistics-Table th {
