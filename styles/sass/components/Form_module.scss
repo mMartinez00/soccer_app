@@ -1,21 +1,22 @@
 .Won,
 .Draw,
 .Lost {
-    border: 1px solid black;
+    border: 0.5px solid #000;
     border-radius: 4px;
     margin: 0 2px;
     padding: 4px;
     color: $white-font-color;
+    @include box-shadow(medium);
 }
 
 .Won {
-    background-color: green;
+    background-color: $win-color;
 }
 
 .Draw {
-    background-color: grey;
+    background-color: $draw-color;
 }
 
 .Lost {
-    background-color: red;
+    background-color: $lost-color;
 }
