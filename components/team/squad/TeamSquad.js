@@ -25,7 +25,7 @@ export default function TeamSquads() {
 
     if (data && data.response.length === 0) {
         return (
-            <div className="Team__Squad">
+            <div className="Team__Squad Team__Squad--Unavailable">
                 <h2>Squad Unavailable</h2>
             </div>
         );

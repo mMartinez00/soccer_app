@@ -4,14 +4,15 @@ import Image from 'next/image';
 export default function Team({ team }) {
     return (
         <div className="Team__Details">
-            <div className="Team__Logo-Container">
+            <figure className="Team__Logo-Container">
                 <Image
                     src={team && team.logo}
-                    width={175}
-                    height={175}
+                    width={200}
+                    height={200}
                     alt="Team__Logo"
+                    className="Team-Logo__Image"
                 />
-            </div>
+            </figure>
             <div className="Team__Content">
                 <p className="Team__Content-Name">Name: {team && team.name} </p>
                 <p className="Team__Content-Code">Code: {team && team.code}</p>

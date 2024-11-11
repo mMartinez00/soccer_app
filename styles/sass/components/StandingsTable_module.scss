@@ -68,7 +68,7 @@
                 &:nth-child(6),
                 &:nth-child(7),
                 &:nth-child(8) {
-                    @include text-align-center;
+                    text-align: center;
                     width: 5%;
                 }
 
@@ -92,7 +92,7 @@
             td {
                 padding: $padding;
 
-                @include text-align-center;
+                text-align: center;
                 &:nth-child(2) {
                     text-align: left;
                 }

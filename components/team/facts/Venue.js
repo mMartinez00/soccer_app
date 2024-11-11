@@ -8,9 +8,10 @@ export default function Venue({ venue }) {
                 {venue.image && (
                     <Image
                         src={venue.image}
-                        width={175}
-                        height={175}
+                        width={200}
+                        height={200}
                         alt="Venue Image"
+                        className="Team-Venue__Image"
                     />
                 )}
             </div>

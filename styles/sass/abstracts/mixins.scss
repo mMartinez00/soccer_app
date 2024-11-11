@@ -1,8 +1,3 @@
-@mixin Link($color: $white-font-color) {
-    text-decoration: none;
-    color: $color;
-}
-
 // box-shadow mixin
 @mixin box-shadow($level: medium) {
     @if $level == light {
@@ -14,9 +9,4 @@
     } @else {
         box-shadow: none;
     }
-}
-
-// Mixins
-@mixin text-align-center {
-    text-align: center;
 }

@@ -4,17 +4,17 @@
     margin: 1rem 0;
 }
 
-.Team__Squad h2 {
+.Team__Squad--Unavailable {
     text-align: center;
     margin: 1rem 0;
     font-size: 2rem;
-    color: white;
+    color: $white-font-color;
 }
 
 .Squad {
     width: 100%;
     height: 100%;
-    color: white;
+    color: $white-font-color;
 }
 
 .Squad__Position-Container {
@@ -26,7 +26,8 @@
 }
 
 .Squad__Position-Heading {
-    font-size: 42px;
+    font-size: 2.4em;
+    color: $light-color;
 }
 
 .Squad__Players {
@@ -40,18 +41,19 @@
     width: $card-width;
     height: $card-height;
     border-radius: $border-radius;
-    border: white 1px solid;
+    background-color: $light-color;
     margin: 1rem;
-    transition: all 0.5s;
+    transition: all 0.6s ease;
+    @include box-shadow(medium);
 }
 
 .Player-Card:hover {
     transform: translateY(-8px);
-    box-shadow: 1px 2px 8px 2px white;
+    @include box-shadow(dark);
 }
 
 .Player-Card__Link {
-    color: white;
+    color: $dark-font-color;
     text-decoration: none;
 }
 
@@ -65,7 +67,7 @@
 }
 
 .Player-Card__Photo {
-    border-radius: 50%;
+    border-radius: $border-radius-circle;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,6 +75,7 @@
 
 .Player-Card__Image {
     border-radius: inherit;
+    @include box-shadow(light);
 }
 
 .Player-Card__Info {

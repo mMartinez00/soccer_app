@@ -3,10 +3,13 @@
     height: 160px;
     border: $white-font-color 1px solid;
     border-radius: $border-radius;
+    background-color: $light-color;
+    color: $base-color;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    @include box-shadow(medium);
 }
 
 .Statistics-Card__Title {
