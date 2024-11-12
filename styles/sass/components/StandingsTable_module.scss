@@ -88,10 +88,8 @@
     // Table Body
     tbody {
         tr {
-            border-bottom: 1px solid $dark-color;
             td {
                 padding: $padding;
-
                 text-align: center;
                 &:nth-child(2) {
                     text-align: left;
