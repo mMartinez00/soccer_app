@@ -95,7 +95,7 @@ main {
 }
 
 .Competition__Matches .Match__Container:nth-child(even) {
-  background-color: #7d7d7d;
+  background-color: #b9b9b9;
 }
 
 .Competition__Link {
@@ -481,7 +481,6 @@ table[class^=Statistics] {
 
 tbody tr {
   color: #363535;
-  border-bottom: 1px solid #363535;
 }
 
 tbody tr:nth-child(odd) {
@@ -489,7 +488,7 @@ tbody tr:nth-child(odd) {
 }
 
 tbody tr:nth-child(even) {
-  background-color: #7d7d7d;
+  background-color: #b9b9b9;
 }
 
 tbody tr td {
@@ -561,9 +560,6 @@ tbody tr td {
   width: 15%;
   text-align: left;
 }
-.Standings-Table tbody tr {
-  border-bottom: 1px solid #363535;
-}
 .Standings-Table tbody tr td {
   padding: 0.5rem;
   text-align: center;
@@ -587,7 +583,7 @@ tbody tr td {
   padding-left: 2.2rem;
 }
 .Standings-Table tbody tr:nth-child(even) {
-  background-color: #7d7d7d;
+  background-color: #b9b9b9;
 }
 .Standings-Table tbody tr:nth-child(odd) {
   background-color: #f4f7f9;
@@ -598,7 +594,7 @@ tbody tr td {
   font-size: 1rem;
   border-radius: 6px;
   border: none;
-  background-color: #7d7d7d;
+  background-color: #b9b9b9;
   background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
   color: #f4f7f9;
   box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6), 0 10px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.2);
