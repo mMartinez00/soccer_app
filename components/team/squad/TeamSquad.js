@@ -1,22 +1,8 @@
 import React from 'react';
-import useSWR from 'swr';
 import { useRouter } from 'next/router';
-import { fetcher } from '@/utils/utils';
+import useSquad from '@/hooks/useSquad';
 import Squad from './Squad';
 import Loading from '@/components/Loading';
-
-function useSquad(teamID) {
-    const { data, isLoading, error } = useSWR(
-        `/api/team/squads/${teamID}`,
-        fetcher
-    );
-
-    return {
-        data,
-        isLoading,
-        isError: error,
-    };
-}
 
 export default function TeamSquads() {
     const router = useRouter();

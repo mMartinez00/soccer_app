@@ -6,14 +6,14 @@ export function cmToFeet(cm) {
     const feet = Math.floor(inches / 12);
     const remainingInches = inches % 12;
 
-    return `${feet}ft ${Math.round(remainingInches)}in`;
+    return `${feet} ft ${Math.round(remainingInches)} in`;
 }
 
 export function kgToPounds(kg) {
     const digit = extractDigits(kg);
     const pounds = +digit[0] * 2.205;
 
-    return `${Math.round(pounds)}lbs`;
+    return `${Math.round(pounds)} lbs`;
 }
 
 export function convertNullToZero(value) {

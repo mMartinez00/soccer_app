@@ -1,22 +1,8 @@
 import React from 'react';
-import { fetcher } from '@/utils/utils';
 import { useRouter } from 'next/router';
-import useSWR from 'swr';
+import useStandings from '@/hooks/useStandings';
 import StandingsTable from './StandingsTable';
 import Loading from '../Loading';
-
-function useStandings(league, leagueID, season) {
-    const { data, error, isLoading } = useSWR(
-        `/api/standings/league/${league}?leagueId=${leagueID}&season=${season}`,
-        fetcher
-    );
-
-    return {
-        data,
-        isLoading,
-        isError: error,
-    };
-}
 
 export default function Standings() {
     const router = useRouter();
@@ -29,11 +15,9 @@ export default function Standings() {
 
     if (isLoading) {
         return (
-            <>
-                <div className="Standings__Container">
-                    <Loading />
-                </div>
-            </>
+            <div className="Standings__Container">
+                <Loading />
+            </div>
         );
     }
 
