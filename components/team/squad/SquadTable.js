@@ -8,7 +8,6 @@ export default function SquadTable({
     attackers,
     season,
 }) {
-    console.log(goalkeepers);
     return (
         <>
             <table className="Squad_Table">
