@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import useLive from '@/hooks/useLive';
+import useFixtures from '@/hooks/useFixtures';
 import MatchList from '@/components/fixtures/MatchList';
 import { groupMatchesByLeague } from '@/utils/utils';
 
@@ -41,19 +43,19 @@ import { groupMatchesByLeague } from '@/utils/utils';
 //     };
 // };
 
-export const getServerSideProps = async () => {
-    const response = await fetch('http://localhost:8000/response');
+// export const getServerSideProps = async () => {
+//     const response = await fetch('http://localhost:8000/response');
 
-    const data = await response.json();
+//     const data = await response.json();
 
-    return {
-        props: {
-            data,
-        },
-    };
-};
+//     return {
+//         props: {
+//             data,
+//         },
+//     };
+// };
 
-export default function Home({ data }) {
+export default function Home() {
     return (
         <>
             <Head>
@@ -74,7 +76,7 @@ export default function Home({ data }) {
                     live={groupMatchesByLeague(live)}
                     all={groupMatchesByLeague(all)}
                 /> */}
-                <MatchList all={groupMatchesByLeague(data)} />
+                {/* <MatchList all={groupMatchesByLeague(data)} /> */}
                 {/* {console.log(groupMatchesByLeague(data))} */}
             </div>
         </>
