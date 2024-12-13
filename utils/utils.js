@@ -21,23 +21,25 @@ export function convertNullToZero(value) {
 }
 
 export function groupMatchesByLeague(array) {
-    const groupedMatches = array
-        .sort((a, b) => {
-            const leagueA = a.league.country.toUpperCase();
-            const leagueB = b.league.country.toUpperCase();
+    const groupedMatches =
+        array &&
+        array
+            .sort((a, b) => {
+                const leagueA = a.league.country.toUpperCase();
+                const leagueB = b.league.country.toUpperCase();
 
-            return leagueA > leagueB ? 1 : leagueA < leagueB ? -1 : 0;
-        })
-        .reduce((a, b) => {
-            const key = `${b.league.country} - ${b.league.name}`;
-            if (!a[key]) {
-                a[key] = [];
-            }
+                return leagueA > leagueB ? 1 : leagueA < leagueB ? -1 : 0;
+            })
+            .reduce((a, b) => {
+                const key = `${b.league.country} - ${b.league.name}`;
+                if (!a[key]) {
+                    a[key] = [];
+                }
 
-            a[key].push(b);
+                a[key].push(b);
 
-            return a;
-        }, {});
+                return a;
+            }, {});
 
     return groupedMatches;
 }

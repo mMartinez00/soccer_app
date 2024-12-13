@@ -5,7 +5,7 @@ export default function useLive() {
     const { data, isLoading, error } = useSWR(`/api/fixtures/live`, fetcher);
 
     return {
-        liveGames: data?.response,
+        data,
         isLoading,
         isError: error,
     };
