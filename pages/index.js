@@ -2,14 +2,23 @@ import Head from 'next/head';
 import useLive from '@/hooks/useLive';
 import useFixtures from '@/hooks/useFixtures';
 import MatchList from '@/components/fixtures/MatchList';
+import Loading from '@/components/Loading';
 import { groupMatchesByLeague } from '@/utils/utils';
 
 export default function Home() {
-    const { data } = useLive();
+    const { data: all, isLoading: isLoading1 } = useLive();
 
-    const { data: fixtures } = useFixtures();
-    const live = groupMatchesByLeague(data?.response);
+    const { data: fixtures, isLoading: isLoading2 } = useFixtures();
+    const live = groupMatchesByLeague(all?.response);
     const allFix = groupMatchesByLeague(fixtures?.response);
+
+    if (isLoading1 && isLoading2) {
+        return (
+            <div className="Matches">
+                <Loading />
+            </div>
+        );
+    }
 
     return (
         <>
