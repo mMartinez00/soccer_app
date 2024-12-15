@@ -11,8 +11,6 @@ export default function Home() {
     const live = groupMatchesByLeague(data?.response);
     const allFix = groupMatchesByLeague(fixtures?.response);
 
-    console.log(live, allFix);
-
     return (
         <>
             <Head>

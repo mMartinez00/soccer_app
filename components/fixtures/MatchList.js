@@ -4,21 +4,21 @@ import Competition from './Competition';
 import MatchDate from '../MatchDate';
 
 export default function MatchList({ live, all }) {
-    const [matches, setMatches] = useState(all);
     const [isActive, setIsActive] = useState(false);
 
     const handleClick = () => {
-        setMatches((matches) => (matches === all ? live : all));
         setIsActive(!isActive);
     };
+
+    const displayedMatches = isActive ? live : all;
 
     return (
         <div className="Matches__Container">
             <div className="Matches__Controls">
                 <Button
                     handleClick={() => handleClick()}
-                    className={`Button Button-Toggle ${
-                        isActive ? 'Active' : ''
+                    className={`Button Button-Toggle${
+                        isActive ? ' Active' : ''
                     }`}
                 >
                     Live
@@ -26,15 +26,13 @@ export default function MatchList({ live, all }) {
                 <MatchDate />
             </div>
             <section className="Matches__List">
-                {Object.entries(matches).map(([league, leagueMatches]) => {
-                    return (
-                        <Competition
-                            key={league}
-                            league={leagueMatches[0].league}
-                            matches={leagueMatches}
-                        />
-                    );
-                })}
+                {Object.entries(displayedMatches).map(([league, matches]) => (
+                    <Competition
+                        key={league}
+                        league={matches[0].league}
+                        matches={matches}
+                    />
+                ))}
             </section>
         </div>
     );
