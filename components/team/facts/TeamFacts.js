@@ -10,8 +10,6 @@ export default function TeamFacts() {
     const { query } = router;
     const { facts, isLoading, isValidating, isError } = useFacts(query.teamID);
 
-    console.log(facts, isLoading, isValidating, isError);
-
     if (isLoading)
         return (
             <div className="Team__Facts">

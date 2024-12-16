@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useMemo } from 'react';
 import useLive from '@/hooks/useLive';
 import useFixtures from '@/hooks/useFixtures';
 import MatchList from '@/components/fixtures/MatchList';
@@ -9,8 +10,15 @@ export default function Home() {
     const { data: all, isLoading: isLoading1 } = useLive();
 
     const { data: fixtures, isLoading: isLoading2 } = useFixtures();
-    const live = groupMatchesByLeague(all?.response);
-    const allFix = groupMatchesByLeague(fixtures?.response);
+    const live = useMemo(
+        () => groupMatchesByLeague(all?.response),
+        [all?.response]
+    );
+
+    const allFix = useMemo(
+        () => groupMatchesByLeague(fixtures?.response),
+        [fixtures?.response]
+    );
 
     if (isLoading1 && isLoading2) {
         return (
@@ -37,8 +45,6 @@ export default function Home() {
 
             <div className="Matches">
                 <MatchList live={live} all={allFix} />
-                {/* <MatchList all={groupMatchesByLeague(data)} /> */}
-                {/* {console.log(groupMatchesByLeague(data))} */}
             </div>
         </>
     );
