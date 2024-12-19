@@ -1,32 +1,31 @@
 import Head from 'next/head';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import useLive from '@/hooks/useLive';
 import useFixtures from '@/hooks/useFixtures';
 import MatchList from '@/components/fixtures/MatchList';
 import Loading from '@/components/Loading';
+import Button from '@/components/Button';
+import MatchDate from '@/components/MatchDate';
 import { groupMatchesByLeague } from '@/utils/utils';
 
 export default function Home() {
+    const [isActive, setIsActive] = useState(false);
     const { data: all, isLoading: isLoading1 } = useLive();
-
     const { data: fixtures, isLoading: isLoading2 } = useFixtures();
     const live = useMemo(
         () => groupMatchesByLeague(all?.response),
         [all?.response]
     );
-
     const allFix = useMemo(
         () => groupMatchesByLeague(fixtures?.response),
         [fixtures?.response]
     );
 
-    if (isLoading1 && isLoading2) {
-        return (
-            <div className="Matches">
-                <Loading />
-            </div>
-        );
-    }
+    const handleClick = () => {
+        setIsActive(!isActive);
+    };
+
+    const displayedMatches = isActive ? live : allFix;
 
     return (
         <>
@@ -44,7 +43,24 @@ export default function Home() {
             </Head>
 
             <div className="Matches">
-                <MatchList live={live} all={allFix} />
+                <div className="Matches__Container">
+                    <div className="Matches__Controls">
+                        <Button
+                            handleClick={() => handleClick()}
+                            className={`Button Button-Toggle${
+                                isActive ? ' Active' : ''
+                            }`}
+                        >
+                            Live
+                        </Button>
+                        <MatchDate />
+                    </div>
+                    {isLoading1 && isLoading2 ? (
+                        <Loading />
+                    ) : (
+                        <MatchList matches={displayedMatches} />
+                    )}
+                </div>
             </div>
         </>
     );
