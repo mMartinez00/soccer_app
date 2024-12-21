@@ -3,11 +3,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Match from './Match';
 
-export default function Competition({ league, matches }) {
+export default function Competition({ league, matches, myRef }) {
     // if the flag or logo property is null refer to: https://github.com/vercel/next.js/discussions/29545
 
     return (
-        <div className="Competition">
+        <div className="Competition" ref={myRef}>
             <div className="Competition__League">
                 <Link
                     className="Competition__Link"
