@@ -1,41 +1,44 @@
-import React, { useState } from 'react';
-import Button from '../Button';
+import React, { useEffect, useRef } from 'react';
 import Competition from './Competition';
-import MatchDate from '../MatchDate';
 
-export default function MatchList({ live, all }) {
-    const [matches, setMatches] = useState(all);
-    const [isActive, setIsActive] = useState(false);
-
-    const handleClick = () => {
-        setMatches((matches) => (matches === all ? live : all));
-        setIsActive(!isActive);
+export default function MatchList({ matches }) {
+    const ref = useRef([]);
+    const options = {
+        root: null,
+        threshold: 0.3,
+        rootMargin: '50px',
+    };
+    const cb = (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('Visible');
+            }
+        });
     };
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(cb, options);
+
+        ref.current.forEach((ref) => observer.observe(ref));
+
+        return () => ref.current.forEach((ref) => observer.unobserve(ref));
+    }, [matches]);
+
     return (
-        <div className="Matches__Container">
-            <div className="Matches__Controls">
-                <Button
-                    handleClick={() => handleClick()}
-                    className={`Button Button-Toggle ${
-                        isActive ? 'Active' : ''
-                    }`}
-                >
-                    Live
-                </Button>
-                <MatchDate />
-            </div>
-            <section className="Matches__List">
-                {Object.entries(matches).map(([league, leagueMatches]) => {
-                    return (
-                        <Competition
-                            key={league}
-                            league={leagueMatches[0].league}
-                            matches={leagueMatches}
-                        />
-                    );
-                })}
-            </section>
-        </div>
+        <section className="Matches__List">
+            {matches &&
+                Object.entries(matches).map(([league, matches], index) => (
+                    <Competition
+                        key={league}
+                        league={matches[0].league}
+                        matches={matches}
+                        myRef={(el) => {
+                            if (el) {
+                                ref.current[index] = el;
+                            }
+                        }}
+                    />
+                ))}
+        </section>
     );
 }

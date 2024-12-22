@@ -7,9 +7,7 @@ export default function PlayerProfile({ player, position }) {
         <div className="Player-Profile">
             <div className="Player-Profile__Container">
                 <div className="Player-Profile__Header">
-                    <h1 className="Player-Profile__Name">
-                        {player && player.name}
-                    </h1>
+                    <h1 className="Player-Profile__Name">{player?.name}</h1>
                     <div className="Player-Profile__Photo-Container">
                         <Image
                             src={player && player.photo}
@@ -22,32 +20,35 @@ export default function PlayerProfile({ player, position }) {
                 </div>
                 <div className="Player-Profile__Info">
                     <p className="Player-Profile__Full-Name">
-                        Full Name: {player && player.firstname}{' '}
-                        {player && player.lastname}
+                        Full Name: {player?.firstname} {player?.lastname}
                     </p>
                     <p className="Player-Profile__DOB">
                         Date of Birth:{' '}
-                        {new Date(
-                            player && player.birth.date
-                        ).toLocaleDateString()}
+                        {new Date(player?.birth.date).toLocaleDateString()} {''}{' '}
+                        {`(age ${player?.age})`}
                     </p>
                     <p className="Player-Profile__POB">
-                        Place of Birth: {player && player.birth.place},{' '}
-                        {player && player.birth.country}
+                        Place of Birth:{' '}
+                        {player.birth.place ? `${player.birth.place},` : 'N/A,'}{' '}
+                        {player?.birth.country}
                     </p>
                     <p className="Player-Profile__Nationality">
                         Nationality: {player && player.nationality}
                     </p>
                     <p className="Player-Profile__Height">
-                        Height: {player && player.height} (
-                        {cmToFeet(player && player.height)})
+                        Height: {player?.height}{' '}
+                        {player.height
+                            ? `(${cmToFeet(player?.height)})`
+                            : 'N/A'}
                     </p>
                     <p className="Player-Profile__Weight">
-                        Weight: {player && player.weight} (
-                        {kgToPounds(player && player.weight)})
+                        Weight: {player?.weight}{' '}
+                        {player.weight
+                            ? `(${kgToPounds(player?.weight)})`
+                            : 'N/A'}
                     </p>
                     <p className="Player-Profile__Position">
-                        Position: {position && position}
+                        Position: {position}
                     </p>
                 </div>
             </div>

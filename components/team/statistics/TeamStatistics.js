@@ -1,23 +1,9 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import useSWR from 'swr';
-import { fetcher } from '@/utils/utils';
+import useStatistics from '@/hooks/useStatistics';
 import Form from '../../standings/Form';
 import TeamStatisticsList from './TeamStatisticsList';
 import Loading from '@/components/Loading';
-
-function useStatistics(team, teamID, leagueID, season) {
-    const { data, error, isLoading } = useSWR(
-        `/api/team/statistics/${team}?teamId=${teamID}&leagueId=${leagueID}&season=${season}`,
-        fetcher
-    );
-
-    return {
-        statistics: data && data.response,
-        isLoading,
-        isError: error,
-    };
-}
 
 export default function Statistics() {
     const router = useRouter();

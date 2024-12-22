@@ -1,11 +1,13 @@
 .Matches {
     width: 100%;
     height: 100%;
-    // border: 1px green solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .Matches__Container {
-    // border: 1px yellow solid;
     width: 90%;
     margin: auto;
     display: flex;
@@ -20,7 +22,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // border: 1px red solid;
 }
 
 .Match__Date .Date {
@@ -30,5 +31,4 @@
 
 .Matches__List {
     width: 100%;
-    // border: white 1px solid;
 }

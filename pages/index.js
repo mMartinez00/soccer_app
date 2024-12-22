@@ -1,59 +1,32 @@
 import Head from 'next/head';
+import { useMemo, useState } from 'react';
+import useLive from '@/hooks/useLive';
+import useFixtures from '@/hooks/useFixtures';
 import MatchList from '@/components/fixtures/MatchList';
+import Loading from '@/components/Loading';
+import Button from '@/components/Button';
+import MatchDate from '@/components/MatchDate';
 import { groupMatchesByLeague } from '@/utils/utils';
 
-// export const getServerSideProps = async () => {
-//     let today = new Date().toISOString().split('T')[0];
+export default function Home() {
+    const [isActive, setIsActive] = useState(false);
+    const { data: all, isLoading: isLoading1 } = useLive();
+    const { data: fixtures, isLoading: isLoading2 } = useFixtures();
+    const live = useMemo(
+        () => groupMatchesByLeague(all?.response),
+        [all?.response]
+    );
+    const allFix = useMemo(
+        () => groupMatchesByLeague(fixtures?.response),
+        [fixtures?.response]
+    );
 
-//     const response1 = await fetch(
-//         `https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all`,
-//         {
-//             method: 'GET',
-//             headers: {
-//                 'X-RapidAPI-Key': process.env.API_KEY,
-//                 'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
-//             },
-//         }
-//     );
-
-//     const response2 = await fetch(
-//         `https://api-football-v1.p.rapidapi.com/v3/fixtures?timezone=America/New_York&date=${today}`,
-//         {
-//             method: 'GET',
-//             headers: {
-//                 'X-RapidAPI-Key': process.env.API_KEY,
-//                 'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
-//             },
-//         }
-//     );
-
-//     const allPromises = await Promise.all([response1, response2]);
-
-//     const live = await allPromises[0].json();
-
-//     const all = await allPromises[1].json();
-
-//     return {
-//         props: {
-//             live: live.response,
-//             all: all.response,
-//         },
-//     };
-// };
-
-export const getServerSideProps = async () => {
-    const response = await fetch('http://localhost:8000/response');
-
-    const data = await response.json();
-
-    return {
-        props: {
-            data,
-        },
+    const handleClick = () => {
+        setIsActive(!isActive);
     };
-};
 
-export default function Home({ data }) {
+    const displayedMatches = isActive ? live : allFix;
+
     return (
         <>
             <Head>
@@ -70,12 +43,24 @@ export default function Home({ data }) {
             </Head>
 
             <div className="Matches">
-                {/* <MatchList
-                    live={groupMatchesByLeague(live)}
-                    all={groupMatchesByLeague(all)}
-                /> */}
-                <MatchList all={groupMatchesByLeague(data)} />
-                {/* {console.log(groupMatchesByLeague(data))} */}
+                <div className="Matches__Container">
+                    <div className="Matches__Controls">
+                        <Button
+                            handleClick={() => handleClick()}
+                            className={`Button Button-Toggle${
+                                isActive ? ' Active' : ''
+                            }`}
+                        >
+                            Live
+                        </Button>
+                        <MatchDate />
+                    </div>
+                    {isLoading1 && isLoading2 ? (
+                        <Loading />
+                    ) : (
+                        <MatchList matches={displayedMatches} />
+                    )}
+                </div>
             </div>
         </>
     );
