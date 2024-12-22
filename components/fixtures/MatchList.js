@@ -5,15 +5,15 @@ export default function MatchList({ matches }) {
     const ref = useRef([]);
     const options = {
         root: null,
-        threshold: 0.1,
-        rootMargin: '-100px',
+        threshold: 0.3,
+        rootMargin: '50px',
     };
     const cb = (entries) => {
-        const [entry] = entries;
-        console.log(entry);
-        if (entry.isInteresting) {
-            console.log(ref.current);
-        }
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('Visible');
+            }
+        });
     };
 
     useEffect(() => {
@@ -21,18 +21,22 @@ export default function MatchList({ matches }) {
 
         ref.current.forEach((ref) => observer.observe(ref));
 
-        // console.log(ref.current[0].classList[0]);
-    }, []);
+        return () => ref.current.forEach((ref) => observer.unobserve(ref));
+    }, [matches]);
 
     return (
         <section className="Matches__List">
             {matches &&
-                Object.entries(matches).map(([league, matches]) => (
+                Object.entries(matches).map(([league, matches], index) => (
                     <Competition
                         key={league}
                         league={matches[0].league}
                         matches={matches}
-                        myRef={(el) => el && ref.current.push(el)}
+                        myRef={(el) => {
+                            if (el) {
+                                ref.current[index] = el;
+                            }
+                        }}
                     />
                 ))}
         </section>
