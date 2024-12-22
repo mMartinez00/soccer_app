@@ -119,7 +119,13 @@ main {
   margin: 1rem 0;
 }
 
-.Team-Statistics_List {
+.Team__Statistics:has(.Loader) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Team-Statistics__List {
   width: 100%;
   height: 100%;
 }
@@ -193,6 +199,9 @@ main {
   width: 100%;
   height: 100%;
   margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Team__Squad--Unavailable {
@@ -363,6 +372,8 @@ main {
   height: 100%;
   margin: 1rem 0;
   display: flex;
+  justify-content: center;
+  align-items: center;
   color: #f4f7f9;
 }
 

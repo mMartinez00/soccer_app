@@ -8,7 +8,7 @@ import Loading from '@/components/Loading';
 export default function TeamFacts() {
     const router = useRouter();
     const { query } = router;
-    const { facts, isLoading, isValidating, isError } = useFacts(query.teamID);
+    const { facts, isLoading, isError } = useFacts(query.teamID);
 
     if (isLoading)
         return (

@@ -4,7 +4,13 @@
     margin: 1rem 0;
 }
 
-.Team-Statistics_List {
+.Team__Statistics:has(.Loader) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Team-Statistics__List {
     width: 100%;
     height: 100%;
 }
