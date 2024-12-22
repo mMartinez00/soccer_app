@@ -20,35 +20,53 @@ export default function PlayerProfile({ player, position }) {
                 </div>
                 <div className="Player-Profile__Info">
                     <p className="Player-Profile__Full-Name">
-                        Full Name: {player?.firstname} {player?.lastname}
+                        Full Name:{' '}
+                        <strong>
+                            {player?.firstname} {player?.lastname}
+                        </strong>
                     </p>
                     <p className="Player-Profile__DOB">
                         Date of Birth:{' '}
-                        {new Date(player?.birth.date).toLocaleDateString()} {''}{' '}
-                        {`(age ${player?.age})`}
+                        <strong>
+                            {new Date(player?.birth.date).toLocaleDateString()}{' '}
+                            {''} {`(age ${player?.age})`}
+                        </strong>
                     </p>
                     <p className="Player-Profile__POB">
                         Place of Birth:{' '}
-                        {player.birth.place ? `${player.birth.place},` : 'N/A,'}{' '}
-                        {player?.birth.country}
+                        <strong>
+                            {player.birth.place
+                                ? `${player.birth.place},`
+                                : 'N/A,'}{' '}
+                            {player?.birth.country}
+                        </strong>
                     </p>
                     <p className="Player-Profile__Nationality">
-                        Nationality: {player && player.nationality}
+                        Nationality:{' '}
+                        <strong> {player && player.nationality}</strong>
                     </p>
                     <p className="Player-Profile__Height">
-                        Height: {player?.height}{' '}
-                        {player.height
-                            ? `(${cmToFeet(player?.height)})`
-                            : 'N/A'}
+                        Height:{' '}
+                        <strong>
+                            {' '}
+                            {player?.height}{' '}
+                            {player.height
+                                ? `(${cmToFeet(player?.height)})`
+                                : 'N/A'}
+                        </strong>
                     </p>
                     <p className="Player-Profile__Weight">
-                        Weight: {player?.weight}{' '}
-                        {player.weight
-                            ? `(${kgToPounds(player?.weight)})`
-                            : 'N/A'}
+                        Weight:{' '}
+                        <strong>
+                            {' '}
+                            {player?.weight}{' '}
+                            {player.weight
+                                ? `(${kgToPounds(player?.weight)})`
+                                : 'N/A'}
+                        </strong>
                     </p>
                     <p className="Player-Profile__Position">
-                        Position: {position}
+                        Position: <strong>{position}</strong>
                     </p>
                 </div>
             </div>
