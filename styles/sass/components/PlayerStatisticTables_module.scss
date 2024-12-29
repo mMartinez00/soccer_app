@@ -10,7 +10,7 @@
     height: 300px;
     position: relative;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: $border-radius;
     @include box-shadow(dark);
 }
 
