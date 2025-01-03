@@ -1,14 +1,14 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
+import { useKeenSlider } from 'keen-slider/react';
 import StatisticsTable from './StatisticsTable';
-import Button from '@/components/Button';
-import { statisticsButtons } from '../table';
+import TeamsTabs from './TeamsTabs';
+import StatisticsButtons from './StatisticsButtons';
 import { groupedByTeam } from '@/utils/utils';
 
 export default function PlayerStatistics({ statistics }) {
     const [currentStatistics, setCurrentStatistic] = useState('General');
     const [activeTab, setActiveTab] = useState(0);
     const [activeButton, setActiveButton] = useState(statisticsButtons[0]);
-    const sliderRef = useRef(null);
 
     const statisticsGroupedByTeam = groupedByTeam(statistics);
     const tables = Object.values(statisticsGroupedByTeam);
@@ -20,7 +20,6 @@ export default function PlayerStatistics({ statistics }) {
     };
 
     const handleTabClick = (index) => {
-        sliderRef.current.dataset.tablePos = index + 1;
         setActiveTab(index);
     };
 
@@ -28,34 +27,10 @@ export default function PlayerStatistics({ statistics }) {
         <div className="Player-Statistics">
             <div className="Player-Statistics__Container">
                 <div className="Player-Statistics__Tabs">
-                    {teams.map((team, index) => (
-                        <Button
-                            key={team}
-                            index={index}
-                            handleClick={() => handleTabClick(index)}
-                            className={`Button Button-Tab ${
-                                activeTab === index ? 'Active' : ''
-                            }`}
-                        >
-                            {team}
-                        </Button>
-                    ))}
+                    <TeamsTabs teams={teams} />
                 </div>
                 <div className="Player-Statistics__Buttons">
-                    {statisticsButtons.map((button, index) => {
-                        return (
-                            <Button
-                                key={button}
-                                index={index}
-                                handleClick={() => handleButtonCLick(button)}
-                                className={`Button Button-Statistics ${
-                                    activeButton === button ? 'Active' : ''
-                                }`}
-                            >
-                                {button}
-                            </Button>
-                        );
-                    })}
+                    <StatisticsButtons />
                 </div>
                 <div className="Player-Statistics__Tables">
                     <div
