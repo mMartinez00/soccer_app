@@ -8,15 +8,15 @@ import { groupedByTeam } from '@/utils/utils';
 export default function PlayerStatistics({ statistics }) {
     const [currentStatistics, setCurrentStatistic] = useState('General');
     const [activeTab, setActiveTab] = useState(0);
-    // const [activeButton, setActiveButton] = useState(statisticsButtons[0]);
+    const [activeButton, setActiveButton] = useState(0);
 
     const statisticsGroupedByTeam = groupedByTeam(statistics);
     const tables = Object.values(statisticsGroupedByTeam);
     const teams = Object.keys(statisticsGroupedByTeam);
 
-    const handleButtonCLick = (button) => {
+    const handleButtonCLick = (button, index) => {
         setCurrentStatistic(button);
-        setActiveButton(button);
+        setActiveButton(index);
     };
 
     const handleTabClick = (index) => {
@@ -34,7 +34,10 @@ export default function PlayerStatistics({ statistics }) {
                     />
                 </div>
                 <div className="Player-Statistics__Buttons">
-                    <StatisticsButtons />
+                    <StatisticsButtons
+                        handleButtonCLick={handleButtonCLick}
+                        activeButton={activeButton}
+                    />
                 </div>
                 <div className="Player-Statistics__Tables">
                     <div
