@@ -647,6 +647,10 @@ tbody tr td {
   margin: 0;
 }
 
+.Tabs {
+  height: 100%;
+}
+
 .Button-Tab {
   height: 100%;
 }
