@@ -1,33 +1,26 @@
 import React from 'react';
 import { table } from '../table';
 
-export default function TableHeaders({ headers }) {
-    const tableHeaders = function () {
-        if (headers === 'General') {
-            return table.General.headers.map((header) => {
-                return <th key={header}>{header}</th>;
-            });
-        }
-
-        if (headers === 'Attacking') {
-            return table.Attacking.headers.map((header) => {
-                return <th key={header}>{header}</th>;
-            });
-        }
-
-        if (headers === 'Defending') {
-            return table.Defending.headers.map((header) => {
-                return <th key={header}>{header}</th>;
-            });
-        }
-    };
+export default function TableHeaders({ currentStatistics }) {
+    const headers =
+        currentStatistics === 'General'
+            ? table.General.headers
+            : currentStatistics === 'Attacking'
+            ? table.Attacking.headers
+            : table.Defending.headers;
 
     return (
         <>
             <thead>
                 <tr>
                     <th>League</th>
-                    {tableHeaders()}
+                    {headers.map((header) => {
+                        return (
+                            <>
+                                <th key={header}>{header}</th>
+                            </>
+                        );
+                    })}
                 </tr>
             </thead>
         </>

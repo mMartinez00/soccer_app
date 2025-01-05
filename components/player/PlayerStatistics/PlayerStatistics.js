@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
-import StatisticsTable from './StatisticsTable';
+import StatisticsTables from './StatisticsTables';
 import TeamsTabs from './TeamsTabs';
 import StatisticsButtons from './StatisticsButtons';
 import { groupedByTeam } from '@/utils/utils';
@@ -42,19 +42,13 @@ export default function PlayerStatistics({ statistics }) {
                 <div className="Player-Statistics__Tables">
                     <div
                         className="Player-Statistics__Slider"
-                        data-table-pos="1"
+                        data-table-pos="0"
                     >
-                        {tables.map((row, index) => {
-                            const teamName = row[0].team.name;
-                            return (
-                                <StatisticsTable
-                                    key={teamName}
-                                    index={index + 1}
-                                    tableRows={row}
-                                    tableHeaders={currentStatistics}
-                                />
-                            );
-                        })}
+                        {/* {console.log(tables)} */}
+                        <StatisticsTables
+                            tables={tables}
+                            currentStatistics={currentStatistics}
+                        />
                     </div>
                 </div>
             </div>
