@@ -1,14 +1,13 @@
 import React from 'react';
-import { table } from '../table';
+import { generalHeaders, attackingHeaders, defendingHeaders } from '../table';
 
 export default function TableHeaders({ currentStatistics }) {
     const headers =
         currentStatistics === 'General'
-            ? table.General.headers
+            ? generalHeaders
             : currentStatistics === 'Attacking'
-            ? table.Attacking.headers
-            : table.Defending.headers;
-
+            ? attackingHeaders
+            : defendingHeaders;
     return (
         <>
             <thead>

@@ -1,56 +1,56 @@
-const table = {
-    General: {
-        headers: [
-            'Rating',
-            'Games',
-            'Games Started',
-            'Minutes',
-            'Fouls Commited',
-            'Fouls Drawn',
-            'Total Passes',
-            'Key Passes',
-            'Subbed In',
-            'Subbed Out',
-        ],
+const generalHeaders = [
+    'Rating',
+    'Games',
+    'Games Started',
+    'Minutes',
+    'Fouls Commited',
+    'Fouls Drawn',
+    'Total Passes',
+    'Key Passes',
+    'Subbed In',
+    'Subbed Out',
+];
 
-        Objects: ['games', 'fouls', 'passes', 'substitutes'],
-    },
+const attackingHeaders = [
+    'Goals',
+    'Assists',
+    'Shots',
+    'Shots on Target',
+    'Attempted Dribbles',
+    'Successful Dribbles',
+    'Penalties Scored',
+    'Penalties Won',
+];
 
-    Attacking: {
-        headers: [
-            'Goals',
-            'Assists',
-            'Shots',
-            'Shots on Target',
-            'Attempted Dribbles',
-            'Successful Dribbles',
-            'Penalties Scored',
-            'Penalties Won',
-        ],
+const defendingHeaders = [
+    'Tackles',
+    'Blocks',
+    'Interceptions',
+    'Yellow Card',
+    'Red Card',
+    'Total Duels',
+    'Duels Won',
+    'Dribble Past',
+    'Goals Saved',
+    'Goals Conceded',
+    'Penalties Saved',
+    'Penalties Commited',
+];
 
-        Objects: ['goals', 'shots', 'dribbles', 'penalty'],
-    },
+const tableData = {
+    general: ['games', 'fouls', 'passes', 'substitutes'],
 
-    Defending: {
-        headers: [
-            'Tackles',
-            'Blocks',
-            'Interceptions',
-            'Yellow Card',
-            'Red Card',
-            'Total Duels',
-            'Duels Won',
-            'Dribble Past',
-            'Goals Saved',
-            'Goals Conceded',
-            'Penalties Saved',
-            'Penalties Commited',
-        ],
+    attack: ['goals', 'shots', 'dribbles', 'penalty'],
 
-        Objects: ['tackles', 'cards', 'duels', 'dribbles', 'penalty', 'goals'],
-    },
+    defending: ['tackles', 'cards', 'duels', 'dribbles', 'penalty', 'goals'],
 };
 
 const statisticsButtons = ['General', 'Attacking', 'Defending'];
 
-export { table, statisticsButtons };
+export {
+    tableData,
+    statisticsButtons,
+    generalHeaders,
+    attackingHeaders,
+    defendingHeaders,
+};

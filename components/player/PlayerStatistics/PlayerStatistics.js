@@ -44,7 +44,6 @@ export default function PlayerStatistics({ statistics }) {
                         className="Player-Statistics__Slider"
                         data-table-pos="0"
                     >
-                        {/* {console.log(tables)} */}
                         <StatisticsTables
                             tables={tables}
                             currentStatistics={currentStatistics}
