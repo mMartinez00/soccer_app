@@ -5,11 +5,9 @@ import TableBody from './TableBody';
 export default function StatisticsTables({ tables, currentStatistics }) {
     return (
         <>
-            {tables.map((rows, index) => {
+            {tables.map((rows) => {
                 return (
-                    <table
-                        className={`Statistics-Table Statistics-Table--${index}`}
-                    >
+                    <table className="Statistics-Table keen-slider__slide">
                         <TableHeaders currentStatistics={currentStatistics} />
                         <TableBody
                             rows={rows}

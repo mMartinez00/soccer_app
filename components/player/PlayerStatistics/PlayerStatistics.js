@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 import StatisticsTables from './StatisticsTables';
 import TeamsTabs from './TeamsTabs';
 import StatisticsButtons from './StatisticsButtons';
 import { groupedByTeam } from '@/utils/utils';
+import 'keen-slider/keen-slider.min.css';
 
 export default function PlayerStatistics({ statistics }) {
     const [currentStatistics, setCurrentStatistic] = useState('General');
@@ -13,6 +14,12 @@ export default function PlayerStatistics({ statistics }) {
     const statisticsGroupedByTeam = groupedByTeam(statistics);
     const tables = Object.values(statisticsGroupedByTeam);
     const teams = Object.keys(statisticsGroupedByTeam);
+    const [sliderRef, instanceRef] = useKeenSlider({
+        initial: 0,
+        slideChanged(slider) {
+            setActiveTab(slider.track.details.rel);
+        },
+    });
 
     const handleButtonCLick = (button, index) => {
         setCurrentStatistic(button);
@@ -21,6 +28,7 @@ export default function PlayerStatistics({ statistics }) {
 
     const handleTabClick = (index) => {
         setActiveTab(index);
+        instanceRef.current?.moveToIdx(index);
     };
 
     return (
@@ -41,8 +49,8 @@ export default function PlayerStatistics({ statistics }) {
                 </div>
                 <div className="Player-Statistics__Tables">
                     <div
-                        className="Player-Statistics__Slider"
-                        data-table-pos="0"
+                        className="Player-Statistics__Slider keen-slider"
+                        ref={sliderRef}
                     >
                         <StatisticsTables
                             tables={tables}
