@@ -9,23 +9,24 @@ import MatchDate from '@/components/MatchDate';
 import { groupMatchesByLeague } from '@/utils/utils';
 
 export default function Home() {
-    const [isActive, setIsActive] = useState(false);
-    const { data: all, isLoading: isLoading1 } = useLive();
-    const { data: fixtures, isLoading: isLoading2 } = useFixtures();
-    const live = useMemo(
-        () => groupMatchesByLeague(all?.response),
-        [all?.response]
+    const [showLive, setShowLive] = useState(false);
+    const { data: liveData, isLoading: loadingLive } = useLive();
+    const { data: fixturesData, isLoading: loadingAll } = useFixtures();
+    const liveMatches = useMemo(
+        () => groupMatchesByLeague(liveData?.response),
+        [liveData?.response]
     );
-    const allFix = useMemo(
-        () => groupMatchesByLeague(fixtures?.response),
-        [fixtures?.response]
+    const allMatches = useMemo(
+        () => groupMatchesByLeague(fixturesData?.response),
+        [fixturesData?.response]
     );
 
     const handleClick = () => {
-        setIsActive(!isActive);
+        setShowLive((prev) => !prev);
     };
 
-    const displayedMatches = isActive ? live : allFix;
+    const displayedMatches = showLive ? liveMatches : allMatches;
+    const isLoading = loadingLive || loadingAll;
 
     return (
         <>
@@ -48,14 +49,14 @@ export default function Home() {
                         <Button
                             handleClick={() => handleClick()}
                             className={`Button Button-Toggle${
-                                isActive ? ' Active' : ''
+                                showLive ? ' Active' : ''
                             }`}
                         >
                             Live
                         </Button>
                         <MatchDate />
                     </div>
-                    {isLoading1 && isLoading2 ? (
+                    {isLoading ? (
                         <Loading />
                     ) : (
                         <MatchList matches={displayedMatches} />

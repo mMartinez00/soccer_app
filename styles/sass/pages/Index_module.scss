@@ -5,30 +5,30 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
 
-.Matches__Container {
-    width: 90%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+    &__Container {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-.Matches__Controls {
-    width: 100%;
-    height: 4.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    &__Controls {
+        width: 100%;
+        height: 4.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__List {
+        width: 100%;
+    }
 }
 
 .Match__Date .Date {
     font-size: 3em;
     color: $light-color;
-}
-
-.Matches__List {
-    width: 100%;
 }
