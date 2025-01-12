@@ -1,28 +1,23 @@
 .Player-Statistics__Tables {
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .Player-Statistics__Slider {
     width: 100%;
     height: 300px;
-    position: relative;
-    overflow: hidden;
     border-radius: $border-radius;
     @include box-shadow(dark);
 }
 
-table[class^='Statistics'] {
+.Statistics-Table {
     table-layout: fixed;
     width: 100%;
     height: 100%;
-    position: absolute;
     border-collapse: collapse;
-    top: 0;
-    z-index: 10;
-    transition: left 0.6s ease-out;
+    font-size: 14px;
 }
 
 .Statistics-Table thead tr {
@@ -30,31 +25,53 @@ table[class^='Statistics'] {
     color: $white-font-color;
 }
 
+.Statistics-Table thead th {
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 6px;
+    text-align: center;
+}
 .Statistics-Table th {
     padding: 6px;
-    font-size: 14px;
+    border: 1px solid transparent;
 }
 
 .Statistics-Table th:nth-child(1) {
-    width: 20em;
+    width: 25em;
+    text-align: left;
+    padding-left: 1.5rem;
 }
 
 .Statistics-Table th:not(:first-child) {
-    width: 30%;
+    width: auto;
 }
 
-tbody tr {
+.Statistics-Table tbody tr {
     color: $dark-color;
 }
 
-tbody tr:nth-child(odd) {
+.Statistics-Table tbody tr:nth-child(odd) {
     background-color: $odd-table-row;
 }
 
-tbody tr:nth-child(even) {
+.Statistics-Table tbody tr:nth-child(even) {
     background-color: $even-table-row;
 }
 
-tbody tr td {
+.Statistics-Table tbody td {
     text-align: center;
+    padding: 6px;
+}
+
+@media (max-width: 768px) {
+    .Statistics-Table th,
+    .Statistics-Table td {
+        font-size: 10px;
+        padding: 4px;
+    }
+
+    .Statistics-Table th:nth-child(1) {
+        width: 20em;
+    }
 }
