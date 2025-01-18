@@ -81,7 +81,7 @@ main {
   height: 100%;
 }
 
-.Competition {
+.LeagueCard {
   width: 100%;
   border-radius: 8px;
   margin: 1.8rem 0;
@@ -90,31 +90,31 @@ main {
   transition: opacity 0.6s ease-out;
   opacity: 0;
 }
-
-.Competition.Visible {
+.LeagueCard.Visible {
   opacity: 1;
 }
 
-.Competition__League {
+.LeagueCard__Header {
   width: 100%;
   height: 3.5rem;
   background-color: #363535;
   display: flex;
   align-items: center;
   padding: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
-
-.Competition__Matches .Match__Container:nth-child(odd) {
-  background-color: #f4f7f9;
-}
-
-.Competition__Matches .Match__Container:nth-child(even) {
-  background-color: #b9b9b9;
-}
-
-.Competition__Link {
+.LeagueCard__Header-Link {
   color: #f4f7f9;
   text-decoration: none;
+  font-weight: bold;
+}
+
+.LeagueCard__Matches .Match__Container:nth-child(odd) {
+  background-color: #f4f7f9;
+}
+.LeagueCard__Matches .Match__Container:nth-child(even) {
+  background-color: #b9b9b9;
 }
 
 .Team__Statistics {

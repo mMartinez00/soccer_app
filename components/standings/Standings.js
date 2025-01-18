@@ -31,15 +31,17 @@ export default function Standings() {
         );
     }
 
+    const { league } = data.response[0];
+
     return (
         <div className="Standings__Container">
             <h1 className="Standings__League-Name">
-                {data.response[0].league.country} -{' '}
-                {data.response[0].league.name} {data.response[0].league.season}{' '}
-                - {data.response[0].league.season + 1}
+                {league.country} - {league.name} {league.season} -{' '}
+                {league.season + 1}
             </h1>
             <div className="Standings__Tables">
-                {data.response[0].league.standings.map((table) => {
+                {league.standings.map((table) => {
+                    console.log(table);
                     return <StandingsTable key={table.group} table={table} />;
                 })}
             </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import Competition from './Competition';
+import LeagueCard from './LeagueCard';
 
 export default function MatchList({ matches }) {
     const ref = useRef([]);
@@ -28,7 +28,7 @@ export default function MatchList({ matches }) {
         <section className="Matches__List">
             {matches &&
                 Object.entries(matches).map(([league, matches], index) => (
-                    <Competition
+                    <LeagueCard
                         key={league}
                         league={matches[0].league}
                         matches={matches}

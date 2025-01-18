@@ -27,14 +27,14 @@ export default function Match({ match }) {
                             alt={`${team.name} logo`}
                             className={`Match__Team-Logo Match__Team-Logo--${type}`}
                         />
-                    )}
-                    {team.name}
+                    )}{' '}
+                    {team.name}{' '}
                     {type === 'Home' && (
                         <Image
                             src={team.logo}
                             width={25}
                             height={25}
-                            alt="logo"
+                            alt={`${team.name} logo`}
                             className={`Match__Team-Logo Match__Team-Logo--${type}`}
                         />
                     )}
