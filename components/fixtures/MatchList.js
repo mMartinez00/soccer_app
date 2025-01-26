@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, memo } from 'react';
 import LeagueCard from './LeagueCard';
 
-export default function MatchList({ matches }) {
+const MatchList = memo(function MatchList({ matches }) {
     const ref = useRef([]);
     const options = {
         root: null,
@@ -41,4 +41,6 @@ export default function MatchList({ matches }) {
                 ))}
         </section>
     );
-}
+});
+
+export default MatchList;

@@ -6,10 +6,12 @@ import MatchList from '@/components/fixtures/MatchList';
 import Loading from '@/components/Loading';
 import Button from '@/components/Button';
 import MatchDate from '@/components/MatchDate';
+import InputText from '@/components/InputText';
 import { groupMatchesByLeague } from '@/utils/utils';
 
 export default function Home() {
     const [showLive, setShowLive] = useState(false);
+    const [inputValue, setInputValue] = useState('');
     const { data: liveData, isLoading: loadingLive } = useLive();
     const { data: fixturesData, isLoading: loadingAll } = useFixtures();
     const liveMatches = useMemo(
@@ -21,9 +23,9 @@ export default function Home() {
         [fixturesData?.response]
     );
 
-    const handleClick = () => {
-        setShowLive((prev) => !prev);
-    };
+    const handleClick = () => setShowLive((prev) => !prev);
+
+    const handleInputChange = (e) => setInputValue(e.target.value);
 
     const displayedMatches = showLive ? liveMatches : allMatches;
     const isLoading = loadingLive || loadingAll;
@@ -54,6 +56,10 @@ export default function Home() {
                         >
                             Live
                         </Button>
+                        <InputText
+                            inputValue={inputValue}
+                            handleInputChange={handleInputChange}
+                        />
                         <MatchDate />
                     </div>
                     {isLoading ? (
