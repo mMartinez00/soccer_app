@@ -24,11 +24,42 @@ export default function Home() {
     );
 
     const handleClick = () => setShowLive((prev) => !prev);
-
     const handleInputChange = (e) => setInputValue(e.target.value);
-
-    const displayedMatches = showLive ? liveMatches : allMatches;
     const isLoading = loadingLive || loadingAll;
+
+    const filtered = function filterByValue(inputValue, matches) {
+        if (!inputValue) return matches;
+
+        const filteredMatches = {};
+
+        Object.entries(matches).forEach(([leagueId, matches]) => {
+            const filteredLeagueMatches = matches.filter((match) => {
+                const league = match.league.name.toUpperCase();
+                const country = match.league.country.toUpperCase();
+                const homeTeam = match.teams.home.name.toUpperCase();
+                const awayTeam = match.teams.away.name.toUpperCase();
+
+                return (
+                    league.includes(inputValue.toUpperCase()) ||
+                    country.includes(inputValue.toUpperCase()) ||
+                    homeTeam.includes(inputValue.toUpperCase()) ||
+                    awayTeam.includes(inputValue.toUpperCase())
+                );
+            });
+
+            if (filteredLeagueMatches.length > 0) {
+                filteredMatches[leagueId] = filteredLeagueMatches;
+            }
+        });
+
+        return filteredMatches;
+    };
+
+    const displayedMatches = useMemo(() => {
+        const matches = showLive ? liveMatches : allMatches;
+
+        return filtered(inputValue, matches);
+    });
 
     return (
         <>
