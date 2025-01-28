@@ -25,7 +25,7 @@ main {
   align-items: center;
 }
 .Matches__Container {
-  width: 90%;
+  width: 85%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -35,6 +35,7 @@ main {
 .Matches__Controls {
   width: 100%;
   height: 4.5rem;
+  margin: 1rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,7 +45,7 @@ main {
 }
 
 .Match__Date .Date {
-  font-size: 3em;
+  font-size: 2em;
   color: #f4f7f9;
 }
 
@@ -680,6 +681,32 @@ main {
 
 .Match__Score {
   margin: 0 8px;
+}
+
+.Input {
+  width: 100%;
+  max-width: 600px;
+  min-width: 150px;
+  height: 2rem;
+  border: none;
+  border-radius: 8px;
+  padding: 6px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  color: #363535;
+  outline: none;
+  background-color: #f4f7f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.Input::placeholder {
+  color: #363535;
+  opacity: 0.5;
+  font-style: italic;
+}
+.Input:focus {
+  border-color: #363535;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 /*# sourceMappingURL=main.css.map */

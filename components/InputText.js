@@ -5,6 +5,7 @@ export default function InputText({ inputValue, handleInputChange }) {
         <>
             <input
                 type="text"
+                className="Input"
                 onChange={handleInputChange}
                 value={inputValue}
                 placeholder="Search for matches"

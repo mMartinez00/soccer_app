@@ -27,7 +27,7 @@ export default function Home() {
     const handleClick = () => setShowLive((prev) => !prev);
     const debounceHandleInputChange = debounce((value) => {
         setDebouncedInput(value);
-    }, 300);
+    }, 400);
 
     const handleInputChange = (e) => {
         const value = e.target.value;
