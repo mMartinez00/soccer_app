@@ -7,11 +7,12 @@ import Loading from '@/components/Loading';
 import Button from '@/components/Button';
 import MatchDate from '@/components/MatchDate';
 import InputText from '@/components/InputText';
-import { groupMatchesByLeague } from '@/utils/utils';
+import { groupMatchesByLeague, debounce, filtered } from '@/utils/utils';
 
 export default function Home() {
     const [showLive, setShowLive] = useState(false);
     const [inputValue, setInputValue] = useState('');
+    const [debouncedInput, setDebouncedInput] = useState('');
     const { data: liveData, isLoading: loadingLive } = useLive();
     const { data: fixturesData, isLoading: loadingAll } = useFixtures();
     const liveMatches = useMemo(
@@ -24,42 +25,22 @@ export default function Home() {
     );
 
     const handleClick = () => setShowLive((prev) => !prev);
-    const handleInputChange = (e) => setInputValue(e.target.value);
-    const isLoading = loadingLive || loadingAll;
+    const debounceHandleInputChange = debounce((value) => {
+        setDebouncedInput(value);
+    }, 300);
 
-    const filtered = function filterByValue(inputValue, matches) {
-        if (!inputValue) return matches;
-
-        const filteredMatches = {};
-
-        Object.entries(matches).forEach(([leagueId, matches]) => {
-            const filteredLeagueMatches = matches.filter((match) => {
-                const league = match.league.name.toUpperCase();
-                const country = match.league.country.toUpperCase();
-                const homeTeam = match.teams.home.name.toUpperCase();
-                const awayTeam = match.teams.away.name.toUpperCase();
-
-                return (
-                    league.includes(inputValue.toUpperCase()) ||
-                    country.includes(inputValue.toUpperCase()) ||
-                    homeTeam.includes(inputValue.toUpperCase()) ||
-                    awayTeam.includes(inputValue.toUpperCase())
-                );
-            });
-
-            if (filteredLeagueMatches.length > 0) {
-                filteredMatches[leagueId] = filteredLeagueMatches;
-            }
-        });
-
-        return filteredMatches;
+    const handleInputChange = (e) => {
+        const value = e.target.value;
+        setInputValue(value);
+        debounceHandleInputChange(value);
     };
+    const isLoading = loadingLive || loadingAll;
 
     const displayedMatches = useMemo(() => {
         const matches = showLive ? liveMatches : allMatches;
 
-        return filtered(inputValue, matches);
-    });
+        return filtered(debouncedInput, matches);
+    }, [showLive, liveMatches, allMatches, debouncedInput]);
 
     return (
         <>

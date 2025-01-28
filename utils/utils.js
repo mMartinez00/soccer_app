@@ -97,3 +97,40 @@ export function filterObj(stat, typeOfData) {
 
     return filtered;
 }
+
+export function debounce(fn, delay) {
+    let timeoutId;
+
+    return (...args) => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => fn(...args), delay);
+    };
+}
+
+export const filtered = function filterByValue(input, matches) {
+    if (!input) return matches;
+
+    const filteredMatches = {};
+
+    Object.entries(matches).forEach(([leagueId, matches]) => {
+        const filteredLeagueMatches = matches.filter((match) => {
+            const league = match.league.name.toUpperCase();
+            const country = match.league.country.toUpperCase();
+            const homeTeam = match.teams.home.name.toUpperCase();
+            const awayTeam = match.teams.away.name.toUpperCase();
+
+            return (
+                league.includes(input.toUpperCase()) ||
+                country.includes(input.toUpperCase()) ||
+                homeTeam.includes(input.toUpperCase()) ||
+                awayTeam.includes(input.toUpperCase())
+            );
+        });
+
+        if (filteredLeagueMatches.length > 0) {
+            filteredMatches[leagueId] = filteredLeagueMatches;
+        }
+    });
+
+    return filteredMatches;
+};
