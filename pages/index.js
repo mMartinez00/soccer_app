@@ -66,7 +66,8 @@ export default function Home() {
                                 showLive ? ' Active' : ''
                             }`}
                         >
-                            Live ({liveData.response.length})
+                            Live{' '}
+                            {liveData ? `(${liveData.response.length})` : ''}
                         </Button>
                         <InputText
                             inputValue={inputValue}
