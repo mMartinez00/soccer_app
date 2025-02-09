@@ -9,8 +9,6 @@ export default function App({ Component, pageProps }) {
 
     const { refreshInterval, mutate, cache, ...restConfig } = useSWRConfig();
 
-    // console.log(cache);
-
     return (
         <SWRConfig value={options}>
             <Layout>
