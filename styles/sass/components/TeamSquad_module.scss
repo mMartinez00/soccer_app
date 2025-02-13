@@ -15,29 +15,45 @@
 }
 
 .Squad {
+    border: red 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 4px;
     width: 100%;
     height: 100%;
     color: $white-font-color;
 }
 
 .Squad__Position-Container {
+    border: 1px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
+    margin: 4px;
 }
 
 .Squad__Position-Heading {
+    border: 1px solid orange;
     font-size: 2.4em;
     color: $light-color;
+    margin: 4px;
 }
 
 .Squad__Players {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+    border: 1px orange solid;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include screen-size(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include screen-size(phone) {
+        grid-template-columns: 1fr;
+    }
+    margin: 4px;
 }
 
 .Player-Card {

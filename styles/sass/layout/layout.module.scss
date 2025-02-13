@@ -1,65 +1,16 @@
-// * {
-//     box-sizing: border-box;
-//     margin: 0;
-//     padding: 0;
-// }
-
-// html {
-//     background-color: $base-color;
-//     font-family: $primary-font;
-//     font-weight: 200;
-// }
-
-// main {
-//     width: 100%;
-//     height: 100%;
-// }
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html,
-body {
+html {
     background-color: $base-color;
     font-family: $primary-font;
     font-weight: 200;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden; // Prevents horizontal scrolling on small screens
 }
 
 main {
     width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-// Responsive container for content
-// .container {
-//     width: 100%;
-//     max-width: 1200px; // Prevents content from being too wide on large screens
-//     padding: 1rem;
-// }
-
-// Responsive adjustments for tablets and smartphones
-@media (max-width: 768px) {
-    // Tablets
-    .container {
-        padding: 0.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    // Smartphones
-    html {
-        font-size: 14px; // Slightly smaller text for better readability
-    }
-
-    .container {
-        padding: 0.25rem;
-    }
+    height: 100%;
 }
