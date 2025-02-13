@@ -48,10 +48,10 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     @include screen-size(tablet) {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
     @include screen-size(phone) {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
     margin: 4px;
 }
