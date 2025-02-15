@@ -51,7 +51,7 @@
         grid-template-columns: repeat(3, 1fr);
     }
     @include screen-size(phone) {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
     margin: 4px;
 }

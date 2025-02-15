@@ -41,7 +41,6 @@ export default function Standings() {
             </h1>
             <div className="Standings__Tables">
                 {league.standings.map((table) => {
-                    console.log(table);
                     return <StandingsTable key={table.group} table={table} />;
                 })}
             </div>
