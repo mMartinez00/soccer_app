@@ -46,22 +46,23 @@
 .Squad__Players {
     border: 1px orange solid;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 8px;
     @include screen-size(tablet) {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(150px, 1fr));
     }
     @include screen-size(phone) {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
     }
     margin: 4px;
 }
 
 .Player-Card {
-    width: $card-width;
-    height: $card-height;
+    width: 100%;
+    max-width: $card-width;
+    height: auto;
     border-radius: $border-radius;
     background-color: $light-color;
-    margin: 1rem;
     transition: all 0.6s ease;
     @include box-shadow(medium);
 }
