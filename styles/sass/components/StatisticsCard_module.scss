@@ -1,4 +1,5 @@
 .Statistics-Card {
+    max-width: 100%;
     width: 160px;
     height: 160px;
     border: $white-font-color 1px solid;
@@ -10,15 +11,18 @@
     align-items: center;
     flex-direction: column;
     @include box-shadow(medium);
+    border: 1px solid green;
 }
 
 .Statistics-Card__Title {
-    margin-bottom: 8px;
-    font-size: 1.2em;
+    text-align: center;
+    font-size: 1em;
+    padding: 0.5rem;
 }
 
 .Statistics-Card__Content {
-    font-size: 3rem;
+    font-size: 2.8rem;
+    padding: 0.5rem;
 }
 
 .Red__Card,

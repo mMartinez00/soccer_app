@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 import StatisticsTables from './StatisticsTables';
 import TeamsTabs from './TeamsTabs';
