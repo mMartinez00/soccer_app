@@ -57,6 +57,11 @@ main {
     justify-content: flex-start;
   }
 }
+@media (max-width: 768px) {
+  .Matches__Controls {
+    padding: 0 1rem;
+  }
+}
 .Matches__List {
   width: 100%;
 }

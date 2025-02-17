@@ -36,6 +36,10 @@
         @include screen-size(laptop) {
             justify-content: flex-start;
         }
+
+        @include screen-size(tablet) {
+            padding: 0 1rem;
+        }
     }
 
     &__List {
