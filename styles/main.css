@@ -32,20 +32,37 @@ main {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .Matches__Container {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .Matches__Container {
+    width: 100%;
+  }
+}
 .Matches__Controls {
   width: 100%;
-  height: 4.5rem;
+  height: auto;
   margin: 1rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+@media (max-width: 1024px) {
+  .Matches__Controls {
+    justify-content: flex-start;
+  }
 }
 .Matches__List {
   width: 100%;
 }
 
 .Match__Date .Date {
-  font-size: 2em;
+  font-size: clamp(1.2rem, 3vw, 2rem);
   color: #f4f7f9;
 }
 
@@ -677,7 +694,7 @@ main {
 }
 
 .Button {
-  padding: 6px 16px;
+  padding: 8px 18px;
   font-size: 1rem;
   border-radius: 6px;
   border: none;
@@ -696,6 +713,20 @@ main {
 }
 .Button.Toggle {
   margin: 0;
+}
+@media (max-width: 768px) {
+  .Button {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .Button {
+    font-size: 12px;
+  }
+}
+
+.Matches__Controls .Button {
+  margin: 0 0.5rem 0 0;
 }
 
 .Tabs {
@@ -747,15 +778,13 @@ main {
 }
 
 .Input {
-  width: 100%;
-  max-width: 600px;
-  min-width: 150px;
+  width: clamp(150px, 50%, 600px);
   height: 2rem;
   border: none;
   border-radius: 8px;
   padding: 6px;
   font-family: inherit;
-  font-size: 16px;
+  font-size: clamp(0.8rem, 1vw, 1.4rem);
   font-weight: 500;
   color: #363535;
   outline: none;

@@ -12,12 +12,23 @@
 }
 
 @mixin screen-size($size) {
+    @if $size == phone {
+        @media (max-width: 480px) {
+            @content;
+        }
+    }
     @if $size == tablet {
         @media (max-width: 768px) {
             @content;
         }
-    } @else if $size == phone {
-        @media (max-width: 480px) {
+    }
+    @if $size == laptop {
+        @media (max-width: 1024px) {
+            @content;
+        }
+    }
+    @if $size == desktop {
+        @media (min-width: 1025px) {
             @content;
         }
     }

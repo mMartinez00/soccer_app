@@ -31,6 +31,18 @@
     &.Toggle {
         margin: 0;
     }
+
+    @include screen-size(tablet) {
+        font-size: 14px;
+    }
+
+    @include screen-size(phone) {
+        font-size: 12px;
+    }
+}
+
+.Matches__Controls .Button {
+    margin: 0 0.5rem 0 0;
 }
 
 .Tabs {
