@@ -3,7 +3,7 @@
 .LeagueCard {
     width: 100%;
     border-radius: $border-radius;
-    margin: 1.8rem 0;
+    margin: 1.8rem auto;
     overflow: hidden;
     @include box-shadow(dark);
     transition: opacity 0.6s ease-out;
@@ -12,11 +12,29 @@
     &.Visible {
         opacity: 1;
     }
+
+    &__Country-Flag,
+    &__Logo {
+        object-fit: contain;
+
+        @include screen-size(phone) {
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+
+    @include screen-size(tablet) {
+        width: 90%;
+    }
+
+    @include screen-size(phone) {
+        width: 100%;
+    }
 }
 
 .LeagueCard__Header {
     width: 100%;
-    height: 3.5rem;
+    height: auto;
     background-color: $dark-color;
     display: flex;
     align-items: center;
@@ -28,6 +46,10 @@
         color: $white-font-color;
         text-decoration: none;
         font-weight: bold;
+    }
+
+    &-Title {
+        font-size: clamp(1rem, 3vw, 2rem);
     }
 }
 
