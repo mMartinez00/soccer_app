@@ -1,6 +1,6 @@
 .Match__Container {
     width: 100%;
-    height: 4.2rem;
+    height: auto;
 }
 
 .Match__Row {
@@ -15,6 +15,7 @@
 .Match {
     width: 100%;
     height: 100%;
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,13 +24,43 @@
 .Match__Time {
     position: absolute;
     left: 10px;
+    font-size: clamp(0.8rem, 1.8vw, 1.2rem);
 }
 
-.Match__Team a {
-    color: #1e1e1e;
+.Match__Team--Link {
+    color: $dark-font-color;
     text-decoration: none;
+    font-weight: bold;
+}
+
+.Match__Team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Match__Team-Name {
+    font-size: clamp(0.8rem, 2vw, 1.5rem);
+    @include screen-size(phone) {
+        max-width: 100px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+.Match__Team-Logo {
+    object-fit: contain;
+
+    @include screen-size(phone) {
+        width: 1rem;
+        height: 1rem;
+    }
 }
 
 .Match__Score {
-    margin: 0 8px;
+    display: flex;
+    margin: 0 clamp(4px, 1vw, 12px);
+    font-size: clamp(1rem, 2vw, 1.8rem);
+    font-weight: bold;
 }

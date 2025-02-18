@@ -6,41 +6,39 @@ export default function Match({ match }) {
     const { fixture, teams, league, goals } = match;
 
     const renderTeam = (team, type) => (
-        <p className={`Match__Team Match__Team--${type}`}>
-            <Link
-                className="Match__Team--Link"
-                href={{
-                    pathname: `/team/${team.name}`,
-                    query: {
-                        teamID: `${team.id}`,
-                        leagueID: `${league.id}`,
-                        season: `${league.season}`,
-                    },
-                }}
-            >
-                <span className="Match__Team-Name">
-                    {type === 'Away' && (
-                        <Image
-                            src={team.logo}
-                            width={25}
-                            height={25}
-                            alt={`${team.name} logo`}
-                            className={`Match__Team-Logo Match__Team-Logo--${type}`}
-                        />
-                    )}{' '}
-                    {team.name}{' '}
-                    {type === 'Home' && (
-                        <Image
-                            src={team.logo}
-                            width={25}
-                            height={25}
-                            alt={`${team.name} logo`}
-                            className={`Match__Team-Logo Match__Team-Logo--${type}`}
-                        />
-                    )}
-                </span>
-            </Link>
-        </p>
+        <Link
+            className="Match__Team--Link"
+            href={{
+                pathname: `/team/${team.name}`,
+                query: {
+                    teamID: `${team.id}`,
+                    leagueID: `${league.id}`,
+                    season: `${league.season}`,
+                },
+            }}
+        >
+            <div className={`Match__Team Match__Team--${type}`}>
+                {type === 'Away' && (
+                    <Image
+                        src={team.logo}
+                        width={25}
+                        height={25}
+                        alt={`${team.name} logo`}
+                        className={`Match__Team-Logo Match__Team-Logo--${type}`}
+                    />
+                )}{' '}
+                <h4 className="Match__Team-Name">{team.name}</h4>{' '}
+                {type === 'Home' && (
+                    <Image
+                        src={team.logo}
+                        width={25}
+                        height={25}
+                        alt={`${team.name} logo`}
+                        className={`Match__Team-Logo Match__Team-Logo--${type}`}
+                    />
+                )}
+            </div>
+        </Link>
     );
 
     return (
@@ -54,9 +52,11 @@ export default function Match({ match }) {
                 </p>
                 <div className="Match">
                     {renderTeam(teams.home, 'Home')}
-                    <p className="Match__Score">
-                        {goals.home} - {goals.away}
-                    </p>
+                    <div className="Match__Score">
+                        <p className="Home__Score">{goals.home}</p>
+                        <p className="Divider">-</p>
+                        <p className="Away__Score">{goals.away}</p>
+                    </div>
                     {renderTeam(teams.away, 'Away')}
                 </div>
             </div>

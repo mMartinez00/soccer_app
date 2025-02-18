@@ -107,7 +107,7 @@ main {
 .LeagueCard {
   width: 100%;
   border-radius: 8px;
-  margin: 1.8rem auto;
+  margin: 1.2rem auto;
   overflow: hidden;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: opacity 0.6s ease-out;
@@ -770,7 +770,7 @@ main {
 
 .Match__Container {
   width: 100%;
-  height: 4.2rem;
+  height: auto;
 }
 
 .Match__Row {
@@ -785,6 +785,7 @@ main {
 .Match {
   width: 100%;
   height: 100%;
+  padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -793,15 +794,48 @@ main {
 .Match__Time {
   position: absolute;
   left: 10px;
+  font-size: clamp(0.8rem, 1.8vw, 1.2rem);
 }
 
-.Match__Team a {
-  color: #1e1e1e;
+.Match__Team--Link {
+  color: #363535;
   text-decoration: none;
+  font-weight: bold;
+}
+
+.Match__Team {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Match__Team-Name {
+  font-size: clamp(0.8rem, 2vw, 1.5rem);
+}
+@media (max-width: 480px) {
+  .Match__Team-Name {
+    max-width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.Match__Team-Logo {
+  object-fit: contain;
+}
+@media (max-width: 480px) {
+  .Match__Team-Logo {
+    width: 1rem;
+    height: 1rem;
+  }
 }
 
 .Match__Score {
-  margin: 0 8px;
+  display: flex;
+  margin: 0 clamp(4px, 1vw, 12px);
+  font-size: clamp(1rem, 2vw, 1.8rem);
+  font-weight: bold;
 }
 
 .Input {
