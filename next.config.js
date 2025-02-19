@@ -5,10 +5,9 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: '**',
+                hostname: 'media.api-sports.io',
             },
         ],
-        unoptimized: true,
     },
 };
 
