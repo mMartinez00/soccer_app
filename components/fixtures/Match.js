@@ -26,8 +26,8 @@ export default function Match({ match }) {
                         alt={`${team.name} logo`}
                         className={`Match__Team-Logo Match__Team-Logo--${type}`}
                     />
-                )}{' '}
-                <h4 className="Match__Team-Name">{team.name}</h4>{' '}
+                )}
+                <h4 className="Match__Team-Name">{team.name}</h4>
                 {type === 'Home' && (
                     <Image
                         src={team.logo}
@@ -41,15 +41,29 @@ export default function Match({ match }) {
         </Link>
     );
 
+    const renderTime = (time) => {
+        const status = time.status;
+        const date = time.date;
+
+        if (status.long === 'Not Started') {
+            return (
+                <time dateTime={date} className="Match__Time">
+                    {date.split('T')[1].split(':00+')[0]}
+                </time>
+            );
+        }
+
+        if (status.long === 'First Half' || status.long === 'Second Half') {
+            return <span className="Match__Time">{status.elapsed}'</span>;
+        }
+
+        return <span className="Match__Time">{status.short}</span>;
+    };
+
     return (
         <div className="Match__Container">
             <div className="Match__Row">
-                <p className="Match__Time">
-                    {fixture.status.long}{' '}
-                    {fixture.status.elapsed !== null
-                        ? fixture.status.elapsed + "'"
-                        : ''}
-                </p>
+                {renderTime(fixture)}
                 <div className="Match">
                     {renderTeam(teams.home, 'Home')}
                     <div className="Match__Score">
