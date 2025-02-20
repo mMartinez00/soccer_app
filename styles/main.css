@@ -227,9 +227,16 @@ main {
 }
 
 .Player-Profile__Container {
-  width: 90%;
-  margin: auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
+@media (max-width: 768px) {
+  .Player-Profile__Container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    justify-items: center;
+  }
 }
 
 .Player-Profile__Header {

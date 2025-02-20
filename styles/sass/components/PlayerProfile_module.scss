@@ -7,9 +7,15 @@
 }
 
 .Player-Profile__Container {
-    width: 90%;
-    margin: auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+
+    @include screen-size(tablet) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        justify-items: center;
+    }
 }
 
 .Player-Profile__Header {
