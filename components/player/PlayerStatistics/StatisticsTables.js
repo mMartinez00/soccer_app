@@ -7,13 +7,17 @@ export default function StatisticsTables({ tables, currentStatistics }) {
         <>
             {tables.map((rows) => {
                 return (
-                    <table className="Statistics-Table keen-slider__slide">
-                        <TableHeaders currentStatistics={currentStatistics} />
-                        <TableBody
-                            rows={rows}
-                            currentStatistics={currentStatistics}
-                        />
-                    </table>
+                    <div className="Statistics-Tables__Container keen-slider__slide">
+                        <table className="Statistics-Table">
+                            <TableHeaders
+                                currentStatistics={currentStatistics}
+                            />
+                            <TableBody
+                                rows={rows}
+                                currentStatistics={currentStatistics}
+                            />
+                        </table>
+                    </div>
                 );
             })}
         </>

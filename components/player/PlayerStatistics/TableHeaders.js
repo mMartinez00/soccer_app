@@ -8,6 +8,7 @@ export default function TableHeaders({ currentStatistics }) {
             : currentStatistics === 'Attacking'
             ? attackingHeaders
             : defendingHeaders;
+
     return (
         <>
             <thead>

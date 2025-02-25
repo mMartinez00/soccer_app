@@ -5,9 +5,13 @@
 }
 
 .Player-Statistics__Container {
-    width: 95%;
+    width: 90%;
     height: 100%;
     margin: auto;
+
+    @include screen-size(tablet) {
+        width: 100%;
+    }
 }
 
 .Player-Statistics__Tabs {
