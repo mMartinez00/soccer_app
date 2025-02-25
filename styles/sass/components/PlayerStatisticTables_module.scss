@@ -26,6 +26,7 @@
     height: 100%;
     border-collapse: collapse;
     font-size: 14px;
+    white-space: nowrap;
 }
 
 .Statistics-Table thead tr {
@@ -37,7 +38,6 @@
     font-size: 12px;
     font-weight: 400;
     text-transform: uppercase;
-    padding: 6px;
     text-align: center;
 }
 
@@ -52,6 +52,7 @@
     left: 0;
     z-index: 100;
     background-color: inherit;
+    border: 1px solid green;
 }
 
 .Statistics-Table th:not(:first-child) {
