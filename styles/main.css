@@ -565,7 +565,7 @@ main {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 200px;
 }
 
 .Player-Statistics__Slider {
@@ -573,14 +573,18 @@ main {
   height: auto;
   border-radius: 8px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.2);
-  border: 1px solid red;
 }
 
 .Statistics-Tables__Container {
   width: 100%;
   height: 100%;
   display: flex;
-  overflow-x: scroll !important;
+}
+
+.Statistics-Tables__Parent {
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll;
 }
 
 .Statistics-Table {
@@ -592,20 +596,25 @@ main {
   white-space: nowrap;
 }
 
+.Statistics-Tables__Parent::-webkit-scrollbar {
+  height: 0.6rem;
+  background-color: #f4f7f9;
+}
+
+.Statistics-Tables__Parent::-webkit-scrollbar-thumb {
+  background-color: #363535;
+  border-radius: 8px;
+}
+
 .Statistics-Table thead tr {
   background-color: #363535;
   color: #f4f7f9;
 }
 
 .Statistics-Table thead th {
-  font-size: 12px;
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
-}
-
-.Statistics-Table th {
-  padding: 6px;
 }
 
 .Statistics-Table th:nth-child(1) {
@@ -613,13 +622,25 @@ main {
   text-align: left;
   position: sticky;
   left: 0;
-  z-index: 100;
+  z-index: 10;
   background-color: inherit;
-  border: 1px solid green;
+  padding-left: 6px;
+}
+
+.Statistics-Table th:nth-child(1)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
 }
 
 .Statistics-Table th:not(:first-child) {
   width: auto;
+  padding: 6px;
 }
 
 .Statistics-Table tbody tr {

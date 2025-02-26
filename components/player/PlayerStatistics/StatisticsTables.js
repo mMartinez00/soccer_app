@@ -8,15 +8,17 @@ export default function StatisticsTables({ tables, currentStatistics }) {
             {tables.map((rows) => {
                 return (
                     <div className="Statistics-Tables__Container keen-slider__slide">
-                        <table className="Statistics-Table">
-                            <TableHeaders
-                                currentStatistics={currentStatistics}
-                            />
-                            <TableBody
-                                rows={rows}
-                                currentStatistics={currentStatistics}
-                            />
-                        </table>
+                        <div className="Statistics-Tables__Parent">
+                            <table className="Statistics-Table">
+                                <TableHeaders
+                                    currentStatistics={currentStatistics}
+                                />
+                                <TableBody
+                                    rows={rows}
+                                    currentStatistics={currentStatistics}
+                                />
+                            </table>
+                        </div>
                     </div>
                 );
             })}
