@@ -8,15 +8,14 @@ export default function PlayerProfile({ player, position }) {
             <div className="Player-Profile__Container">
                 <div className="Player-Profile__Header">
                     <h1 className="Player-Profile__Name">{player?.name}</h1>
-                    <div className="Player-Profile__Photo-Container">
+                    <figure className="Player-Profile__Photo-Container">
                         <Image
                             src={player && player.photo}
-                            width={200}
-                            height={200}
+                            fill={true}
                             alt={`Photo of ${player.firstname} ${player.lastname}`}
                             className="Player-Profile__Photo"
                         />
-                    </div>
+                    </figure>
                 </div>
                 <div className="Player-Profile__Info">
                     <p className="Player-Profile__Full-Name">

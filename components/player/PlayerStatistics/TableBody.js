@@ -22,8 +22,8 @@ export default function TableBody({ rows, currentStatistics }) {
                                 <Image
                                     src={row.league.logo}
                                     alt="logo"
-                                    width={25}
-                                    height={25}
+                                    width={16}
+                                    height={16}
                                 />
                             </th>
                             {currentStatistics === 'General' ? (
