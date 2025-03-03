@@ -2,36 +2,67 @@
 
 .Standings {
     &__Container {
-        width: 100%;
+        width: 90%;
         height: 100%;
+        margin: auto;
         display: flex;
-        justify-content: center;
-        align-items: center;
         flex-direction: column;
+        border: 1px solid white;
     }
 
-    &__League-Name {
-        margin: 1rem;
-        color: $light-color;
-    }
+    &__Header {
+        width: 100%;
+        height: 100px;
+        border: 1px solid red;
 
-    h2 {
-        margin: 1rem;
-        font-size: 2em;
-        color: $light-color;
+        header {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            .Standings__Logo-Container {
+                width: 100px;
+                // height: 100px;
+                height: 100%;
+
+                position: relative;
+                border: 1px solid orange;
+            }
+
+            .Standings__League-Name {
+                display: flex;
+                flex-direction: column;
+                color: $white-font-color;
+                font-size: clamp(1.25rem, 0.6413rem + 3.0435vw, 3rem);
+                border: 1px solid green;
+                padding-left: 8px;
+
+                .Standings__League-Country {
+                    // font-size: clamp(1.5rem, 0.6vw + 1.2rem, 2.2rem);
+                    font-size: 1.5rem;
+                    // color: red;
+                    opacity: 0.6;
+                }
+            }
+        }
     }
 }
 
 // League Tables Wrapper
 .Standings__Tables {
     width: 75%;
+    // width: 100%;
     height: 100%;
+    margin: auto;
+    border: 1px solid orange;
 }
 
 // Standings Table
 .Standings-Table__Container {
     width: 100%;
     height: 100%;
+    border: 1px solid red;
 }
 
 .Standings-Table {
@@ -44,11 +75,13 @@
     overflow: hidden;
     @include box-shadow(dark);
     color: $dark-color;
+    border: 1px solid white;
 
     &__Group {
         margin: 1rem 0;
         color: $white-font-color;
         font-size: 1.8em;
+        border: 1px green solid;
     }
 
     // Table Head
