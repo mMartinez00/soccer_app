@@ -38,28 +38,24 @@ export default function Standings() {
 
     return (
         <div className="Standings__Container">
-            <div className="Standings__Header">
-                <header>
-                    <div className="Standings__Logo-Container">
-                        <figure>
-                            <Image
-                                src={league.logo}
-                                alt={`${league.name} logo`}
-                                fill={true}
-                                // width={100}
-                                // height={100}
-                                className="Standings__Logo"
-                            />
-                        </figure>
-                    </div>
-                    <h1 className="Standings__League-Name">
-                        {league.name}
-                        <span className="Standings__League-Country">
-                            {league.country}
-                        </span>
-                    </h1>
-                </header>
-            </div>
+            <header className="Standings__Header">
+                <div className="Standings__Logo-Container">
+                    <figure>
+                        <Image
+                            src={league.logo}
+                            alt={`${league.name} logo`}
+                            fill={true}
+                            className="Standings__Logo"
+                        />
+                    </figure>
+                </div>
+                <h1 className="Standings__League-Name">
+                    {league.name}
+                    <span className="Standings__League-Country">
+                        {league.country}
+                    </span>
+                </h1>
+            </header>
             <div className="Standings__Tables">
                 {league.standings.map((table) => {
                     return <StandingsTable key={table.group} table={table} />;
