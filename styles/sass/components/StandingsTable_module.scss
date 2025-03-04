@@ -38,12 +38,17 @@
             color: $white-font-color;
             font-size: clamp(1.25rem, 0.6413rem + 3.0435vw, 3rem);
             border: 1px solid green;
-            padding-left: 8px;
+            padding-left: 6px;
 
             .Standings__League-Country {
                 font-size: clamp(0.8rem, 0.6413vw + 0.8rem, 1.25rem);
                 opacity: 0.6;
             }
+        }
+
+        @include screen-size(tablet) {
+            flex-direction: row-reverse;
+            justify-content: space-between;
         }
     }
 }
