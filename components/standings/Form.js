@@ -2,28 +2,30 @@ import React from 'react';
 
 export default function Form({ form }) {
     const formatGameResults = function (form) {
-        return (
-            form &&
-            form.split('').map((value, index) => {
+        if (!form) return null;
+
+        if (form.length > 1) {
+            return form.split('').map((value, index) => {
                 let className =
                     value === 'W' ? 'Won' : value === 'L' ? 'Lost' : 'Draw';
 
-                if (form && form > 1) {
-                    return (
-                        <span key={index} className={className}>
-                            {value}
-                        </span>
-                    );
-                }
-
                 return (
-                    <>
-                        <span key={index} className={className}>
-                            {value}
-                        </span>
-                    </>
+                    <span key={`${value}-${index}`} className={className}>
+                        {console.log(`${value}-${index}`)}
+                        {value}
+                    </span>
                 );
-            })
+            });
+        }
+
+        return (
+            <span
+                className={
+                    form === 'W' ? 'Won' : value === 'L' ? 'Lost' : 'Draw'
+                }
+            >
+                {form}
+            </span>
         );
     };
 
