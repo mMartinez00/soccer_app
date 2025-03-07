@@ -16,6 +16,7 @@ export default function PlayerStatistics({ statistics }) {
     const teams = Object.keys(statisticsGroupedByTeam);
     const [sliderRef, instanceRef] = useKeenSlider({
         initial: 0,
+        drag: false,
         slideChanged(slider) {
             setActiveTab(slider.track.details.rel);
         },
