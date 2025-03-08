@@ -3,6 +3,7 @@ import { useKeenSlider } from 'keen-slider/react';
 import StatisticsTables from './StatisticsTables';
 import TeamsTabs from './TeamsTabs';
 import StatisticsButtons from './StatisticsButtons';
+import Table from '@/components/Table';
 import { groupedByTeam } from '@/utils/utils';
 import 'keen-slider/keen-slider.min.css';
 
@@ -31,6 +32,8 @@ export default function PlayerStatistics({ statistics }) {
         instanceRef.current?.moveToIdx(index);
     };
 
+    // console.log(tables);
+
     return (
         <div className="Player-Statistics">
             <div className="Player-Statistics__Container">
@@ -52,10 +55,17 @@ export default function PlayerStatistics({ statistics }) {
                         className="Player-Statistics__Slider keen-slider"
                         ref={sliderRef}
                     >
-                        <StatisticsTables
-                            tables={tables}
-                            currentStatistics={currentStatistics}
-                        />
+                        <div className="Statistics-Tables__Container keen-slider__slide">
+                            <div className="Statistics-Tables__Wrapper">
+                                {tables.map((table) => (
+                                    <Table
+                                        key={table[0].team.id}
+                                        type="Statistics"
+                                        data={table}
+                                    />
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

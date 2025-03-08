@@ -2,6 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import useStandings from '@/hooks/useStandings';
 import StandingsTable from './StandingsTable';
+import Table from '../Table';
 import Loading from '../Loading';
 import Image from 'next/image';
 
@@ -33,6 +34,9 @@ export default function Standings() {
     }
 
     const { league } = data.response[0];
+    const standings = league.standings;
+
+    // console.log(standings);
 
     return (
         <div className="Standings__Container">
@@ -55,9 +59,11 @@ export default function Standings() {
                 </h1>
             </header>
             <div className="Standings__Tables">
-                {league.standings.map((table) => (
-                    <StandingsTable key={table[0].group} table={table} />
-                ))}
+                <div className="Standings-Table__Container">
+                    {standings.map((table) => {
+                        return <Table type="Standings" data={table} />;
+                    })}
+                </div>
             </div>
         </div>
     );

@@ -11,7 +11,6 @@ export default function Form({ form }) {
 
                 return (
                     <span key={`${value}-${index}`} className={className}>
-                        {console.log(`${value}-${index}`)}
                         {value}
                     </span>
                 );
