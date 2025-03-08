@@ -37,6 +37,18 @@ const defendingHeaders = [
     'Penalties Commited',
 ];
 
+const standingsHeaders = [
+    'Pos',
+    'Team',
+    'P',
+    'W',
+    'D',
+    'L',
+    '+/-',
+    'PTS',
+    'Form',
+];
+
 const tableData = {
     general: ['games', 'fouls', 'passes', 'substitutes'],
 
@@ -53,4 +65,5 @@ export {
     generalHeaders,
     attackingHeaders,
     defendingHeaders,
+    standingsHeaders,
 };
