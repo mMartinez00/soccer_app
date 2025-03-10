@@ -36,7 +36,7 @@ export default function Standings() {
     const { league } = data.response[0];
     const standings = league.standings;
 
-    // console.log(standings);
+    console.log(standings);
 
     return (
         <div className="Standings__Container">
@@ -61,7 +61,13 @@ export default function Standings() {
             <div className="Standings__Tables">
                 <div className="Standings-Table__Container">
                     {standings.map((table) => {
-                        return <Table type="Standings" data={table} />;
+                        return (
+                            <Table
+                                key={table[0].group}
+                                type="Standings"
+                                data={table}
+                            />
+                        );
                     })}
                 </div>
             </div>
