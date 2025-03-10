@@ -1,4 +1,5 @@
 const generalHeaders = [
+    'League',
     'Rating',
     'Games',
     'Games Started',
@@ -12,6 +13,7 @@ const generalHeaders = [
 ];
 
 const attackingHeaders = [
+    'League',
     'Goals',
     'Assists',
     'Shots',
@@ -23,6 +25,7 @@ const attackingHeaders = [
 ];
 
 const defendingHeaders = [
+    'League',
     'Tackles',
     'Blocks',
     'Interceptions',

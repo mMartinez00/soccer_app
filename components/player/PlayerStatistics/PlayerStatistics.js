@@ -32,8 +32,6 @@ export default function PlayerStatistics({ statistics }) {
         instanceRef.current?.moveToIdx(index);
     };
 
-    // console.log(tables);
-
     return (
         <div className="Player-Statistics">
             <div className="Player-Statistics__Container">
@@ -62,6 +60,7 @@ export default function PlayerStatistics({ statistics }) {
                                         key={table[0].team.id}
                                         type="Statistics"
                                         data={table}
+                                        currentStatistics={currentStatistics}
                                     />
                                 ))}
                             </div>
