@@ -32,7 +32,11 @@ async function fetchData() {
 }
 
 export default async function handler(req, res) {
-    const response = await fetchData();
+    try {
+        const response = await fetchData();
 
-    res.status(200).json(response);
+        res.status(200).json(response);
+    } catch (error) {
+        res.status(500).json({ error: 'failed to load data' });
+    }
 }
