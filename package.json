@@ -11,7 +11,11 @@
         "sass": "sass --watch styles/sass/main.scss:styles/main.css"
     },
     "dependencies": {
+        "@heroui/button": "^2.2.24",
+        "@heroui/system": "^2.4.20",
+        "@heroui/theme": "^2.4.20",
         "@tailwindcss/postcss": "^4.1.12",
+        "framer-motion": "^12.23.12",
         "keen-slider": "^6.8.6",
         "motion": "^12.23.12",
         "next": "13.4.12",
@@ -33,7 +37,6 @@
         "eslint-plugin-react": "^7.35.2",
         "eslint-plugin-react-hooks": "^4.6.2",
         "globals": "^15.9.0",
-        "json-server": "^1.0.0-alpha.23",
-        "sass": "^1.77.5"
+        "json-server": "^1.0.0-alpha.23"
     }
 }
