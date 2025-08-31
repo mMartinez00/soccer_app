@@ -4,7 +4,8 @@ import useLive from '@/hooks/useLive';
 import useFixtures from '@/hooks/useFixtures';
 import MatchList from '@/components/fixtures/MatchList';
 import Loading from '@/components/Loading';
-import Button from '@/components/Button';
+// import Button from '@/components/Button';
+import { Button } from '@heroui/button';
 import MatchDate from '@/components/MatchDate';
 import InputText from '@/components/InputText';
 import { groupMatchesByLeague, debounce, filtered } from '@/utils/utils';
@@ -60,7 +61,7 @@ export default function Home() {
             <div className="Matches">
                 <div className="Matches__Container">
                     <div className="Matches__Controls">
-                        <Button
+                        {/* <Button
                             handleClick={() => handleClick()}
                             className={`Button Button-Toggle${
                                 showLive ? ' Active' : ''
@@ -68,7 +69,8 @@ export default function Home() {
                         >
                             Live{' '}
                             {liveData ? `(${liveData.response.length})` : ''}
-                        </Button>
+                        </Button> */}
+                        <Button>Click me</Button>
                         <InputText
                             inputValue={inputValue}
                             handleInputChange={handleInputChange}
