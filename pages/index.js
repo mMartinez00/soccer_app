@@ -4,7 +4,8 @@ import useLive from '@/hooks/useLive';
 import useFixtures from '@/hooks/useFixtures';
 import MatchList from '@/components/fixtures/MatchList';
 import Loading from '@/components/Loading';
-import Button from '@/components/Button';
+// import Button from '@/components/Button';
+import { Button } from '@chakra-ui/react';
 import MatchDate from '@/components/MatchDate';
 import InputText from '@/components/InputText';
 import { groupMatchesByLeague, debounce, filtered } from '@/utils/utils';
@@ -69,6 +70,7 @@ export default function Home() {
                             Live{' '}
                             {liveData ? `(${liveData.response.length})` : ''}
                         </Button> */}
+                        {/* <Button>Click me</Button> */}
                         <Button>Click me</Button>
                         <InputText
                             inputValue={inputValue}

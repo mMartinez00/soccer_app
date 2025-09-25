@@ -1,6 +1,7 @@
 import Layout from '@/components/Layout';
 import styles from '../styles/main.css';
 import { SWRConfig, useSWRConfig } from 'swr';
+import { ChakraProvider } from '@chakra-ui/react';
 
 export default function App({ Component, pageProps }) {
     const options = {
@@ -11,9 +12,11 @@ export default function App({ Component, pageProps }) {
 
     return (
         <SWRConfig value={options}>
-            <Layout>
-                <Component {...pageProps} />
-            </Layout>
+            <ChakraProvider>
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+            </ChakraProvider>
         </SWRConfig>
     );
 }
