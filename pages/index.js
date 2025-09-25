@@ -61,17 +61,10 @@ export default function Home() {
             <div className="Matches">
                 <div className="Matches__Container">
                     <div className="Matches__Controls">
-                        {/* <Button
-                            handleClick={() => handleClick()}
-                            className={`Button Button-Toggle${
-                                showLive ? ' Active' : ''
-                            }`}
-                        >
+                        <Button variant="subtle" onClick={() => handleClick()}>
                             Live{' '}
                             {liveData ? `(${liveData.response.length})` : ''}
-                        </Button> */}
-                        {/* <Button>Click me</Button> */}
-                        <Button>Click me</Button>
+                        </Button>
                         <InputText
                             inputValue={inputValue}
                             handleInputChange={handleInputChange}
