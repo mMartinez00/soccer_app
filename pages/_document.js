@@ -1,12 +1,15 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import { Provider } from '@/components/ui/provider';
 
 export default function Document() {
     return (
-        <Html lang="en">
+        <Html lang="en" suppressHydrationWarning>
             <Head />
             <body>
-                <Main />
-                <NextScript />
+                <Provider>
+                    <Main />
+                    <NextScript />
+                </Provider>
             </body>
         </Html>
     );
