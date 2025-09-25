@@ -1,5 +1,4 @@
 import Layout from '@/components/Layout';
-import { HeroUIProvider } from '@heroui/system';
 import styles from '../styles/main.css';
 import { SWRConfig, useSWRConfig } from 'swr';
 
@@ -12,11 +11,9 @@ export default function App({ Component, pageProps }) {
 
     return (
         <SWRConfig value={options}>
-            <HeroUIProvider>
-                <Layout>
-                    <Component {...pageProps} />
-                </Layout>
-            </HeroUIProvider>
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
         </SWRConfig>
     );
 }
