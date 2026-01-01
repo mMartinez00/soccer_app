@@ -1,5 +1,4 @@
 import Layout from '@/components/Layout';
-import styles from '../styles/main.css';
 import { SWRConfig, useSWRConfig } from 'swr';
 import { Provider } from '@/components/ui/provider';
 
